@@ -1,7 +1,13 @@
 import styled from "styled-components"
 
 export const HeaderStyled = styled.header`
-  padding: 1rem 0 0 1.5rem;
+  padding-top: 1rem;
+  height: var(--header-height);
+  padding-left: 1.5rem;
+  /* border: solid green 2px; */
+  background-color: white;
+  border-bottom: 0.2px solid transparent;
+  box-shadow: 0px 0.2px 5px 0px var(--font-color);
 
   h1 {
     a {

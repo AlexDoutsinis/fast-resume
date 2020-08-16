@@ -2,6 +2,8 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Hero from "../components/hero/hero"
+import HeroContent from "../components/hero/heroContent"
 
 const IndexPage = () => (
   <Layout>
@@ -11,7 +13,9 @@ const IndexPage = () => (
       lang="en"
       description=""
     />
-    <h1>hello</h1>
+    <Hero>
+      <HeroContent />
+    </Hero>
   </Layout>
 )
 
