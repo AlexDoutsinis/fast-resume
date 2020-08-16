@@ -1,5 +1,6 @@
 import React from "react"
 
+import "../globalStyles.css"
 import Header from "./header"
 import useMetaData from "../hooks/use-Metadata"
 
