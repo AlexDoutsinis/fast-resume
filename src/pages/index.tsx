@@ -4,6 +4,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero/hero"
 import HeroContent from "../components/hero/heroContent"
+import Features from "../components/features/features"
+import FeaturesContent from "../components/features/featuresContent"
 
 const IndexPage = () => (
   <Layout>
@@ -16,6 +18,9 @@ const IndexPage = () => (
     <Hero>
       <HeroContent />
     </Hero>
+    <Features>
+      <FeaturesContent />
+    </Features>
   </Layout>
 )
 

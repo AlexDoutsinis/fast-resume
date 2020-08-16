@@ -13,7 +13,7 @@ const Hero: React.FC<{}> = ({ children }) => {
     <HeroWrapperStyled>
       <HeroContentStyled>{children}</HeroContentStyled>
       <HeroIllustrationStyled>
-        <img src={hireImg} alt="hire illustration" />
+        <img src={hireImg} alt="Hire illustration" />
       </HeroIllustrationStyled>
     </HeroWrapperStyled>
   )
