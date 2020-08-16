@@ -1,0 +1,79 @@
+/* Fonts */
+@font-face {
+  font-family: Lato;
+  src: url("fonts/lato-regular.woff2") format("woff2"),
+    url("fonts/lato-regular.woff") format("woof");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("fonts/lato-bold.woff2") format("woff2"),
+    url("fonts/lato-bold.woff") format("woof");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("fonts/lato-italic.woff2") format("woff2"),
+    url("fonts/lato-italic.woff") format("woof");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Reset */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Styles */
+:root {
+  --font-color: #303d46;
+  --bg-color: #fff;
+  --divider-bg-color: #bfbfbf;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+  color: var(--font-color);
+  background-color: var(--bg-color);
+}
