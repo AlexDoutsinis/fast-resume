@@ -16,8 +16,6 @@ export const TemplateStyled = styled.div`
   grid-row-gap: 500px;
   margin-top: 1.5rem;
 
-  /* border: solid 1px green; */
-
   div {
     border: solid 0.5px var(--light-blue-color);
     cursor: pointer;

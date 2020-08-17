@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <FooterStyled>
       © {new Date().getFullYear()}, Built with
-      {` `} 💙 from <a href="https://github.com/Alexiosdut">Alexis Doutsinis</a>
+      {` `} 💙 by <a href="https://github.com/Alexiosdut">Alexis Doutsinis</a>
     </FooterStyled>
   )
 }

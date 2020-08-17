@@ -7,8 +7,6 @@ export const FeaturesWrapperStyled = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* border: solid red 2px; */
   background-color: var(--light-blue-color);
 `
 

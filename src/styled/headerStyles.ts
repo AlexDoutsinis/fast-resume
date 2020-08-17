@@ -4,7 +4,6 @@ export const HeaderStyled = styled.header`
   padding-top: 1rem;
   height: var(--header-height);
   padding-left: 1.5rem;
-  /* border: solid green 2px; */
   background-color: white;
   border-bottom: 0.2px solid transparent;
   box-shadow: 0px 0.2px 5px 0px var(--font-color);
