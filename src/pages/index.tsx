@@ -6,6 +6,7 @@ import Hero from "../components/hero/hero"
 import HeroContent from "../components/hero/heroContent"
 import Features from "../components/features/features"
 import FeaturesContent from "../components/features/featuresContent"
+import Templates from "../components/templates/templates"
 
 const IndexPage = () => (
   <Layout>
@@ -21,6 +22,9 @@ const IndexPage = () => (
     <Features>
       <FeaturesContent />
     </Features>
+    <Templates>
+      <>Pick a template</>
+    </Templates>
   </Layout>
 )
 

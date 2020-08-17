@@ -5,7 +5,7 @@ const FeaturesContent = () => {
     <>
       <h2>Get a well-crafted resume in no time!</h2>
       <p>Just pick a template and start crafting...</p>
-      <span>No sign-up required!</span>
+      <p>No sign-up required!</p>
     </>
   )
 }

@@ -21,11 +21,6 @@ export const FeaturesContentStyled = styled.div`
   p {
     margin-top: 1.5rem;
   }
-
-  span {
-    display: inline-block;
-    margin-top: 1.5rem;
-  }
 `
 
 export const FeaturesIllustrationStyled = styled.div`
