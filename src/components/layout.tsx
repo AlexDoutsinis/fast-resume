@@ -3,6 +3,7 @@ import React from "react"
 import "../globalStyles.css"
 import Header from "./header"
 import useMetaData from "../hooks/use-Metadata"
+import Footer from "./footer/footer"
 
 const Layout: React.FC = ({ children }) => {
   const { siteMetadata } = useMetaData()
@@ -12,11 +13,7 @@ const Layout: React.FC = ({ children }) => {
       <Header siteTitle={siteMetadata.title} />
       <div>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer />
       </div>
     </>
   )
