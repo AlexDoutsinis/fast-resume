@@ -15,7 +15,7 @@ type Props = {
 const Template = ({ node }: Props) => {
   return (
     <TemplateStyled>
-      <div>
+      <div onClick={() => console.log(node.name)}>
         <Img
           fluid={node.childImageSharp.fluid}
           alt={`Resume template '${node.name}'`}
