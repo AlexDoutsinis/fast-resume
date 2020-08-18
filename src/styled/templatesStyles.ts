@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { IoIosPhonePortrait } from "react-icons/io"
 
 export const TemplateWrapperStyled = styled.section`
   h3 {
@@ -22,4 +23,24 @@ export const TemplateStyled = styled.div`
     box-shadow: 0px 0px 7px 1px var(--light-blue-color);
     border-radius: 5px;
   }
+`
+
+export const RotateIconWrapperStyled = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+type RotateIconStyledProps = {
+  wobble: boolean
+}
+
+export const RotateIconStyled = styled(IoIosPhonePortrait)<
+  RotateIconStyledProps
+>`
+  font-size: 2.5rem;
+  color: var(--blue-color);
+
+  ${props => (props.wobble ? `animation: wobble 1s 2` : `display: none`)}
 `

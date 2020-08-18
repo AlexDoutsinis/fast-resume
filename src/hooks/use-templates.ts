@@ -17,7 +17,7 @@ type Node = {
   }
 }
 
-function useTemplates(): Templates {
+export function useTemplates(): Templates {
   const { allFile }: TemplatesQuery = useStaticQuery(
     graphql`
       query GetTemplates {
@@ -39,5 +39,3 @@ function useTemplates(): Templates {
 
   return { edges: allFile.edges }
 }
-
-export { useTemplates }

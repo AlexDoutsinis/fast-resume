@@ -10,12 +10,13 @@ type Props = {
       fluid: any
     }
   }
+  openModal: (templateName: string) => void
 }
 
-const Template = ({ node }: Props) => {
+const Template = ({ node, openModal }: Props) => {
   return (
     <TemplateStyled>
-      <div onClick={() => console.log(node.name)}>
+      <div onClick={() => openModal(node.name)}>
         <Img
           fluid={node.childImageSharp.fluid}
           alt={`Resume template '${node.name}'`}

@@ -1,10 +1,11 @@
 type State = {
   isModalOpen: boolean
   currentTemplate: string
+  wobble: boolean
 }
 
 type Action = {
-  type: "openModal" | "closeModal"
+  type: "openModal" | "closeModal" | "stopWobble"
   templateName?: string
 }
 
@@ -12,13 +13,16 @@ export function templatesReducer(state: State, action: Action): State {
   switch (action.type) {
     case "openModal": {
       return {
-        ...state,
         isModalOpen: true,
         currentTemplate: action.templateName,
+        wobble: true,
       }
     }
     case "closeModal": {
-      return { ...state, isModalOpen: false }
+      return { ...state, isModalOpen: false, wobble: false }
+    }
+    case "stopWobble": {
+      return { ...state, wobble: false }
     }
   }
 }
