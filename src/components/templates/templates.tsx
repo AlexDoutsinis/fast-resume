@@ -9,19 +9,19 @@ import Modal from "./modal"
 const initialState = {
   isModalOpen: false,
   currentTemplate: "",
-  wobble: false,
+  wobble: 0,
 }
 
 const Templates: React.FC<{}> = ({ children }) => {
   const { edges } = useTemplates()
   const [state, dispatch] = useReducer(templatesReducer, initialState)
 
-  function openModal(templateName) {
-    dispatch({ type: "openModal", templateName })
+  function openModal(templateName: string): void {
+    dispatch({ type: "openModal_startWobble", templateName })
   }
 
-  function closeModal() {
-    dispatch({ type: "closeModal" })
+  function closeModal(): void {
+    dispatch({ type: "closeModal_stopWobble" })
   }
 
   const modalProps = {

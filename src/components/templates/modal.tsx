@@ -10,9 +10,11 @@ type Props = {
   isModalOpen: boolean
   closeModal: () => void
   currentTemplate: string
-  wobble: boolean
+  wobble: number
   stopWobble: () => void
 }
+
+Wrapper.setAppElement("#___gatsby")
 
 const Modal: React.FC<Props> = props => {
   const {

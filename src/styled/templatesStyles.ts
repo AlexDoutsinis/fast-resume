@@ -33,7 +33,7 @@ export const RotateIconWrapperStyled = styled.div`
 `
 
 type RotateIconStyledProps = {
-  wobble: boolean
+  wobble: number
 }
 
 export const RotateIconStyled = styled(IoIosPhonePortrait)<
