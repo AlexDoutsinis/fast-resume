@@ -40,6 +40,7 @@ const Modal: React.FC<Props> = props => {
       {width <= deviceSize && (
         <RotateIconWrapperStyled>
           <RotateIconStyled onAnimationEnd={stopWobble} wobble={wobble} />
+          {wobble ? <p>Please rotate your device</p> : null}
         </RotateIconWrapperStyled>
       )}
     </Wrapper>

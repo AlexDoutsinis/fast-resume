@@ -30,6 +30,11 @@ export const RotateIconWrapperStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  p {
+    padding-left: 5px;
+    font-size: 0.85rem;
+  }
 `
 
 type RotateIconStyledProps = {
