@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react"
 
-export const useViewport = () => {
+type Width = {
+  width: number
+}
+
+export const useViewport = (): Width => {
   const [width, setWidth] = useState(window.innerWidth)
 
   useEffect(() => {

@@ -5,6 +5,7 @@ import {
   RotateIconWrapperStyled,
   RotateIconStyled,
 } from "../../styled/templatesStyles"
+import { useViewport } from "../../hooks/use-viewport"
 
 type Props = {
   isModalOpen: boolean
@@ -26,6 +27,9 @@ const Modal: React.FC<Props> = props => {
     stopWobble,
   } = props
 
+  const { width } = useViewport()
+  const deviceSize = 768
+
   return (
     <Wrapper
       isOpen={isModalOpen}
@@ -33,9 +37,11 @@ const Modal: React.FC<Props> = props => {
       contentLabel={currentTemplate}
     >
       {children}
-      <RotateIconWrapperStyled>
-        <RotateIconStyled onAnimationEnd={stopWobble} wobble={wobble} />
-      </RotateIconWrapperStyled>
+      {width <= deviceSize && (
+        <RotateIconWrapperStyled>
+          <RotateIconStyled onAnimationEnd={stopWobble} wobble={wobble} />
+        </RotateIconWrapperStyled>
+      )}
     </Wrapper>
   )
 }
