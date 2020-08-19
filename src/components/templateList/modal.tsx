@@ -37,6 +37,7 @@ const Modal: React.FC<Props> = props => {
       contentLabel={currentTemplate}
     >
       {children}
+
       {width <= deviceSize && (
         <RotateIconWrapperStyled>
           <RotateIconStyled onAnimationEnd={stopWobble} wobble={wobble} />

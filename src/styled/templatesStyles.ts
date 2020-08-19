@@ -26,10 +26,11 @@ export const TemplateStyled = styled.div`
 `
 
 export const RotateIconWrapperStyled = styled.div`
-  height: 95%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 
   p {
     padding-left: 5px;

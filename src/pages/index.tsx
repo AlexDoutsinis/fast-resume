@@ -6,7 +6,7 @@ import Hero from "../components/hero/hero"
 import HeroContent from "../components/hero/heroContent"
 import Features from "../components/features/features"
 import FeaturesContent from "../components/features/featuresContent"
-import TemplateList from "../components/templates/templateList"
+import TemplateList from "../components/templateList/templateList"
 
 const IndexPage = () => (
   <Layout>

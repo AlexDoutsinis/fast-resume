@@ -5,6 +5,7 @@ import { useTemplates } from "../../hooks/use-templates"
 import Template from "./template"
 import { templatesReducer } from "../../reducers/templatesReducer"
 import Modal from "./modal"
+import Navbar from "../resumeBuilder/navbar"
 
 const initialState = {
   isModalOpen: false,
@@ -41,7 +42,7 @@ const TemplateList: React.FC<{}> = ({ children }) => {
         ))}
       </div>
       <Modal {...modalProps}>
-        <h2>{state.currentTemplate}</h2>
+        <Navbar />
       </Modal>
     </TemplateWrapperStyled>
   )
