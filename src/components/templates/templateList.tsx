@@ -12,7 +12,7 @@ const initialState = {
   wobble: 0,
 }
 
-const Templates: React.FC<{}> = ({ children }) => {
+const TemplateList: React.FC<{}> = ({ children }) => {
   const { edges } = useTemplates()
   const [state, dispatch] = useReducer(templatesReducer, initialState)
 
@@ -47,4 +47,4 @@ const Templates: React.FC<{}> = ({ children }) => {
   )
 }
 
-export default Templates
+export default TemplateList
