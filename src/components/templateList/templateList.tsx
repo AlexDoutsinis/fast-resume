@@ -1,11 +1,10 @@
 import React, { useReducer } from "react"
 
-import { TemplateWrapperStyled } from "../../styled/templatesStyles"
+import { TemplateWrapperStyled } from "../../styled/templateListStyles"
 import { useTemplates } from "../../hooks/use-templates"
 import Template from "./template"
-import { templatesReducer } from "../../reducers/templatesReducer"
+import { templatesReducer } from "../../reducers/templateListReducer"
 import Modal from "./modal"
-import Navbar from "../resumeBuilder/navbar"
 
 const initialState = {
   isModalOpen: false,
@@ -35,15 +34,13 @@ const TemplateList: React.FC<{}> = ({ children }) => {
 
   return (
     <TemplateWrapperStyled>
-      <h3>{children}</h3>
+      <h3>Pick a template</h3>
       <div>
         {edges.map(({ node }) => (
           <Template key={node.name} node={node} openModal={openModal} />
         ))}
       </div>
-      <Modal {...modalProps}>
-        <Navbar />
-      </Modal>
+      <Modal {...modalProps}>{children}</Modal>
     </TemplateWrapperStyled>
   )
 }

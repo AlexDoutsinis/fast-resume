@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 
-import { TemplateStyled } from "../../styled/templatesStyles"
+import { TemplateStyled } from "../../styled/templateListStyles"
 
 type Props = {
   node: {

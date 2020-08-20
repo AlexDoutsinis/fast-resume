@@ -7,6 +7,7 @@ import HeroContent from "../components/hero/heroContent"
 import Features from "../components/features/features"
 import FeaturesContent from "../components/features/featuresContent"
 import TemplateList from "../components/templateList/templateList"
+import ResumeBuilder from "../components/resumeBuilder/resumeBuilder"
 
 const IndexPage = () => (
   <Layout>
@@ -23,7 +24,7 @@ const IndexPage = () => (
       <FeaturesContent />
     </Features>
     <TemplateList>
-      <>Pick a template</>
+      <ResumeBuilder />
     </TemplateList>
   </Layout>
 )
