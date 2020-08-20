@@ -11,8 +11,9 @@ const Navbar = () => {
         <li>Contact</li>
         <li>Experience</li>
         <li>Education</li>
-        <li>| Layouts</li>
+        <li>Layouts</li>
       </ul>
+      <button>Export PDF</button>
     </NavStyled>
   )
 }

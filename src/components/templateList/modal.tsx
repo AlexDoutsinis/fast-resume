@@ -17,6 +17,24 @@ type Props = {
 
 Wrapper.setAppElement("#___gatsby")
 
+const customStyles = {
+  content: {
+    // top: "50%",
+    // left: "50%",
+    // right: "auto",
+    // bottom: "auto",
+    // marginRight: "-50%",
+    // transform: "translate(-50%, -50%)",
+
+    padding: "10px",
+    top: "2%",
+    left: "5%",
+    right: "5%",
+    bottom: "2%",
+    border: "none",
+  },
+}
+
 const Modal: React.FC<Props> = props => {
   const {
     children,
@@ -35,6 +53,7 @@ const Modal: React.FC<Props> = props => {
       isOpen={isModalOpen}
       onRequestClose={closeModal}
       contentLabel={currentTemplate}
+      style={customStyles}
     >
       {children}
 

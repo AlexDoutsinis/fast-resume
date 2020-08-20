@@ -1,35 +1,30 @@
 import styled from "styled-components"
 
 export const NavStyled = styled.nav`
-  /* width: 100%; */
   display: flex;
   flex-direction: row;
-  /* justify-content: center;
-  justify-items: center; */
+  font-size: 0.8rem;
+  justify-content: space-between;
 
   ul {
-    flex-basis: 80%;
+    flex-basis: 85%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 
     li {
-      /* border: solid red 1px; */
-      /* display: inline-block; */
-      /* padding-left: 10px; */
-
-      /* &:first-child {
-        padding: 0;
-      }
-
-      &:nth-child(4) {
-        padding: 0;
-      }
-
-      &:last-child {
-        padding: 0;
-      } */
+      padding-left: 5px;
     }
+  }
+
+  button {
+    background: none;
+    padding: 3px 6px;
+    margin-left: 7px;
+    font-size: inherit;
+    border: solid var(--blue-color) 1px;
+    display: inline-block;
+    align-self: flex-start;
   }
 `
