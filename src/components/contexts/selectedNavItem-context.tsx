@@ -1,6 +1,6 @@
 import React, { useState, createContext, useContext } from "react"
 
-type NavItems =
+type NavItem =
   | "Profile"
   | "Skills"
   | "Contact"
@@ -9,14 +9,14 @@ type NavItems =
   | "Design"
 
 type SelectedNavItemContextProps = {
-  selectedNavItem: NavItems
-  setSelectedNavItem: (value: NavItems) => void
+  selectedNavItem: NavItem
+  setSelectedNavItem: (value: NavItem) => void
 }
 
 const SelectedNavItemContext = createContext({} as SelectedNavItemContextProps)
 
 export const SelectedNavItemContextProvider: React.FC<{}> = ({ children }) => {
-  const [selectedNavItem, setSelectedNavItem] = useState("Profile" as NavItems)
+  const [selectedNavItem, setSelectedNavItem] = useState("Profile" as NavItem)
 
   return (
     <SelectedNavItemContext.Provider

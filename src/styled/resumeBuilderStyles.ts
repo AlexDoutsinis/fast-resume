@@ -5,6 +5,7 @@ export const NavStyled = styled.nav`
   flex-direction: row;
   font-size: 0.8rem;
   justify-content: space-between;
+  margin-bottom: 1rem;
 
   ul {
     flex-basis: 85%;
@@ -40,7 +41,8 @@ export const NavItemStyled = styled.li<NavItemStyledProps>`
 export const SideBarStyled = styled.div`
   margin-top: 1rem;
   display: inline-block;
-  max-width: 40%;
+  width: 40%;
+  vertical-align: top;
 
   input,
   textarea {
@@ -53,6 +55,7 @@ export const SideBarStyled = styled.div`
   }
 
   textarea {
+    resize: vertical;
     min-width: 100%;
     max-width: 100%;
     min-height: 100px;
@@ -62,14 +65,19 @@ export const SideBarStyled = styled.div`
 `
 
 export const CurrentTemplateStyled = styled.div`
-  max-width: 60%;
+  width: 60%;
   display: inline-block;
   line-height: 1.3;
+  font-size: 12px;
+  word-wrap: break-word;
+  overflow: auto;
+  margin-top: 2rem;
 `
 
 // Template designs
 export const TemplateDesignWrapperStyled = styled.div`
   width: 595px;
   height: 842px;
-  cursor: pointer;
+
+  /* border: solid red 1px; */
 `
