@@ -1,7 +1,7 @@
 import React from "react"
 
 import { NavStyled, NavItemStyled } from "../../styled/resumeBuilderStyles"
-import { useToolbarContext } from "../contexts/toolbarContext"
+import { useSelectedNavItemContext } from "../contexts/selectedNavItem-context"
 
 type NavItems = [
   "Profile",
@@ -22,15 +22,15 @@ const navItems: NavItems = [
 ]
 
 const Navbar = () => {
-  const { selectedNavItem, setSelectedNavItem } = useToolbarContext()
+  const { selectedNavItem, setSelectedNavItem } = useSelectedNavItemContext()
 
   return (
     <NavStyled>
       <ul>
         {navItems.map((item, index) => (
           <NavItemStyled
-            onClick={() => setSelectedNavItem(index)}
-            selectedNavItem={selectedNavItem}
+            onClick={() => setSelectedNavItem(navItems[index])}
+            selectedNavItem={navItems.indexOf(selectedNavItem)}
             index={index}
             key={item}
           >
