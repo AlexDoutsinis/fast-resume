@@ -11,8 +11,6 @@ import { useSelectedNavItemContext } from "../../contexts/selectedNavItem-contex
 const SideBar = () => {
   const { selectedNavItem } = useSelectedNavItemContext()
 
-  console.log("SideBar: re-render")
-
   return (
     <SideBarStyled>
       {selectedNavItem === "Profile" && <Profile />}

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { device } from "../utils/device"
 
 export const NavStyled = styled.nav`
   display: flex;
@@ -34,6 +35,10 @@ type NavItemStyledProps = {
 export const NavItemStyled = styled.li<NavItemStyledProps>`
   padding-left: 5px;
   cursor: pointer;
+
+  ${device.mobileM`
+    padding: 3px 6px;
+  `}
 
   ${props => props.selectedNavItem === props.index && "color: red"};
 `

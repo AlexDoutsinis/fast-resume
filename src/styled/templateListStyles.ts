@@ -31,10 +31,13 @@ export const RotateIconWrapperStyled = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  background-color: var(--light-blue-color);
+  width: 150px;
 
   p {
     padding-left: 5px;
     font-size: 0.85rem;
+    padding: 0.4rem 1rem;
   }
 `
 

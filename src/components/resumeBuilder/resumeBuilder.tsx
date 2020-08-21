@@ -6,8 +6,6 @@ import SideBar from "./sideBar/sideBar"
 import CurrentTemplate from "./currentTemplate/currentTemplate"
 
 const ResumeBuilder = () => {
-  console.log("ResumeBuilder: re-render")
-
   return (
     <div>
       <SelectedNavItemContextProvider>
@@ -20,5 +18,3 @@ const ResumeBuilder = () => {
 }
 
 export default ResumeBuilder
-
-// 84 + 411 = 495
