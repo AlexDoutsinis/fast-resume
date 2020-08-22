@@ -8,7 +8,7 @@ import Experience from "./Experience"
 import Education from "./education"
 import { useSelectedNavItemContext } from "../../contexts/selectedNavItem-context"
 
-const SideBar = () => {
+const SideBar = props => {
   const { selectedNavItem } = useSelectedNavItemContext()
 
   return (

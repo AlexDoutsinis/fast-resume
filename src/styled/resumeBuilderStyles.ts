@@ -6,7 +6,12 @@ export const NavStyled = styled.nav`
   flex-direction: row;
   font-size: 0.8rem;
   justify-content: space-between;
+  margin-top: 10px;
   margin-bottom: 1rem;
+
+  ${device.laptop`
+    font-size: 1rem;
+  `}
 
   ul {
     flex-basis: 85%;
@@ -24,6 +29,7 @@ export const NavStyled = styled.nav`
     border: solid var(--blue-color) 1px;
     display: inline-block;
     align-self: flex-start;
+    cursor: pointer;
   }
 `
 
@@ -40,7 +46,9 @@ export const NavItemStyled = styled.li<NavItemStyledProps>`
     padding: 3px 6px;
   `}
 
-  ${props => props.selectedNavItem === props.index && "color: red"};
+  ${props =>
+    props.selectedNavItem === props.index &&
+    "color: var(--blue-color); font-weight: 700;"};
 `
 
 export const SideBarStyled = styled.div`
@@ -51,7 +59,8 @@ export const SideBarStyled = styled.div`
 
   input,
   textarea {
-    font-size: 0.8rem;
+    font-size: 12px;
+    line-height: 1.3;
     width: 100%;
     padding: 3px 6px;
     outline: none;
@@ -70,19 +79,25 @@ export const SideBarStyled = styled.div`
 `
 
 export const CurrentTemplateStyled = styled.div`
-  width: 60%;
+  width: 55%;
   display: inline-block;
   line-height: 1.3;
   font-size: 12px;
   word-wrap: break-word;
   overflow: auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-left: 5%;
+
+  ${device.laptopL`
+    width: 60%;
+    margin-left: 0;
+  `}
 `
 
 // Template designs
 export const TemplateDesignWrapperStyled = styled.div`
   width: 595px;
   height: 842px;
-
-  /* border: solid red 1px; */
+  margin: auto;
+  border: solid var(--blue-color) 0.5px;
 `
