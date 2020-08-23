@@ -1,10 +1,15 @@
 import React from "react"
 import styled from "styled-components"
+import { device } from "../../../utils/device"
 
-const AddInputBtn = () => {
+type Props = {
+  handleAddInput: () => void
+}
+
+const AddInputBtn = ({ handleAddInput }: Props) => {
   return (
     <ButtonWrapperStyled>
-      <ButtonStyled>Add more</ButtonStyled>
+      <ButtonStyled onClick={handleAddInput}>Add more</ButtonStyled>
     </ButtonWrapperStyled>
   )
 }
@@ -20,9 +25,17 @@ const ButtonStyled = styled.button`
   outline: none;
   padding: 3px 6px;
   color: var(--blue-color);
+  font-size: 12px;
   font-weight: 700;
-  font-size: 14px;
   cursor: pointer;
+
+  ${device.tablet`
+    font-size: 14px;
+  `}
+
+  ${device.laptop`
+    padding: 6px 10px;
+  `}
 `
 
 export default AddInputBtn

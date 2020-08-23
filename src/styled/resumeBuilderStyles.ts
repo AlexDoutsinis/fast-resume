@@ -19,6 +19,18 @@ export const NavStyled = styled.nav`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    ${device.tablet`
+      flex-basis: 60%;
+    `}
+
+    ${device.laptopL`
+      flex-basis: 50%;
+    `}
+
+    ${device.desktop`
+      flex-basis: 30%;
+    `}
   }
 
   button {
@@ -43,7 +55,7 @@ export const NavItemStyled = styled.li<NavItemStyledProps>`
   cursor: pointer;
 
   ${device.mobileM`
-    padding: 3px 6px;
+    padding: 4px 8px;
   `}
 
   ${props =>
@@ -57,6 +69,10 @@ export const SideBarStyled = styled.div`
   width: 40%;
   vertical-align: top;
   overflow-y: auto;
+
+  ${device.desktop`
+    width: 30%
+  `}
 
   input,
   textarea {
@@ -79,6 +95,60 @@ export const SideBarStyled = styled.div`
   }
 `
 
+export const InputsWrapperStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  input {
+    flex-basis: 70%;
+
+    ${device.mobileM`
+      flex-basis: 75%;
+    `}
+
+    ${device.tablet`
+      flex-basis: 85%;
+    `}
+
+    ${device.laptop`
+      flex-basis: 89%;
+    `}
+
+    ${device.laptopL`
+      flex-basis: 91%;
+    `}
+
+    ${device.desktop`
+      flex-basis: 94%;
+    `}
+  }
+
+  button {
+    border: none;
+    background: none;
+    outline: none;
+    flex-basis: 10%;
+    padding: 3px 6px;
+    color: var(--blue-color);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+
+    ${device.tablet`
+      font-size: 14px;
+      flex-basis: 6%;
+      padding: 3px 6px;
+      padding: 6px 10px;
+    `}
+
+    ${device.desktop`
+      flex-basis: 5%;
+    `}
+  }
+`
+
 export const CurrentTemplateStyled = styled.div`
   width: 55%;
   display: inline-block;
@@ -92,6 +162,10 @@ export const CurrentTemplateStyled = styled.div`
   ${device.laptopL`
     width: 60%;
     margin-left: 0;
+  `}
+
+  ${device.desktop`
+    width: 65%
   `}
 `
 
