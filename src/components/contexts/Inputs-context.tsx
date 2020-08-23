@@ -6,17 +6,17 @@ type Profile = {
   profileSummary: string
 }
 
-type Contact = {
+type ContactList = {
   item: string
 }[]
 
-type Experience = {
+type ExperienceList = {
   role: string
   company: string
   description: string
 }[]
 
-type Education = {
+type EducationList = {
   university: string
   specialize: string
   website: string
@@ -27,12 +27,12 @@ export type InputsContextProps = {
   setProfile: (value: Profile) => void
   skills: string
   setSkills: (value: string) => void
-  contact: Contact
-  setContact: (value: Contact) => void
-  experience: Experience
-  setExperience: (value: Experience) => void
-  education: Education
-  setEducation: (value: Education) => void
+  contactList: ContactList
+  setContactList: (value: ContactList) => void
+  experienceList: ExperienceList
+  setExperienceList: (value: ExperienceList) => void
+  educationList: EducationList
+  setEducationList: (value: EducationList) => void
 }
 
 const InputsContext = createContext({} as InputsContextProps)
@@ -44,25 +44,31 @@ export const InputsContextProvider: React.FC<{}> = ({ children }) => {
     profileSummary: "",
   } as Profile)
   const [skills, setSkills] = useState("")
-  const [contact, setContact] = useState([{ item: "" }] as Contact)
-  const [experience, setExperience] = useState([
-    { role: "", company: "", description: "" },
-  ] as Experience)
-  const [education, setEducation] = useState([
-    { university: "", specialize: "", website: "" },
-  ] as Education)
+  const [contactList, setContactList] = useState(
+    Array(3).fill({ item: "" }) as ContactList
+  )
+  const [experienceList, setExperienceList] = useState(
+    Array(2).fill({ role: "", company: "", description: "" }) as ExperienceList
+  )
+  const [educationList, setEducationList] = useState(
+    Array(2).fill({
+      university: "",
+      specialize: "",
+      website: "",
+    }) as EducationList
+  )
 
   const InputsContextState = {
     profile,
     setProfile,
     skills,
     setSkills,
-    contact,
-    setContact,
-    experience,
-    setExperience,
-    education,
-    setEducation,
+    contactList,
+    setContactList,
+    experienceList,
+    setExperienceList,
+    educationList,
+    setEducationList,
   }
 
   return (

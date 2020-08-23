@@ -5,7 +5,7 @@ import { useInputsContext } from "../../contexts/Inputs-context"
 const Profile = () => {
   const { profile, setProfile } = useInputsContext()
 
-  function handleInput(
+  function handleInputChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     setProfile({ ...profile, [e.target.name]: e.target.value })
@@ -18,20 +18,20 @@ const Profile = () => {
         placeholder={"Full name"}
         name={"fullName"}
         value={profile.fullName}
-        onChange={handleInput}
+        onChange={handleInputChange}
       />
       <input
         type="text"
         placeholder={"Subtitle"}
         name={"subtitle"}
         value={profile.subtitle}
-        onChange={handleInput}
+        onChange={handleInputChange}
       />
       <textarea
         placeholder={"Profile summary"}
         name={"profileSummary"}
         value={profile.profileSummary}
-        onChange={handleInput}
+        onChange={handleInputChange}
       ></textarea>
     </>
   )

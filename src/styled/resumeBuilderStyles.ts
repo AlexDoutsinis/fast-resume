@@ -56,6 +56,7 @@ export const SideBarStyled = styled.div`
   display: inline-block;
   width: 40%;
   vertical-align: top;
+  overflow-y: auto;
 
   input,
   textarea {

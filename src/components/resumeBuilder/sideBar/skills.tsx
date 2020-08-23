@@ -5,7 +5,7 @@ import { useInputsContext } from "../../contexts/Inputs-context"
 const Skills = () => {
   const { skills, setSkills } = useInputsContext()
 
-  function handleInput(e: React.ChangeEvent<HTMLTextAreaElement>) {
+  function handleInputChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setSkills(e.target.value)
   }
 
@@ -14,7 +14,7 @@ const Skills = () => {
       <textarea
         name={"skills"}
         value={skills}
-        onChange={handleInput}
+        onChange={handleInputChange}
         placeholder={"Describe your skills"}
       ></textarea>
     </>
