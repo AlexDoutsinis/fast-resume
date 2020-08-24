@@ -6,23 +6,23 @@ type Profile = {
   profileSummary: string
 }
 
-type ContactList = {
+export type ContactList = {
   item: string
 }[]
 
-type ExperienceList = {
+export type ExperienceList = {
   role: string
   company: string
   description: string
 }[]
 
-type EducationList = {
+export type EducationList = {
   university: string
   specialize: string
   website: string
 }[]
 
-export type InputsContextProps = {
+type InputsContextProps = {
   profile: Profile
   setProfile: (value: Profile) => void
   skills: string

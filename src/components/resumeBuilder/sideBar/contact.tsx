@@ -1,55 +1,35 @@
 import React from "react"
 
-import { useInputsContext } from "../../contexts/Inputs-context"
+import { useInputsContext, ContactList } from "../../contexts/Inputs-context"
 import AddInputBtn from "./addInputBtn"
-import { deepCopy } from "../../../utils/deepCopy"
 import { InputsWrapperStyled } from "../../../styled/resumeBuilderStyles"
+import { useHandleForm } from "../../../hooks/use-handleForm"
 
 const Contact = () => {
   const { contactList, setContactList } = useInputsContext()
+  const handlers = useHandleForm<ContactList>(contactList, setContactList)
 
-  function handleInputChange(
-    e: React.ChangeEvent<HTMLInputElement>,
-    i: number
-  ) {
-    const list = deepCopy(contactList)
-    list[i].item = e.target.value
-
-    setContactList(list)
-  }
-
-  function handleAddInput() {
-    const list = deepCopy(contactList)
-    list.push({ item: "" })
-
-    setContactList(list)
-  }
-
-  function handleRemoveInput(index: number) {
-    const list = deepCopy(contactList)
-    list.splice(index, 1)
-
-    setContactList(list)
-  }
+  const { ref, handleInputChange, handleAddBtn, handleRemoveBtn } = handlers
 
   return (
     <>
       {contactList.map((contact, index) => (
-        <InputsWrapperStyled>
+        <InputsWrapperStyled key={index}>
           <input
-            key={index}
             type="text"
+            name="item"
             value={contact.item}
             onChange={e => handleInputChange(e, index)}
             placeholder={"Mobile, Email, e.g."}
+            ref={ref}
           />
           {index === contactList.length - 1 && index > 0 && (
-            <button onClick={() => handleRemoveInput(index)}>Rm</button>
+            <button onClick={() => handleRemoveBtn(index)}>Rm</button>
           )}
         </InputsWrapperStyled>
       ))}
 
-      <AddInputBtn handleAddInput={handleAddInput} />
+      <AddInputBtn handleAddBtn={handleAddBtn} />
     </>
   )
 }

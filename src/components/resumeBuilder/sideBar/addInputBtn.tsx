@@ -3,13 +3,15 @@ import styled from "styled-components"
 import { device } from "../../../utils/device"
 
 type Props = {
-  handleAddInput: () => void
+  handleAddBtn: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const AddInputBtn = ({ handleAddInput }: Props) => {
+const AddInputBtn = ({ handleAddBtn }: Props) => {
   return (
     <ButtonWrapperStyled>
-      <ButtonStyled onClick={handleAddInput}>Add more</ButtonStyled>
+      <ButtonStyled data-name="item" onClick={e => handleAddBtn(e)}>
+        Add more
+      </ButtonStyled>
     </ButtonWrapperStyled>
   )
 }
