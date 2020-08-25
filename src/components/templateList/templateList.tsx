@@ -1,6 +1,9 @@
 import React, { useReducer } from "react"
 
-import { TemplateWrapperStyled } from "../../styled/templateListStyles"
+import {
+  TemplateWrapperStyled,
+  TemplateStyled,
+} from "../../styled/templateListStyles"
 import { useTemplates } from "../../hooks/use-templates"
 import Template from "./template"
 import { templatesReducer } from "../../reducers/templateListReducer"
@@ -36,11 +39,11 @@ const TemplateList: React.FC<{}> = ({ children }) => {
   return (
     <TemplateWrapperStyled>
       <h3>Pick a template</h3>
-      <div>
+      <TemplateStyled>
         {edges.map(({ node }) => (
           <Template key={node.name} node={node} openModal={openModal} />
         ))}
-      </div>
+      </TemplateStyled>
       <FormContextProvider>
         <Modal {...modalProps}>{children}</Modal>
       </FormContextProvider>

@@ -4,7 +4,7 @@ import Wrapper from "react-modal"
 import {
   RotateIconWrapperStyled,
   RotateIconStyled,
-} from "../../styled/templateListStyles"
+} from "../../styled/resumeBuilderStyles"
 import { useViewport } from "../../hooks/use-viewport"
 
 type Props = {

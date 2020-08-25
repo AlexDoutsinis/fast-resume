@@ -1,22 +1,25 @@
 import styled from "styled-components"
 
 export const HeroWrapperStyled = styled.section`
-  height: calc(55vh - var(--header-height));
+  /* height: calc(55vh - var(--header-height));
   padding: 0 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 
-  border: solid red 1px;
+  /* here */
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 export const HeroContentStyled = styled.div`
   h2 {
     font-size: 1.7rem;
     font-weight: 700;
-
-    border: solid green 1px;
   }
 
   p {

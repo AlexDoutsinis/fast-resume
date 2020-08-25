@@ -1,8 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
 
-import { TemplateStyled } from "../../styled/templateListStyles"
-
 type Props = {
   node: {
     name: string
@@ -15,14 +13,12 @@ type Props = {
 
 const Template = ({ node, openModal }: Props) => {
   return (
-    <TemplateStyled>
-      <div onClick={() => openModal(node.name)}>
-        <Img
-          fluid={node.childImageSharp.fluid}
-          alt={`Resume template '${node.name}'`}
-        />
-      </div>
-    </TemplateStyled>
+    <div onClick={() => openModal(node.name)}>
+      <Img
+        fluid={node.childImageSharp.fluid}
+        alt={`Resume template '${node.name}'`}
+      />
+    </div>
   )
 }
 

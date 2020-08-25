@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const HeaderStyled = styled.header`
-  padding-top: 1rem;
+  /* padding-top: 1rem;
   height: var(--header-height);
   padding-left: 1.5rem;
   background-color: white;
@@ -11,6 +11,23 @@ export const HeaderStyled = styled.header`
   h1 {
     a {
       text-align: left;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: inherit;
+    }
+  } */
+
+  /* here */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 0;
+  padding-left: 1.5rem;
+  border-bottom: 0.2px solid transparent;
+  box-shadow: 0px 0.2px 5px 0px var(--font-color);
+
+  h1 {
+    a {
       font-size: 1.3rem;
       font-weight: 700;
       color: inherit;

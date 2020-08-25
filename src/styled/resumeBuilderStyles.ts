@@ -1,5 +1,36 @@
 import styled from "styled-components"
+import { IoIosPhonePortrait } from "react-icons/io"
+
 import { device } from "../utils/device"
+
+export const RotateIconWrapperStyled = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: var(--light-blue-color);
+  width: 150px;
+
+  p {
+    padding-left: 5px;
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+  }
+`
+
+type RotateIconStyledProps = {
+  wobble: number
+}
+
+export const RotateIconStyled = styled(IoIosPhonePortrait)<
+  RotateIconStyledProps
+>`
+  font-size: 2.5rem;
+  color: var(--blue-color);
+
+  ${props => (props.wobble ? `animation: wobble 1s 2` : `display: none`)};
+`
 
 export const NavStyled = styled.nav`
   display: flex;
