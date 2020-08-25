@@ -51,11 +51,8 @@ export default Contact
 
 //todo:
 
-// na ftiaksw to add button
-// na valw remove button
-// na ftiaksw kai ta ypolipa tabs
-// na ginete render to input state sto resume
-// na ftiaksw to ui tou resumeBuilder responsive gia oles tis othones
+// na ginete render to state sto resume
+// resume builder: na skourenei kai na ginete lock to background
 // na ftiaksw to ui tou landing page responsive gia oles tis othones
 // na valw k alla templates
 // na ftiaksw to export pdf button

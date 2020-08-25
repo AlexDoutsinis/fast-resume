@@ -7,12 +7,16 @@ export const HeroWrapperStyled = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  border: solid red 1px;
 `
 
 export const HeroContentStyled = styled.div`
   h2 {
     font-size: 1.7rem;
     font-weight: 700;
+
+    border: solid green 1px;
   }
 
   p {

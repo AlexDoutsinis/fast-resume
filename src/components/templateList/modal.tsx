@@ -39,6 +39,7 @@ const Modal: React.FC<Props> = props => {
   } = props
 
   const { width } = useViewport()
+
   const deviceSize = 768
 
   return (

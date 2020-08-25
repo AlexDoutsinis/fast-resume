@@ -9,6 +9,10 @@ export const NavStyled = styled.nav`
   margin-top: 10px;
   margin-bottom: 1rem;
 
+  ${device.tablet`
+    margin-right: 10px;
+  `}
+
   ${device.laptop`
     font-size: 1rem;
   `}
@@ -35,13 +39,15 @@ export const NavStyled = styled.nav`
 
   button {
     background: none;
-    padding: 3px 6px;
-    margin-left: 7px;
+    margin-left: 10px;
     font-size: inherit;
     border: solid var(--blue-color) 1px;
     display: inline-block;
-    align-self: flex-start;
     cursor: pointer;
+
+    ${device.tablet`
+      padding: 3px 6px;
+    `}
   }
 `
 
@@ -69,6 +75,10 @@ export const SideBarStyled = styled.div`
   width: 40%;
   vertical-align: top;
   overflow-y: auto;
+
+  ${device.tablet`
+    padding-left: 8.5px;
+  `}
 
   ${device.desktop`
     width: 30%
@@ -106,7 +116,7 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
   justify-content: space-between;
   align-items: center;
   margin-bottom: ${props => (props.mb ? "1rem;" : "1.5rem;")};
-  ${props => props.mb05 && "margin-bottom: .5rem;"}
+  ${props => props.mb05 && "margin-bottom: .5rem;"};
 
   div {
     flex-basis: 60%;
