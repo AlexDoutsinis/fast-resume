@@ -5,7 +5,7 @@ import { useTemplates } from "../../hooks/use-templates"
 import Template from "./template"
 import { templatesReducer } from "../../reducers/templateListReducer"
 import Modal from "./modal"
-import { InputsContextProvider } from "../contexts/Inputs-context"
+import { FormContextProvider } from "../contexts/form-context"
 
 const initialState = {
   isModalOpen: false,
@@ -41,9 +41,9 @@ const TemplateList: React.FC<{}> = ({ children }) => {
           <Template key={node.name} node={node} openModal={openModal} />
         ))}
       </div>
-      <InputsContextProvider>
+      <FormContextProvider>
         <Modal {...modalProps}>{children}</Modal>
-      </InputsContextProvider>
+      </FormContextProvider>
     </TemplateWrapperStyled>
   )
 }

@@ -7,7 +7,7 @@ type Profile = {
 }
 
 export type ContactList = {
-  item: string
+  contactItem: string
 }[]
 
 export type ExperienceList = {
@@ -22,7 +22,7 @@ export type EducationList = {
   website: string
 }[]
 
-type InputsContextProps = {
+type FormContextProps = {
   profile: Profile
   setProfile: (value: Profile) => void
   skills: string
@@ -35,9 +35,9 @@ type InputsContextProps = {
   setEducationList: (value: EducationList) => void
 }
 
-const InputsContext = createContext({} as InputsContextProps)
+const FormContext = createContext({} as FormContextProps)
 
-export const InputsContextProvider: React.FC<{}> = ({ children }) => {
+export const FormContextProvider: React.FC<{}> = ({ children }) => {
   const [profile, setProfile] = useState({
     fullName: "",
     subtitle: "",
@@ -45,20 +45,20 @@ export const InputsContextProvider: React.FC<{}> = ({ children }) => {
   } as Profile)
   const [skills, setSkills] = useState("")
   const [contactList, setContactList] = useState(
-    Array(3).fill({ item: "" }) as ContactList
+    Array(1).fill({ contactItem: "" }) as ContactList
   )
   const [experienceList, setExperienceList] = useState(
-    Array(2).fill({ role: "", company: "", description: "" }) as ExperienceList
+    Array(1).fill({ role: "", company: "", description: "" }) as ExperienceList
   )
   const [educationList, setEducationList] = useState(
-    Array(2).fill({
+    Array(1).fill({
       university: "",
       specialize: "",
       website: "",
     }) as EducationList
   )
 
-  const InputsContextState = {
+  const FormContextState = {
     profile,
     setProfile,
     skills,
@@ -72,12 +72,12 @@ export const InputsContextProvider: React.FC<{}> = ({ children }) => {
   }
 
   return (
-    <InputsContext.Provider value={{ ...InputsContextState }}>
+    <FormContext.Provider value={{ ...FormContextState }}>
       {children}
-    </InputsContext.Provider>
+    </FormContext.Provider>
   )
 }
 
-export const useInputsContext = (): InputsContextProps => {
-  return useContext(InputsContext)
+export const useFormContext = (): FormContextProps => {
+  return useContext(FormContext)
 }

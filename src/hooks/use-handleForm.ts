@@ -8,7 +8,7 @@ export const useHandleForm = <T extends any[]>(
   const { ref, toggleFocus } = useFocus()
 
   function handleInputChange(
-    e: React.ChangeEvent<HTMLInputElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     index: number
   ) {
     const newList = deepCopy(list)
@@ -17,21 +17,43 @@ export const useHandleForm = <T extends any[]>(
     setList(newList)
   }
 
-  function handleAddBtn(e: React.MouseEvent<HTMLButtonElement>) {
-    const target = e.target as HTMLElement
+  function handleAddContact(e: React.MouseEvent<HTMLButtonElement>) {
     const newList = deepCopy(list)
-    newList.push({ [target.getAttribute("data-name")]: "" })
+    newList.push({ contactItem: "" })
     toggleFocus()
 
     setList(newList)
   }
 
-  function handleRemoveBtn(index: number) {
+  function handleAddExperience(e: React.MouseEvent<HTMLButtonElement>) {
+    const newList = deepCopy(list)
+    newList.push({ role: "", company: "", description: "" })
+    toggleFocus()
+
+    setList(newList)
+  }
+
+  function handleAddEducation(e: React.MouseEvent<HTMLButtonElement>) {
+    const newList = deepCopy(list)
+    newList.push({ university: "", specialize: "", website: "" })
+    toggleFocus()
+
+    setList(newList)
+  }
+
+  function handleRemoveInput(index: number) {
     const newList = deepCopy(list)
     newList.splice(index, 1)
 
     setList(newList)
   }
 
-  return { ref, handleInputChange, handleAddBtn, handleRemoveBtn }
+  return {
+    ref,
+    handleInputChange,
+    handleAddContact,
+    handleAddExperience,
+    handleAddEducation,
+    handleRemoveInput,
+  }
 }

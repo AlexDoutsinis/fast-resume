@@ -95,58 +95,95 @@ export const SideBarStyled = styled.div`
   }
 `
 
-export const InputsWrapperStyled = styled.div`
+type FormWrapperStyledProps = {
+  mb: boolean
+  mb05?: boolean
+}
+
+export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: ${props => (props.mb ? "1rem;" : "1.5rem;")};
+  ${props => props.mb05 && "margin-bottom: .5rem;"}
 
-  input {
-    flex-basis: 70%;
-
-    ${device.mobileM`
-      flex-basis: 75%;
-    `}
-
-    ${device.tablet`
-      flex-basis: 85%;
-    `}
-
-    ${device.laptop`
-      flex-basis: 89%;
-    `}
-
-    ${device.laptopL`
-      flex-basis: 91%;
-    `}
-
-    ${device.desktop`
-      flex-basis: 94%;
-    `}
+  div {
+    flex-basis: 60%;
   }
 
   button {
+    flex-basis: 35%;
     border: none;
     background: none;
     outline: none;
-    flex-basis: 10%;
-    padding: 3px 6px;
     color: var(--blue-color);
     font-size: 12px;
     font-weight: 700;
     cursor: pointer;
-
-    ${device.tablet`
-      font-size: 14px;
-      flex-basis: 6%;
-      padding: 3px 6px;
-      padding: 6px 10px;
-    `}
-
-    ${device.desktop`
-      flex-basis: 5%;
-    `}
+    padding: 6px 3px;
   }
+
+  ${device.mobileM`
+    div {
+      flex-basis: 65%;
+    }
+
+    button {
+      flex-basis: 30%;
+    }
+  `}
+
+  ${device.mobileL`
+    div {
+      flex-basis: 70%;
+    }
+
+    button {
+      flex-basis: 25%;
+    }
+  `}
+
+  ${device.tablet`
+    div {
+      flex-basis: 80%;
+    }
+
+    button {
+      flex-basis: 15%;
+      font-size: 14px;
+    }
+  `}
+
+  ${device.laptop`
+    div {
+      flex-basis: 85%;
+    }
+
+    button {
+      flex-basis: 10%;
+    }
+  `}
+
+  ${device.laptopL`
+    div {
+      flex-basis: 90%;
+    }
+
+    button {
+      flex-basis: 5%;
+    }
+  `}
+
+  ${device.desktop`
+    div {
+      flex-basis: 92%;
+    }
+
+    button {
+      flex-basis: 3%;
+    }
+  `}
 `
 
 export const CurrentTemplateStyled = styled.div`

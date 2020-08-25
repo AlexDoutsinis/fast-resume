@@ -1,35 +1,48 @@
 import React from "react"
 
-import { useInputsContext, ContactList } from "../../contexts/Inputs-context"
+import { useFormContext, ContactList } from "../../contexts/form-context"
 import AddInputBtn from "./addInputBtn"
-import { InputsWrapperStyled } from "../../../styled/resumeBuilderStyles"
+import { FormWrapperStyled } from "../../../styled/resumeBuilderStyles"
 import { useHandleForm } from "../../../hooks/use-handleForm"
+import RemoveInputBtn from "./removeInputBtn"
 
 const Contact = () => {
-  const { contactList, setContactList } = useInputsContext()
+  const { contactList, setContactList } = useFormContext()
   const handlers = useHandleForm<ContactList>(contactList, setContactList)
 
-  const { ref, handleInputChange, handleAddBtn, handleRemoveBtn } = handlers
+  const {
+    ref,
+    handleInputChange,
+    handleAddContact,
+    handleRemoveInput,
+  } = handlers
 
   return (
     <>
-      {contactList.map((contact, index) => (
-        <InputsWrapperStyled key={index}>
-          <input
-            type="text"
-            name="item"
-            value={contact.item}
-            onChange={e => handleInputChange(e, index)}
-            placeholder={"Mobile, Email, e.g."}
-            ref={ref}
-          />
-          {index === contactList.length - 1 && index > 0 && (
-            <button onClick={() => handleRemoveBtn(index)}>Rm</button>
-          )}
-        </InputsWrapperStyled>
-      ))}
+      {contactList.map((contact, index) => {
+        const isLastItem = index === contactList.length - 1
 
-      <AddInputBtn handleAddBtn={handleAddBtn} />
+        return (
+          <FormWrapperStyled key={index} mb={isLastItem} mb05>
+            <div>
+              <input
+                type="text"
+                name="contactItem"
+                value={contact.contactItem}
+                onChange={e => handleInputChange(e, index)}
+                placeholder={"Mobile, Email, e.g."}
+                ref={ref}
+              />
+            </div>
+            <RemoveInputBtn
+              show={isLastItem && index > 0}
+              handleClick={() => handleRemoveInput(index)}
+            />
+          </FormWrapperStyled>
+        )
+      })}
+
+      <AddInputBtn handleAddInput={handleAddContact} />
     </>
   )
 }

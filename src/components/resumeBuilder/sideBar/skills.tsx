@@ -1,9 +1,10 @@
 import React from "react"
 
-import { useInputsContext } from "../../contexts/Inputs-context"
+import { useFormContext } from "../../contexts/form-context"
+import { FormWrapperStyled } from "../../../styled/resumeBuilderStyles"
 
 const Skills = () => {
-  const { skills, setSkills } = useInputsContext()
+  const { skills, setSkills } = useFormContext()
 
   function handleInputChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setSkills(e.target.value)
@@ -11,12 +12,16 @@ const Skills = () => {
 
   return (
     <>
-      <textarea
-        name={"skills"}
-        value={skills}
-        onChange={handleInputChange}
-        placeholder={"Describe your skills"}
-      ></textarea>
+      <FormWrapperStyled mb={false}>
+        <div>
+          <textarea
+            name={"skills"}
+            value={skills}
+            onChange={handleInputChange}
+            placeholder={"Describe your skills"}
+          ></textarea>
+        </div>
+      </FormWrapperStyled>
     </>
   )
 }
