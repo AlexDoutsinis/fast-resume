@@ -1,15 +1,6 @@
 import styled from "styled-components"
 
 export const FeaturesWrapperStyled = styled.section`
-  /* height: 45vh;
-  padding: 0 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--light-blue-color); */
-
-  /* here */
   padding: 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;

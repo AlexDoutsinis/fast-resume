@@ -1,14 +1,6 @@
 import styled from "styled-components"
 
 export const HeroWrapperStyled = styled.section`
-  /* height: calc(55vh - var(--header-height));
-  padding: 0 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-
-  /* here */
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
