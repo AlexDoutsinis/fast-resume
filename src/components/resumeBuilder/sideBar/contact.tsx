@@ -23,7 +23,7 @@ const Contact = () => {
         const isLastItem = index === contactList.length - 1
 
         return (
-          <FormWrapperStyled key={index} mb={isLastItem} mb05>
+          <FormWrapperStyled key={contact.id} mb={isLastItem} mb05>
             <div>
               <input
                 type="text"

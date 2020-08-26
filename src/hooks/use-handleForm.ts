@@ -1,3 +1,5 @@
+import { nanoid } from "nanoid"
+
 import { useFocus } from "./use-focus"
 import { deepCopy } from "../utils/deepCopy"
 
@@ -19,7 +21,7 @@ export const useHandleForm = <T extends any[]>(
 
   function handleAddContact(e: React.MouseEvent<HTMLButtonElement>) {
     const newList = deepCopy(list)
-    newList.push({ contactItem: "" })
+    newList.push({ id: nanoid(), contactItem: "" })
     toggleFocus()
 
     setList(newList)
@@ -27,7 +29,7 @@ export const useHandleForm = <T extends any[]>(
 
   function handleAddExperience(e: React.MouseEvent<HTMLButtonElement>) {
     const newList = deepCopy(list)
-    newList.push({ role: "", company: "", description: "" })
+    newList.push({ id: nanoid(), role: "", company: "", description: "" })
     toggleFocus()
 
     setList(newList)
@@ -35,7 +37,7 @@ export const useHandleForm = <T extends any[]>(
 
   function handleAddEducation(e: React.MouseEvent<HTMLButtonElement>) {
     const newList = deepCopy(list)
-    newList.push({ university: "", specialize: "", website: "" })
+    newList.push({ id: nanoid(), university: "", specialize: "", website: "" })
     toggleFocus()
 
     setList(newList)

@@ -16,7 +16,7 @@ const Template = ({ node, openModal }: Props) => {
     <div onClick={() => openModal(node.name)}>
       <Img
         fluid={node.childImageSharp.fluid}
-        alt={`Resume template '${node.name}'`}
+        alt={`Resume template: '${node.name}'`}
       />
     </div>
   )

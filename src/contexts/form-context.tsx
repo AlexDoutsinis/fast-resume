@@ -1,4 +1,5 @@
 import React, { useState, createContext, useContext } from "react"
+import { nanoid } from "nanoid"
 
 type Profile = {
   fullName: string
@@ -7,16 +8,19 @@ type Profile = {
 }
 
 export type ContactList = {
+  id: string
   contactItem: string
 }[]
 
 export type ExperienceList = {
+  id: string
   role: string
   company: string
   description: string
 }[]
 
 export type EducationList = {
+  id: string
   university: string
   specialize: string
   website: string
@@ -45,13 +49,19 @@ export const FormContextProvider: React.FC<{}> = ({ children }) => {
   } as Profile)
   const [skills, setSkills] = useState("")
   const [contactList, setContactList] = useState(
-    Array(1).fill({ contactItem: "" }) as ContactList
+    Array(1).fill({ id: nanoid(), contactItem: "" }) as ContactList
   )
   const [experienceList, setExperienceList] = useState(
-    Array(1).fill({ role: "", company: "", description: "" }) as ExperienceList
+    Array(1).fill({
+      id: nanoid(),
+      role: "",
+      company: "",
+      description: "",
+    }) as ExperienceList
   )
   const [educationList, setEducationList] = useState(
     Array(1).fill({
+      id: nanoid(),
       university: "",
       specialize: "",
       website: "",

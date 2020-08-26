@@ -23,7 +23,7 @@ const Education = () => {
         const isLastItem = index === educationList.length - 1
 
         return (
-          <FormWrapperStyled key={index} mb={isLastItem}>
+          <FormWrapperStyled key={education.id} mb={isLastItem}>
             <div>
               <input
                 ref={ref}

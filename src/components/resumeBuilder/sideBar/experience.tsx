@@ -26,7 +26,7 @@ const Experience = () => {
         const isLastItem = index === experienceList.length - 1
 
         return (
-          <FormWrapperStyled key={index} mb={isLastItem}>
+          <FormWrapperStyled key={experience.id} mb={isLastItem}>
             <div>
               <input
                 ref={ref}
