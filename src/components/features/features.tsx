@@ -1,19 +1,32 @@
 import React from "react"
-
-import outerSpace from "../../images/Illustrations/undraw_Outer_space.svg"
+import { useStaticQuery, graphql } from "gatsby"
 
 import {
   FeaturesWrapperStyled,
   FeaturesContentStyled,
   FeaturesIllustrationStyled,
 } from "../../styled/featuresStyles"
+import { Svg } from "../hero/hero"
 
 const Features: React.FC<{}> = ({ children }) => {
+  const { allFile }: Svg = useStaticQuery(graphql`
+    query {
+      allFile(filter: { name: { eq: "undraw_Outer_space" } }) {
+        edges {
+          node {
+            publicURL
+          }
+        }
+      }
+    }
+  `)
+  const outerSpaceSvg = allFile.edges[0].node.publicURL
+
   return (
     <FeaturesWrapperStyled>
       <FeaturesContentStyled>{children}</FeaturesContentStyled>
       <FeaturesIllustrationStyled>
-        <img src={outerSpace} alt="Outer space illustration" />
+        <img src={outerSpaceSvg} alt="Outer space illustration" />
       </FeaturesIllustrationStyled>
     </FeaturesWrapperStyled>
   )

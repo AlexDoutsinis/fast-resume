@@ -1,6 +1,5 @@
 import React from "react"
-
-import hireImg from "../../images/Illustrations/undraw_hire.svg"
+import { useStaticQuery, graphql } from "gatsby"
 
 import {
   HeroWrapperStyled,
@@ -8,12 +7,35 @@ import {
   HeroIllustrationStyled,
 } from "../../styled/heroStyles"
 
+export type Svg = {
+  allFile: {
+    edges: {
+      node: {
+        publicURL: string
+      }
+    }[]
+  }
+}
+
 const Hero: React.FC<{}> = ({ children }) => {
+  const { allFile }: Svg = useStaticQuery(graphql`
+    query {
+      allFile(filter: { name: { eq: "undraw_hire" } }) {
+        edges {
+          node {
+            publicURL
+          }
+        }
+      }
+    }
+  `)
+  const hireSvg = allFile.edges[0].node.publicURL
+
   return (
     <HeroWrapperStyled>
       <HeroContentStyled>{children}</HeroContentStyled>
       <HeroIllustrationStyled>
-        <img src={hireImg} alt="Hire illustration" />
+        <img src={hireSvg} alt="Hire illustration" />
       </HeroIllustrationStyled>
     </HeroWrapperStyled>
   )
