@@ -1,6 +1,6 @@
 import React from "react"
 
-import { useFormContext } from "../../contexts/form-context"
+import { useFormContext } from "../../../contexts/form-context"
 import { FormWrapperStyled } from "../../../styled/resumeBuilderStyles"
 
 const Skills = () => {

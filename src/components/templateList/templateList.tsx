@@ -8,7 +8,7 @@ import { useTemplates } from "../../hooks/use-templates"
 import Template from "./template"
 import { templatesReducer } from "../../reducers/templateListReducer"
 import Modal from "./modal"
-import { FormContextProvider } from "../contexts/form-context"
+import { FormContextProvider } from "../../contexts/form-context"
 
 const initialState = {
   isModalOpen: false,

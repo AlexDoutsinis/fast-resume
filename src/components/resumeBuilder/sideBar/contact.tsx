@@ -1,6 +1,6 @@
 import React from "react"
 
-import { useFormContext, ContactList } from "../../contexts/form-context"
+import { useFormContext, ContactList } from "../../../contexts/form-context"
 import AddInputBtn from "./addInputBtn"
 import { FormWrapperStyled } from "../../../styled/resumeBuilderStyles"
 import { useHandleForm } from "../../../hooks/use-handleForm"

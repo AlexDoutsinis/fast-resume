@@ -6,7 +6,7 @@ import Skills from "./skills"
 import Contact from "./contact"
 import Experience from "./Experience"
 import Education from "./education"
-import { useSelectedNavItemContext } from "../../contexts/selectedNavItem-context"
+import { useSelectedNavItemContext } from "../../../contexts/selectedNavItem-context"
 
 const SideBar = () => {
   const { selectedNavItem } = useSelectedNavItemContext()

@@ -1,7 +1,7 @@
 import React from "react"
 
 import { NavStyled, NavItemStyled } from "../../styled/resumeBuilderStyles"
-import { useSelectedNavItemContext } from "../contexts/selectedNavItem-context"
+import { useSelectedNavItemContext } from "../../contexts/selectedNavItem-context"
 
 type NavItems = [
   "Profile",

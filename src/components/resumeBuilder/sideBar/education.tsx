@@ -1,6 +1,6 @@
 import React from "react"
 
-import { useFormContext, EducationList } from "../../contexts/form-context"
+import { useFormContext, EducationList } from "../../../contexts/form-context"
 import { useHandleForm } from "../../../hooks/use-handleForm"
 import { FormWrapperStyled } from "../../../styled/resumeBuilderStyles"
 import RemoveInputBtn from "./removeInputBtn"

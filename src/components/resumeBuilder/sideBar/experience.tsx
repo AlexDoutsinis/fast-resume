@@ -1,6 +1,6 @@
 import React from "react"
 
-import { useFormContext, ExperienceList } from "../../contexts/form-context"
+import { useFormContext, ExperienceList } from "../../../contexts/form-context"
 import RemoveInputBtn from "./removeInputBtn"
 import { useHandleForm } from "../../../hooks/use-handleForm"
 import AddInputBtn from "./addInputBtn"
