@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react"
 
 export const useFocus = () => {
   const [focus, setFocus] = useState(false)
-  const ref = useRef<HTMLInputElement>(null)
+  const ref = useRef(null)
 
   useEffect(() => {
     ref.current?.focus()
