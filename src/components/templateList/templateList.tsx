@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import React from "react"
 
 import {
   TemplateWrapperStyled,
@@ -6,7 +6,7 @@ import {
 } from "../../styled/templateListStyles"
 import { useTemplates } from "../../hooks/use-templates"
 import Template from "./template"
-import { templatesReducer } from "../../reducers/templateListReducer"
+import { useTemplateListReducer } from "../../reducers/templateListReducer"
 import Modal from "./modal"
 import { FormContextProvider } from "../../contexts/form-context"
 
@@ -18,7 +18,7 @@ const initialState = {
 
 const TemplateList: React.FC<{}> = ({ children }) => {
   const { edges } = useTemplates()
-  const [state, dispatch] = useReducer(templatesReducer, initialState)
+  const { state, dispatch } = useTemplateListReducer(initialState)
 
   function openModal(templateName: string): void {
     dispatch({ type: "openModal_startWobble", templateName })

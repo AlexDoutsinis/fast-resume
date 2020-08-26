@@ -18,6 +18,9 @@ type Props = {
 Wrapper.setAppElement("#___gatsby")
 
 const customStyles = {
+  overlay: {
+    backgroundColor: "rgba(187,225,250, 0.30)",
+  },
   content: {
     padding: "10px",
     top: "2%",

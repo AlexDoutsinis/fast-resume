@@ -1,3 +1,5 @@
+import { useReducer } from "react"
+
 type State = {
   isModalOpen: boolean
   currentTemplate: string
@@ -9,7 +11,7 @@ type Action = {
   templateName?: string
 }
 
-export function templatesReducer(state: State, action: Action): State {
+export function templateListReducer(state: State, action: Action): State {
   switch (action.type) {
     case "openModal_startWobble": {
       return {
@@ -25,4 +27,17 @@ export function templatesReducer(state: State, action: Action): State {
       return { ...state, wobble: 0 }
     }
   }
+}
+
+type UseTemplateListReducer = {
+  state: State
+  dispatch: React.Dispatch<Action>
+}
+
+export function useTemplateListReducer(
+  initialState: State
+): UseTemplateListReducer {
+  const [state, dispatch] = useReducer(templateListReducer, initialState)
+
+  return { state, dispatch }
 }
