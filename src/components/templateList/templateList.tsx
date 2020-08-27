@@ -16,10 +16,8 @@ const initialState = {
   wobble: 0,
 }
 
-type CurrentTemplate = "minimal-1" | "minimal-2"
-
 type CurrentTemplateContextProps = {
-  currentTemplate: CurrentTemplate
+  currentTemplate: string
 }
 
 export const CurrentTemplateContext = createContext(
