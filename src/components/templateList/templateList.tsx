@@ -1,4 +1,4 @@
-import React from "react"
+import React, { createContext } from "react"
 
 import {
   TemplateWrapperStyled,
@@ -16,7 +16,17 @@ const initialState = {
   wobble: 0,
 }
 
-const TemplateList: React.FC<{}> = ({ children }) => {
+type CurrentTemplate = "minimal-1" | "minimal-2"
+
+type CurrentTemplateContextProps = {
+  currentTemplate: CurrentTemplate
+}
+
+export const CurrentTemplateContext = createContext(
+  {} as CurrentTemplateContextProps
+)
+
+const TemplateList: React.FC<{}> = ({ children: ResumeBuilderChildren }) => {
   const { edges } = useTemplates()
   const { state, dispatch } = useTemplateListReducer(initialState)
 
@@ -45,7 +55,13 @@ const TemplateList: React.FC<{}> = ({ children }) => {
         ))}
       </TemplateStyled>
       <FormContextProvider>
-        <Modal {...modalProps}>{children}</Modal>
+        <Modal {...modalProps}>
+          <CurrentTemplateContext.Provider
+            value={{ currentTemplate: state.currentTemplate }}
+          >
+            {ResumeBuilderChildren}
+          </CurrentTemplateContext.Provider>
+        </Modal>
       </FormContextProvider>
     </TemplateWrapperStyled>
   )

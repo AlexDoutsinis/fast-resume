@@ -51,9 +51,9 @@ export default Contact
 
 //todo:
 
+// na valw ena checkbox gia efkolh allagh line height
 // na valw k alla templates
 // apo to modal na mporw na allazw template
-// na valw dinatotita epiloghs tou line height
 // na ftiaksw to ui tou landing page responsive gia oles tis othones
 // na ftiaksw to export pdf button
 // na kanw optimize to performance
