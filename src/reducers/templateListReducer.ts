@@ -7,7 +7,11 @@ type State = {
 }
 
 type Action = {
-  type: "openModal_startWobble" | "closeModal_stopWobble" | "stopWobble"
+  type:
+    | "openModal_startWobble"
+    | "closeModal_stopWobble"
+    | "stopWobble"
+    | "setCurrentTemplate"
   templateName?: string
 }
 
@@ -25,6 +29,9 @@ export function templateListReducer(state: State, action: Action): State {
     }
     case "stopWobble": {
       return { ...state, wobble: 0 }
+    }
+    case "setCurrentTemplate": {
+      return { ...state, currentTemplate: action.templateName }
     }
   }
 }

@@ -6,19 +6,23 @@ import Skills from "./skills"
 import Contact from "./contact"
 import Experience from "./Experience"
 import Education from "./education"
+import Design from "./design"
 import { useSelectedNavItemContext } from "../../../contexts/selectedNavItem-context"
 
 const SideBar = () => {
   const { selectedNavItem } = useSelectedNavItemContext()
 
   return (
-    <SideBarStyled>
-      {selectedNavItem === "Profile" && <Profile />}
-      {selectedNavItem === "Skills" && <Skills />}
-      {selectedNavItem === "Contact" && <Contact />}
-      {selectedNavItem === "Experience" && <Experience />}
-      {selectedNavItem === "Education" && <Education />}
-    </SideBarStyled>
+    <>
+      <SideBarStyled>
+        {selectedNavItem === "Profile" && <Profile />}
+        {selectedNavItem === "Skills" && <Skills />}
+        {selectedNavItem === "Contact" && <Contact />}
+        {selectedNavItem === "Experience" && <Experience />}
+        {selectedNavItem === "Education" && <Education />}
+        {selectedNavItem === "Design" && <Design />}
+      </SideBarStyled>
+    </>
   )
 }
 

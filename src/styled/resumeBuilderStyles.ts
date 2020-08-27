@@ -227,7 +227,7 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
   `}
 `
 
-export const CurrentTemplateStyled = styled.div`
+export const CurrentTemplateBoxStyled = styled.div`
   width: 55%;
   display: inline-block;
   line-height: 1.3;
@@ -247,8 +247,7 @@ export const CurrentTemplateStyled = styled.div`
   `}
 `
 
-// Template designs
-export const TemplateDesignWrapperStyled = styled.div`
+export const CurrentTemplateWrapperStyled = styled.div`
   width: 595px;
   height: 842px;
   margin: auto;

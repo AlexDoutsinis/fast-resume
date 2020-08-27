@@ -18,6 +18,7 @@ const initialState = {
 
 type CurrentTemplateContextProps = {
   currentTemplate: string
+  setCurrentTemplate: (templateName: string) => void
 }
 
 export const CurrentTemplateContext = createContext(
@@ -25,7 +26,7 @@ export const CurrentTemplateContext = createContext(
 )
 
 const TemplateList: React.FC<{}> = ({ children: ResumeBuilderChildren }) => {
-  const { edges } = useTemplates()
+  const { edges: templates } = useTemplates()
   const { state, dispatch } = useTemplateListReducer(initialState)
 
   function openModal(templateName: string): void {
@@ -44,19 +45,23 @@ const TemplateList: React.FC<{}> = ({ children: ResumeBuilderChildren }) => {
     stopWobble: () => dispatch({ type: "stopWobble" }),
   }
 
+  const contextValue = {
+    currentTemplate: state.currentTemplate,
+    setCurrentTemplate: (templateName: string) =>
+      dispatch({ type: "setCurrentTemplate", templateName }),
+  }
+
   return (
     <TemplateWrapperStyled>
       <h3>Pick a template</h3>
       <TemplateStyled>
-        {edges.map(({ node }) => (
+        {templates.map(({ node }) => (
           <Template key={node.name} node={node} openModal={openModal} />
         ))}
       </TemplateStyled>
       <FormContextProvider>
         <Modal {...modalProps}>
-          <CurrentTemplateContext.Provider
-            value={{ currentTemplate: state.currentTemplate }}
-          >
+          <CurrentTemplateContext.Provider value={{ ...contextValue }}>
             {ResumeBuilderChildren}
           </CurrentTemplateContext.Provider>
         </Modal>
