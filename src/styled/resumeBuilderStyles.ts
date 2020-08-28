@@ -227,10 +227,16 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
   `}
 `
 
-export const CurrentTemplateBoxStyled = styled.div`
+type CurrentTemplateBoxStyledProps = {
+  lineHeight: number
+}
+
+export const CurrentTemplateBoxStyled = styled.div<
+  CurrentTemplateBoxStyledProps
+>`
   width: 55%;
   display: inline-block;
-  line-height: 1.3;
+  ${props => props.lineHeight && `line-height: ${props.lineHeight};`};
   font-size: 12px;
   word-wrap: break-word;
   overflow: auto;

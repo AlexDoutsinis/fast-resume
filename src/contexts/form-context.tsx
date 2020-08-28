@@ -37,6 +37,8 @@ type FormContextProps = {
   setExperienceList: (value: ExperienceList) => void
   educationList: EducationList
   setEducationList: (value: EducationList) => void
+  lineHeight: number
+  setLineHeight: (value: number) => void
 }
 
 const FormContext = createContext({} as FormContextProps)
@@ -67,6 +69,7 @@ export const FormContextProvider: React.FC<{}> = ({ children }) => {
       website: "",
     }) as EducationList
   )
+  const [lineHeight, setLineHeight] = useState(1.3)
 
   const FormContextState = {
     profile,
@@ -79,6 +82,8 @@ export const FormContextProvider: React.FC<{}> = ({ children }) => {
     setExperienceList,
     educationList,
     setEducationList,
+    lineHeight,
+    setLineHeight,
   }
 
   return (
