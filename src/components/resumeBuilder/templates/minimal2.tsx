@@ -27,7 +27,7 @@ const Minimal2 = () => {
         </TitleStyled>
         <ContactStyled>
           {contactList.map(item => (
-            <div>{item.contactItem}</div>
+            <div key={item.id}>{item.contactItem}</div>
           ))}
         </ContactStyled>
       </HeaderStyled>
@@ -51,7 +51,7 @@ const Minimal2 = () => {
           <SectionContentStyled>{skills}</SectionContentStyled>
           <SectionHeadingStyled>Education</SectionHeadingStyled>
           {educationList.map(item => (
-            <div>
+            <div key={item.id}>
               <SectionSubHeadingStyled>
                 {item.university}
               </SectionSubHeadingStyled>
