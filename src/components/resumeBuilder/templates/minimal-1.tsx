@@ -73,7 +73,7 @@ const HeaderStyled = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 13%;
+  height: 110px;
 
   span {
     font-size: 28px;

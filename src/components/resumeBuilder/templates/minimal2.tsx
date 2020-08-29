@@ -70,7 +70,7 @@ const Minimal2 = () => {
 }
 
 const HeaderStyled = styled.div`
-  height: 20%;
+  height: 170px;
   display: grid;
   grid-template-columns: 60% 40%;
   padding: 0 32px;
