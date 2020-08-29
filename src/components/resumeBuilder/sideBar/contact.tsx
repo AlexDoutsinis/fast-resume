@@ -56,5 +56,3 @@ export default Contact
 // na ftiaksw to export pdf button
 // na kanw optimize to performance
 // na ftiaksw to SEO
-
-// refactor resumeBuilder styles (na ta spasw se perisotera arxeia)

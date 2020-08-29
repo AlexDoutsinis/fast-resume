@@ -255,7 +255,7 @@ export const CurrentTemplateBoxStyled = styled.div<
 
 export const CurrentTemplateWrapperStyled = styled.div`
   width: 595px;
-  height: 842px;
+  min-height: 842px;
   margin: auto;
   border: solid var(--blue-color) 0.5px;
 `
