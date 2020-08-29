@@ -4,8 +4,8 @@ import {
   CurrentTemplateBoxStyled,
   CurrentTemplateWrapperStyled,
 } from "../../../styled/resumeBuilderStyles"
-import Minimal1 from "../designs/minimal-1"
-import Minimal2 from "../designs/minimal2"
+import Minimal1 from "../templates/minimal-1"
+import Minimal2 from "../templates/minimal2"
 import { CurrentTemplateContext } from "../../templateList/templateList"
 import { useFormContext } from "../../../contexts/form-context"
 
