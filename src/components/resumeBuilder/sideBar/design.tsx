@@ -15,7 +15,7 @@ const Design = () => {
   const { lineHeight, setLineHeight } = useFormContext()
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const maxValue = 1.5
+    const maxValue = 1.7
     const minValue = 1
     const value = parseFloat(e.target.value)
 
