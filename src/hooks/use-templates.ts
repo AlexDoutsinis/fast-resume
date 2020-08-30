@@ -21,7 +21,7 @@ export function useTemplates(): Templates {
   const { allFile }: TemplatesQuery = useStaticQuery(
     graphql`
       query GetTemplates {
-        allFile(filter: { relativeDirectory: { eq: "templates" } }) {
+        allFile(filter: { relativeDirectory: { eq: "resumeTemplates" } }) {
           edges {
             node {
               name
