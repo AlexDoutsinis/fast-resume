@@ -6,8 +6,8 @@ import {
 } from "../../../styled/resumeBuilderStyles"
 import { CurrentTemplateContext } from "../../templateList/templateList"
 import { useFormContext } from "../../../contexts/form-context"
-import Minimal1 from "../../templates/minimal1"
-import Minimal2 from "../../templates/minimal2"
+import Minimal1 from "../../resumeTemplates/minimal1"
+import Minimal2 from "../../resumeTemplates/minimal2"
 
 const CurrentTemplate = () => {
   const { currentTemplate } = useContext(CurrentTemplateContext)
