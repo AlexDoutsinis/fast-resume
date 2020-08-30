@@ -4,10 +4,10 @@ import {
   CurrentTemplateBoxStyled,
   CurrentTemplateWrapperStyled,
 } from "../../../styled/resumeBuilderStyles"
-import Minimal1 from "../templates/minimal-1"
-import Minimal2 from "../templates/minimal2"
 import { CurrentTemplateContext } from "../../templateList/templateList"
 import { useFormContext } from "../../../contexts/form-context"
+import Minimal1 from "../../templates/minimal1"
+import Minimal2 from "../../templates/minimal2"
 
 const CurrentTemplate = () => {
   const { currentTemplate } = useContext(CurrentTemplateContext)

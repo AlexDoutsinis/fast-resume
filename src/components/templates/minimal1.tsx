@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { useFormContext } from "../../../contexts/form-context"
+import { useFormContext } from "../../contexts/form-context"
 import {
   SectionHeadingStyled,
   SectionContentStyled,
