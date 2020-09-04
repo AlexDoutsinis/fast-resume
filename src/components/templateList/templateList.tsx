@@ -10,12 +10,6 @@ import { useTemplateListReducer } from "../../reducers/templateListReducer"
 import Modal from "./modal"
 import { FormContextProvider } from "../../contexts/form-context"
 
-const initialState = {
-  isModalOpen: false,
-  currentTemplate: "",
-  wobble: 0,
-}
-
 type CurrentTemplateContextProps = {
   currentTemplate: string
   setCurrentTemplate: (templateName: string) => void
@@ -27,7 +21,7 @@ export const CurrentTemplateContext = createContext(
 
 const TemplateList: React.FC<{}> = ({ children: ResumeBuilderChildren }) => {
   const { edges: templates } = useTemplates()
-  const { state, dispatch } = useTemplateListReducer(initialState)
+  const { state, dispatch } = useTemplateListReducer()
 
   function openModal(templateName: string): void {
     dispatch({ type: "openModal_startWobble", templateName })

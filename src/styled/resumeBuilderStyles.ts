@@ -122,7 +122,7 @@ export const SideBarStyled = styled.div`
     width: 100%;
     padding: 3px 6px;
     outline: none;
-    border: solid var(--blue-color) 0.5px;
+    border: solid var(--blue-color) 1px;
     margin-bottom: 0.5rem;
   }
 
@@ -173,7 +173,7 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
     button {
       flex-basis: 30%;
     }
-  `}
+  `};
 
   ${device.mobileL`
     div {
@@ -183,7 +183,7 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
     button {
       flex-basis: 25%;
     }
-  `}
+  `};
 
   ${device.tablet`
     div {
@@ -194,7 +194,7 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
       flex-basis: 15%;
       font-size: 14px;
     }
-  `}
+  `};
 
   ${device.laptop`
     div {
@@ -204,7 +204,7 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
     button {
       flex-basis: 10%;
     }
-  `}
+  `};
 
   ${device.laptopL`
     div {
@@ -214,7 +214,7 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
     button {
       flex-basis: 5%;
     }
-  `}
+  `};
 
   ${device.desktop`
     div {
@@ -224,7 +224,7 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
     button {
       flex-basis: 3%;
     }
-  `}
+  `};
 `
 
 type CurrentTemplateBoxStyledProps = {
@@ -257,5 +257,5 @@ export const CurrentTemplateWrapperStyled = styled.div`
   width: 595px;
   min-height: 842px;
   margin: auto;
-  border: solid var(--blue-color) 0.5px;
+  border: solid var(--blue-color) 1px;
 `
