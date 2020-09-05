@@ -1,4 +1,4 @@
-import React, { createContext } from "react"
+import React from "react"
 
 import {
   TemplateWrapperStyled,
@@ -6,22 +6,13 @@ import {
 } from "../../styled/templateListStyles"
 import { useTemplates } from "../../hooks/use-templates"
 import Template from "./template"
-import { useTemplateListReducer } from "../../reducers/templateListReducer"
 import Modal from "./modal"
 import { FormContextProvider } from "../../contexts/form-context"
+import { useTemplateListContext } from "../../contexts/templateList-context"
 
-type CurrentTemplateContextProps = {
-  currentTemplate: string
-  setCurrentTemplate: (templateName: string) => void
-}
-
-export const CurrentTemplateContext = createContext(
-  {} as CurrentTemplateContextProps
-)
-
-const TemplateList: React.FC<{}> = ({ children: ResumeBuilderChildren }) => {
+const TemplateList: React.FC<{}> = ({ children: ResumeBuilder }) => {
   const { edges: templates } = useTemplates()
-  const { state, dispatch } = useTemplateListReducer()
+  const { state, dispatch } = useTemplateListContext()
 
   function openModal(templateName: string): void {
     dispatch({ type: "openModal_startWobble", templateName })
@@ -39,12 +30,6 @@ const TemplateList: React.FC<{}> = ({ children: ResumeBuilderChildren }) => {
     stopWobble: () => dispatch({ type: "stopWobble" }),
   }
 
-  const contextValue = {
-    currentTemplate: state.currentTemplate,
-    setCurrentTemplate: (templateName: string) =>
-      dispatch({ type: "setCurrentTemplate", templateName }),
-  }
-
   return (
     <TemplateWrapperStyled>
       <h3>Pick a template</h3>
@@ -54,11 +39,7 @@ const TemplateList: React.FC<{}> = ({ children: ResumeBuilderChildren }) => {
         ))}
       </TemplateStyled>
       <FormContextProvider>
-        <Modal {...modalProps}>
-          <CurrentTemplateContext.Provider value={{ ...contextValue }}>
-            {ResumeBuilderChildren}
-          </CurrentTemplateContext.Provider>
-        </Modal>
+        <Modal {...modalProps}>{ResumeBuilder}</Modal>
       </FormContextProvider>
     </TemplateWrapperStyled>
   )

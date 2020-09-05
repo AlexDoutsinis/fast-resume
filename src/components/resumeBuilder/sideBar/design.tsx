@@ -1,17 +1,18 @@
-import React, { useContext } from "react"
+import React from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
 
 import { useTemplates } from "../../../hooks/use-templates"
-import { CurrentTemplateContext } from "../../templateList/templateList"
 import { useFormContext } from "../../../contexts/form-context"
 import { device } from "../../../utils/device"
+import { useTemplateListContext } from "../../../contexts/templateList-context"
 
 const Design = () => {
   const { edges: templates } = useTemplates()
-  const { currentTemplate, setCurrentTemplate } = useContext(
-    CurrentTemplateContext
-  )
+  const {
+    state: { currentTemplate },
+    dispatch,
+  } = useTemplateListContext()
   const { lineHeight, setLineHeight } = useFormContext()
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -40,7 +41,9 @@ const Design = () => {
           <ImgWrapperStyled
             selected={currentTemplate === node.name ? true : false}
             key={node.name}
-            onClick={() => setCurrentTemplate(node.name)}
+            onClick={() =>
+              dispatch({ type: "setCurrentTemplate", templateName: node.name })
+            }
           >
             <Img
               fluid={node.childImageSharp.fluid}

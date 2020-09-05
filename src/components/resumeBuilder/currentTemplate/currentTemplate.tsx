@@ -1,16 +1,18 @@
-import React, { useContext } from "react"
+import React from "react"
 
 import {
   CurrentTemplateBoxStyled,
   CurrentTemplateWrapperStyled,
 } from "../../../styled/resumeBuilderStyles"
-import { CurrentTemplateContext } from "../../templateList/templateList"
 import { useFormContext } from "../../../contexts/form-context"
 import Minimal1 from "../../resumeTemplates/minimal1"
 import Minimal2 from "../../resumeTemplates/minimal2"
+import { useTemplateListContext } from "../../../contexts/templateList-context"
 
 const CurrentTemplate = () => {
-  const { currentTemplate } = useContext(CurrentTemplateContext)
+  const {
+    state: { currentTemplate },
+  } = useTemplateListContext()
   const { lineHeight } = useFormContext()
 
   return (

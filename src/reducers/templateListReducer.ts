@@ -43,12 +43,12 @@ const initialState: State = {
   wobble: 0,
 }
 
-type UseTemplateListReducer = {
+export type TemplateList = {
   state: State
   dispatch: React.Dispatch<Action>
 }
 
-export function useTemplateListReducer(): UseTemplateListReducer {
+export function useTemplateListReducer(): TemplateList {
   const [state, dispatch] = useReducer(templateListReducer, initialState)
 
   return { state, dispatch }

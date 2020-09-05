@@ -8,6 +8,7 @@ import Features from "../components/features/features"
 import FeaturesContent from "../components/features/featuresContent"
 import TemplateList from "../components/templateList/templateList"
 import ResumeBuilder from "../components/resumeBuilder/resumeBuilder"
+import { TemplateListContextProvider } from "../contexts/templateList-context"
 
 const IndexPage = () => (
   <Layout>
@@ -23,9 +24,11 @@ const IndexPage = () => (
     <Features>
       <FeaturesContent />
     </Features>
-    <TemplateList>
-      <ResumeBuilder />
-    </TemplateList>
+    <TemplateListContextProvider>
+      <TemplateList>
+        <ResumeBuilder />
+      </TemplateList>
+    </TemplateListContextProvider>
   </Layout>
 )
 
