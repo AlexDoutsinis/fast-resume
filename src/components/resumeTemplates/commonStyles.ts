@@ -9,6 +9,8 @@ export {
 
 type SectionHeadingStyledProps = {
   first?: boolean
+  center?: boolean
+  ls?: boolean
 }
 
 const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
@@ -17,6 +19,8 @@ const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
   margin-top: 32px;
 
   ${props => props.first && "margin: 0;"};
+  ${props => props.center && "text-align: center;"};
+  ${props => props.ls && "letter-spacing: 2px;"};
 `
 
 const SectionContentStyled = styled.div`
