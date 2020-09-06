@@ -88,7 +88,7 @@ const HeaderStyled = styled.div<Header>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 110px;
+  height: 120px;
   ${props => props.uppercase && "text-transform: uppercase;"};
 
   span {
