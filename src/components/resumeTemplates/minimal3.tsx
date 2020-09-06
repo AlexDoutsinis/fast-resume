@@ -17,16 +17,21 @@ const Minimal3 = () => {
     experienceList,
     educationList,
     uppercaseHeading,
+    letterSpacing,
   } = useFormContext()
 
   return (
     <WrapperStyled>
       <SideStyled pr>
-        <TitleStyled uppercase={uppercaseHeading}>
+        <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
           <div>{profile.fullName}</div>
           <span>{profile.subtitle}</span>
         </TitleStyled>
-        <SectionHeadingStyled center ls uppercase={uppercaseHeading}>
+        <SectionHeadingStyled
+          center
+          uppercase={uppercaseHeading}
+          letterSpacing={letterSpacing}
+        >
           Profile
         </SectionHeadingStyled>
         <SectionContentStyled>{profile.profileSummary}</SectionContentStyled>
@@ -35,7 +40,11 @@ const Minimal3 = () => {
             <div key={item.id}>{item.contactItem}</div>
           ))}
         </ContactStyled>
-        <SectionHeadingStyled center ls uppercase={uppercaseHeading}>
+        <SectionHeadingStyled
+          center
+          uppercase={uppercaseHeading}
+          letterSpacing={letterSpacing}
+        >
           Education
         </SectionHeadingStyled>
         <EducationStyled>
@@ -56,7 +65,11 @@ const Minimal3 = () => {
       </SideStyled>
 
       <SideStyled>
-        <SectionHeadingStyled first ls uppercase={uppercaseHeading}>
+        <SectionHeadingStyled
+          first
+          uppercase={uppercaseHeading}
+          letterSpacing={letterSpacing}
+        >
           Experience
         </SectionHeadingStyled>
         {experienceList.map(item => (
@@ -66,7 +79,10 @@ const Minimal3 = () => {
             <SectionContentStyled>{item.description}</SectionContentStyled>
           </div>
         ))}
-        <SectionHeadingStyled ls uppercase={uppercaseHeading}>
+        <SectionHeadingStyled
+          uppercase={uppercaseHeading}
+          letterSpacing={letterSpacing}
+        >
           Skills
         </SectionHeadingStyled>
         <SectionContentStyled>{skills}</SectionContentStyled>
@@ -83,6 +99,7 @@ const WrapperStyled = styled.div`
 
 type Title = {
   uppercase: boolean
+  letterSpacing: number
 }
 
 const TitleStyled = styled.div<Title>`
@@ -92,6 +109,8 @@ const TitleStyled = styled.div<Title>`
   align-items: center;
   margin-top: 20px;
   ${props => props.uppercase && "text-transform: uppercase;"};
+  ${props =>
+    props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 
   div {
     font-size: 24px;

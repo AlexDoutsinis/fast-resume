@@ -10,8 +10,8 @@ export {
 type SectionHeadingStyledProps = {
   first?: boolean
   center?: boolean
-  ls?: boolean
-  uppercase?: boolean
+  uppercase: boolean
+  letterSpacing: number
 }
 
 const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
@@ -19,10 +19,11 @@ const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
   font-weight: 700;
   margin-top: 32px;
   ${props => props.uppercase && "text-transform: uppercase;"};
+  ${props =>
+    props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 
   ${props => props.first && "margin: 0;"};
   ${props => props.center && "text-align: center;"};
-  ${props => props.ls && "letter-spacing: 2px;"};
 `
 
 const SectionContentStyled = styled.div`

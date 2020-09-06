@@ -18,6 +18,8 @@ const Design = () => {
     setLineHeight,
     uppercaseHeading,
     setUppercaseHeading,
+    letterSpacing,
+    setLetterSpacing,
   } = useFormContext()
 
   function handleLineHeightChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -26,6 +28,14 @@ const Design = () => {
     const value = parseFloat(e.target.value)
 
     if (value <= maxValue && value >= minValue) setLineHeight(value)
+  }
+
+  function handleLetterSpacingChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const maxValue = 3
+    const minValue = 1
+    const value = parseFloat(e.target.value)
+
+    if (value <= maxValue && value >= minValue) setLetterSpacing(value)
   }
 
   return (
@@ -40,8 +50,18 @@ const Design = () => {
           onChange={handleLineHeightChange}
         />
       </InputWrapperStyled>
+      <InputWrapperStyled>
+        <label htmlFor="letterSpacing">Letter Spacing - Headings</label>
+        <input
+          type="number"
+          step={"0.5"}
+          name="letterSpacing"
+          value={letterSpacing}
+          onChange={handleLetterSpacingChange}
+        />
+      </InputWrapperStyled>
       <CheckboxWrapperStyled>
-        <label htmlFor="uppercase">Uppercase Headings</label>
+        <label htmlFor="uppercase">Uppercase - Headings</label>
         <div>
           <input
             name="uppercase"

@@ -246,11 +246,11 @@ export const CurrentTemplateBoxStyled = styled.div<
   ${device.laptopL`
     width: 60%;
     margin-left: 0;
-  `}
+  `};
 
   ${device.desktop`
     width: 65%
-  `}
+  `};
 `
 
 export const CurrentTemplateWrapperStyled = styled.div`

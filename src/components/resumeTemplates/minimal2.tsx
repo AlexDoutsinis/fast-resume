@@ -17,12 +17,13 @@ const Minimal2 = () => {
     experienceList,
     educationList,
     uppercaseHeading,
+    letterSpacing,
   } = useFormContext()
 
   return (
     <>
       <HeaderStyled>
-        <TitleStyled uppercase={uppercaseHeading}>
+        <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
           <FullNameStyled>{profile.fullName}</FullNameStyled>
           <SubtitleStyled>{profile.subtitle}</SubtitleStyled>
         </TitleStyled>
@@ -34,11 +35,18 @@ const Minimal2 = () => {
       </HeaderStyled>
       <MainStyled>
         <SideStyled pr>
-          <SectionHeadingStyled first uppercase={uppercaseHeading}>
+          <SectionHeadingStyled
+            first
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+          >
             Profile
           </SectionHeadingStyled>
           <SectionContentStyled>{profile.profileSummary}</SectionContentStyled>
-          <SectionHeadingStyled uppercase={uppercaseHeading}>
+          <SectionHeadingStyled
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+          >
             Experience
           </SectionHeadingStyled>
           {experienceList.map(item => (
@@ -52,11 +60,18 @@ const Minimal2 = () => {
           ))}
         </SideStyled>
         <SideStyled>
-          <SectionHeadingStyled first uppercase={uppercaseHeading}>
+          <SectionHeadingStyled
+            first
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+          >
             Skills
           </SectionHeadingStyled>
           <SectionContentStyled>{skills}</SectionContentStyled>
-          <SectionHeadingStyled uppercase={uppercaseHeading}>
+          <SectionHeadingStyled
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+          >
             Education
           </SectionHeadingStyled>
           {educationList.map(item => (
@@ -79,7 +94,7 @@ const Minimal2 = () => {
 }
 
 const HeaderStyled = styled.div`
-  height: 160px;
+  height: 170px;
   display: grid;
   grid-template-columns: 60% 40%;
   padding: 0 32px;
@@ -87,6 +102,7 @@ const HeaderStyled = styled.div`
 
 type Title = {
   uppercase: boolean
+  letterSpacing: number
 }
 
 const TitleStyled = styled.div<Title>`
@@ -94,6 +110,8 @@ const TitleStyled = styled.div<Title>`
   flex-direction: column;
   justify-content: center;
   ${props => props.uppercase && "text-transform: uppercase;"};
+  ${props =>
+    props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 `
 
 const FullNameStyled = styled.div`

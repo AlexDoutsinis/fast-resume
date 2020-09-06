@@ -17,25 +17,36 @@ const Minimal1 = () => {
     experienceList,
     educationList,
     uppercaseHeading,
+    letterSpacing,
   } = useFormContext()
 
   return (
     <>
-      <HeaderStyled uppercase={uppercaseHeading}>
+      <HeaderStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
         <span>{profile.fullName}</span>
         <div>{profile.subtitle}</div>
       </HeaderStyled>
       <MainStyled>
         <SideStyled pr>
-          <SectionHeadingStyled first uppercase={uppercaseHeading}>
+          <SectionHeadingStyled
+            first
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+          >
             Profile
           </SectionHeadingStyled>
           <SectionContentStyled>{profile.profileSummary}</SectionContentStyled>
-          <SectionHeadingStyled uppercase={uppercaseHeading}>
+          <SectionHeadingStyled
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+          >
             Skills
           </SectionHeadingStyled>
           <SectionContentStyled>{skills}</SectionContentStyled>
-          <SectionHeadingStyled uppercase={uppercaseHeading}>
+          <SectionHeadingStyled
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+          >
             Contact
           </SectionHeadingStyled>
           <SectionContentStyled>
@@ -45,7 +56,11 @@ const Minimal1 = () => {
           </SectionContentStyled>
         </SideStyled>
         <SideStyled>
-          <SectionHeadingStyled first uppercase={uppercaseHeading}>
+          <SectionHeadingStyled
+            first
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+          >
             Experience
           </SectionHeadingStyled>
           {experienceList.map(item => (
@@ -57,7 +72,10 @@ const Minimal1 = () => {
               <SectionContentStyled>{item.description}</SectionContentStyled>
             </div>
           ))}
-          <SectionHeadingStyled uppercase={uppercaseHeading}>
+          <SectionHeadingStyled
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+          >
             Education
           </SectionHeadingStyled>
           {educationList.map(item => (
@@ -81,6 +99,7 @@ const Minimal1 = () => {
 
 type Header = {
   uppercase: boolean
+  letterSpacing: number
 }
 
 const HeaderStyled = styled.div<Header>`
@@ -90,6 +109,8 @@ const HeaderStyled = styled.div<Header>`
   align-items: center;
   height: 120px;
   ${props => props.uppercase && "text-transform: uppercase;"};
+  ${props =>
+    props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 
   span {
     font-size: 28px;
