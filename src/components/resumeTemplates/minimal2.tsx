@@ -79,7 +79,7 @@ const Minimal2 = () => {
 }
 
 const HeaderStyled = styled.div`
-  height: 170px;
+  height: 160px;
   display: grid;
   grid-template-columns: 60% 40%;
   padding: 0 32px;
@@ -97,12 +97,12 @@ const TitleStyled = styled.div<Title>`
 `
 
 const FullNameStyled = styled.div`
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 700;
 `
 
 const SubtitleStyled = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   font-style: italic;
   margin-top: 10px;
 `
