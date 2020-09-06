@@ -16,12 +16,13 @@ const Minimal2 = () => {
     contactList,
     experienceList,
     educationList,
+    uppercaseHeading,
   } = useFormContext()
 
   return (
     <>
       <HeaderStyled>
-        <TitleStyled>
+        <TitleStyled uppercase={uppercaseHeading}>
           <FullNameStyled>{profile.fullName}</FullNameStyled>
           <SubtitleStyled>{profile.subtitle}</SubtitleStyled>
         </TitleStyled>
@@ -33,9 +34,13 @@ const Minimal2 = () => {
       </HeaderStyled>
       <MainStyled>
         <SideStyled pr>
-          <SectionHeadingStyled first>Profile</SectionHeadingStyled>
+          <SectionHeadingStyled first uppercase={uppercaseHeading}>
+            Profile
+          </SectionHeadingStyled>
           <SectionContentStyled>{profile.profileSummary}</SectionContentStyled>
-          <SectionHeadingStyled>Experience</SectionHeadingStyled>
+          <SectionHeadingStyled uppercase={uppercaseHeading}>
+            Experience
+          </SectionHeadingStyled>
           {experienceList.map(item => (
             <div key={item.id}>
               <SectionSubHeadingStyled>{item.role}</SectionSubHeadingStyled>
@@ -47,9 +52,13 @@ const Minimal2 = () => {
           ))}
         </SideStyled>
         <SideStyled>
-          <SectionHeadingStyled first>Skills</SectionHeadingStyled>
+          <SectionHeadingStyled first uppercase={uppercaseHeading}>
+            Skills
+          </SectionHeadingStyled>
           <SectionContentStyled>{skills}</SectionContentStyled>
-          <SectionHeadingStyled>Education</SectionHeadingStyled>
+          <SectionHeadingStyled uppercase={uppercaseHeading}>
+            Education
+          </SectionHeadingStyled>
           {educationList.map(item => (
             <div key={item.id}>
               <SectionSubHeadingStyled>
@@ -76,10 +85,15 @@ const HeaderStyled = styled.div`
   padding: 0 32px;
 `
 
-const TitleStyled = styled.div`
+type Title = {
+  uppercase: boolean
+}
+
+const TitleStyled = styled.div<Title>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  ${props => props.uppercase && "text-transform: uppercase;"};
 `
 
 const FullNameStyled = styled.div`

@@ -13,9 +13,14 @@ const Design = () => {
     state: { currentTemplate },
     dispatch,
   } = useTemplateListContext()
-  const { lineHeight, setLineHeight } = useFormContext()
+  const {
+    lineHeight,
+    setLineHeight,
+    uppercaseHeading,
+    setUppercaseHeading,
+  } = useFormContext()
 
-  function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleLineHeightChange(e: React.ChangeEvent<HTMLInputElement>) {
     const maxValue = 1.5
     const minValue = 1
     const value = parseFloat(e.target.value)
@@ -32,9 +37,20 @@ const Design = () => {
           step={"0.05"}
           name="lineHeight"
           value={lineHeight}
-          onChange={handleInputChange}
+          onChange={handleLineHeightChange}
         />
       </InputWrapperStyled>
+      <CheckboxWrapperStyled>
+        <label htmlFor="uppercase">Uppercase Headings</label>
+        <div>
+          <input
+            name="uppercase"
+            type="checkbox"
+            checked={uppercaseHeading}
+            onChange={() => setUppercaseHeading(isUppercase => !isUppercase)}
+          />
+        </div>
+      </CheckboxWrapperStyled>
 
       <ImgBoxStyled>
         {templates.map(({ node }) => (
@@ -58,7 +74,7 @@ const Design = () => {
 
 const InputWrapperStyled = styled.div`
   width: 70%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 
   label {
     display: block;
@@ -84,11 +100,29 @@ const InputWrapperStyled = styled.div`
   }
 `
 
+const CheckboxWrapperStyled = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  div {
+    flex-basis: 50px;
+    height: 1rem;
+  }
+
+  input {
+    cursor: pointer;
+    margin: 0;
+  }
+`
+
 const ImgBoxStyled = styled.div`
   display: grid;
   grid-template-columns: 80px 80px;
   grid-gap: 1.5rem;
   margin: 7px 0;
+  margin-top: 2.5rem;
 `
 
 type ImgWrapperStyledProps = {

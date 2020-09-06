@@ -16,16 +16,17 @@ const Minimal3 = () => {
     contactList,
     experienceList,
     educationList,
+    uppercaseHeading,
   } = useFormContext()
 
   return (
     <WrapperStyled>
       <SideStyled pr>
-        <TitleStyled>
+        <TitleStyled uppercase={uppercaseHeading}>
           <div>{profile.fullName}</div>
           <span>{profile.subtitle}</span>
         </TitleStyled>
-        <SectionHeadingStyled center ls>
+        <SectionHeadingStyled center ls uppercase={uppercaseHeading}>
           Profile
         </SectionHeadingStyled>
         <SectionContentStyled>{profile.profileSummary}</SectionContentStyled>
@@ -34,7 +35,7 @@ const Minimal3 = () => {
             <div key={item.id}>{item.contactItem}</div>
           ))}
         </ContactStyled>
-        <SectionHeadingStyled center ls>
+        <SectionHeadingStyled center ls uppercase={uppercaseHeading}>
           Education
         </SectionHeadingStyled>
         <EducationStyled>
@@ -55,7 +56,7 @@ const Minimal3 = () => {
       </SideStyled>
 
       <SideStyled>
-        <SectionHeadingStyled first ls>
+        <SectionHeadingStyled first ls uppercase={uppercaseHeading}>
           Experience
         </SectionHeadingStyled>
         {experienceList.map(item => (
@@ -65,7 +66,9 @@ const Minimal3 = () => {
             <SectionContentStyled>{item.description}</SectionContentStyled>
           </div>
         ))}
-        <SectionHeadingStyled ls>Skills</SectionHeadingStyled>
+        <SectionHeadingStyled ls uppercase={uppercaseHeading}>
+          Skills
+        </SectionHeadingStyled>
         <SectionContentStyled>{skills}</SectionContentStyled>
       </SideStyled>
     </WrapperStyled>
@@ -78,12 +81,17 @@ const WrapperStyled = styled.div`
   padding: 32px 40px;
 `
 
-const TitleStyled = styled.div`
+type Title = {
+  uppercase: boolean
+}
+
+const TitleStyled = styled.div<Title>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  ${props => props.uppercase && "text-transform: uppercase;"};
 
   div {
     font-size: 24px;

@@ -39,6 +39,8 @@ type FormContextProps = {
   setEducationList: (value: EducationList) => void
   lineHeight: number
   setLineHeight: (value: number) => void
+  uppercaseHeading: boolean
+  setUppercaseHeading: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const FormContext = createContext({} as FormContextProps)
@@ -70,6 +72,7 @@ export const FormContextProvider: React.FC<{}> = ({ children }) => {
     }) as EducationList
   )
   const [lineHeight, setLineHeight] = useState(1.3)
+  const [uppercaseHeading, setUppercaseHeading] = useState(false)
 
   const FormContextState = {
     profile,
@@ -84,6 +87,8 @@ export const FormContextProvider: React.FC<{}> = ({ children }) => {
     setEducationList,
     lineHeight,
     setLineHeight,
+    uppercaseHeading,
+    setUppercaseHeading,
   }
 
   return (

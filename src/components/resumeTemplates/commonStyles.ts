@@ -11,12 +11,14 @@ type SectionHeadingStyledProps = {
   first?: boolean
   center?: boolean
   ls?: boolean
+  uppercase?: boolean
 }
 
 const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
   font-size: 16px;
   font-weight: 700;
   margin-top: 32px;
+  ${props => props.uppercase && "text-transform: uppercase;"};
 
   ${props => props.first && "margin: 0;"};
   ${props => props.center && "text-align: center;"};
