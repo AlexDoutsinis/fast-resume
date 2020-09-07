@@ -139,10 +139,16 @@ const CheckboxWrapperStyled = styled.div`
 
 const ImgBoxStyled = styled.div`
   display: grid;
-  grid-template-columns: 80px 80px;
-  grid-gap: 1.5rem;
-  margin: 7px 0;
+  grid-template-columns: repeat(4, 60px);
+  grid-gap: 1.2rem;
+  padding: 7px;
   margin-top: 2.5rem;
+  overflow: auto;
+
+  ${device.tablet`
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(4, 80px);
+  `}
 `
 
 type ImgWrapperStyledProps = {
