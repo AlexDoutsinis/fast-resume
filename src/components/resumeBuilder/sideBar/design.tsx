@@ -31,7 +31,7 @@ const Design = () => {
   }
 
   function handleLetterSpacingChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const maxValue = 3
+    const maxValue = 2.5
     const minValue = 1
     const value = parseFloat(e.target.value)
 
