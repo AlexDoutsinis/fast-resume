@@ -38,6 +38,22 @@ function SEO({ description, lang, meta, title }: Props) {
           property: `og:type`,
           content: `website`,
         },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:creator`,
+          content: siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
       ].concat(meta)}
     />
   )

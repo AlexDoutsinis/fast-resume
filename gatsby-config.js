@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `craftyourresume.io`,
     description: `The most simple way to craft a resume that will get you hired.`,
+    author: "Alexis Doutsinis",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

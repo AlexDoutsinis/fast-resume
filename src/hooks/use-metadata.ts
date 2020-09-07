@@ -8,6 +8,7 @@ type SiteMetadata = {
   siteMetadata: {
     title: string
     description: string
+    author: string
   }
 }
 
@@ -19,6 +20,7 @@ function useMetaData(): SiteMetadata {
           siteMetadata {
             title
             description
+            author
           }
         }
       }
