@@ -15,7 +15,7 @@ type SectionHeadingStyledProps = {
 }
 
 const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   margin-top: 32px;
   ${props => props.uppercase && "text-transform: uppercase;"};
@@ -32,14 +32,15 @@ const SectionContentStyled = styled.div`
 
 type SectionSubHeadingStyledProps = {
   sm?: boolean
+  noMargin?: boolean
 }
 
 const SectionSubHeadingStyled = styled.div<SectionSubHeadingStyledProps>`
   font-size: 14px;
   margin-top: 16px;
-
   ${props =>
     props.sm && "font-size: 13px; font-style: italic; margin-top: 12px;"};
+  ${props => props.noMargin && "margin: 0;"};
 `
 
 type SideStyledProps = {

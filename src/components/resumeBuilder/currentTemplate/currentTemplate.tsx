@@ -9,6 +9,7 @@ import Minimal1 from "../../resumeTemplates/minimal1"
 import Minimal2 from "../../resumeTemplates/minimal2"
 import { useTemplateListContext } from "../../../contexts/templateList-context"
 import Minimal3 from "../../resumeTemplates/minimal3"
+import Minimal4 from "../../resumeTemplates/minimal4"
 
 const CurrentTemplate = () => {
   const {
@@ -22,6 +23,7 @@ const CurrentTemplate = () => {
         {currentTemplate === "minimal-1" && <Minimal1 />}
         {currentTemplate === "minimal-2" && <Minimal2 />}
         {currentTemplate === "minimal-3" && <Minimal3 />}
+        {currentTemplate === "minimal-4" && <Minimal4 />}
       </CurrentTemplateWrapperStyled>
     </CurrentTemplateBoxStyled>
   )
