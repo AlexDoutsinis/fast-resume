@@ -2,16 +2,11 @@ import styled from "styled-components"
 
 import { device } from "../utils/device"
 
-export const HeroWrapperStyled = styled.section`
-  padding: 2rem 1.5rem;
+export const HeroWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  ${device.mobileL`
-    padding-left: 2.5rem;
-  `};
 
   ${device.tablet`
     flex-direction: row;
@@ -46,10 +41,23 @@ export const HeroContentStyled = styled.div`
     color: white;
     border: 1px solid var(--dark-blue-color);
     border-radius: 5px;
-    padding: 0.8rem 1rem;
+    padding: 0.9em 1.1em;
     margin-top: 2rem;
     cursor: pointer;
+    font-size: 14px;
   }
+
+  ${device.laptop`
+    flex-basis: 350px;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  `};
 `
 
 export const HeroIllustrationStyled = styled.div`
@@ -58,5 +66,9 @@ export const HeroIllustrationStyled = styled.div`
   ${device.tablet`
     max-width: 350px;
     margin: 0;
+  `};
+
+  ${device.laptop`
+    max-width: 400px;
   `};
 `

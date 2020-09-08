@@ -12,6 +12,10 @@ export const TemplateWrapperStyled = styled.section`
     ${device.tablet`
       margin: 2.5rem 0;
     `};
+
+    ${device.laptop`
+      margin: 3.5rem 0;
+    `};
   }
 `
 

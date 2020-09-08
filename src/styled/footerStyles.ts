@@ -18,6 +18,10 @@ export const FooterStyled = styled.footer`
   `};
 
   ${device.tablet`
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
+  `};
+
+  ${device.laptop`
+    padding: 3rem 1.5rem;
   `};
 `

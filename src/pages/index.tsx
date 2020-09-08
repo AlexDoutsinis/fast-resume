@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -9,6 +10,7 @@ import FeaturesContent from "../components/features/featuresContent"
 import TemplateList from "../components/templateList/templateList"
 import ResumeBuilder from "../components/resumeBuilder/resumeBuilder"
 import { TemplateListContextProvider } from "../contexts/templateList-context"
+import { device } from "../utils/device"
 
 const IndexPage = () => (
   <Layout>
@@ -18,12 +20,16 @@ const IndexPage = () => (
       lang="en"
       description=""
     />
-    <Hero>
-      <HeroContent />
-    </Hero>
-    <Features>
-      <FeaturesContent />
-    </Features>
+    <SectionStyled>
+      <Hero>
+        <HeroContent />
+      </Hero>
+    </SectionStyled>
+    <SectionStyled bg>
+      <Features>
+        <FeaturesContent />
+      </Features>
+    </SectionStyled>
     <TemplateListContextProvider>
       <TemplateList>
         <ResumeBuilder />
@@ -31,5 +37,24 @@ const IndexPage = () => (
     </TemplateListContextProvider>
   </Layout>
 )
+
+type Section = {
+  bg?: boolean
+}
+
+const SectionStyled = styled.section<Section>`
+  ${props => props.bg && "background-color: var(--light-blue-color);"};
+
+  padding: 2rem 1.5rem;
+
+  ${device.mobileL`
+    padding-left: 2.5rem;
+  `};
+
+  ${device.laptop`
+    padding-left: 3.5rem;
+    padding-right: 2.5rem;
+  `};
+`
 
 export default IndexPage

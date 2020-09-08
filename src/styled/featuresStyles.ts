@@ -2,16 +2,18 @@ import styled from "styled-components"
 
 import { device } from "../utils/device"
 
-export const FeaturesWrapperStyled = styled.section`
-  padding: 2.5rem 1.5rem;
+export const FeaturesWrapperStyled = styled.div`
+  /* padding: 2.5rem 1.5rem; */
+  /* padding: 0.5rem 0; */
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  background-color: var(--light-blue-color);
+  /* background-color: var(--light-blue-color); */
 
   ${device.tablet`
-    padding-left: 2.5rem;
+    /* padding-left: 2.5rem; */
     flex-direction: row;
     justify-content: space-between;
   `}
@@ -36,6 +38,6 @@ export const FeaturesIllustrationStyled = styled.div`
   margin-top: 2rem;
 
   ${device.tablet`
-    max-width: 350px;
+    max-width: 400px;
   `};
 `

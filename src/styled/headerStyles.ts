@@ -22,4 +22,8 @@ export const HeaderStyled = styled.header`
   ${device.mobileL`
     padding-left: 2.5rem;
   `}
+
+  ${device.laptop`
+    padding-left: 3.5rem;
+  `};
 `
