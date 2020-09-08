@@ -6,8 +6,8 @@ import {
   SectionHeadingStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
-} from "./commonStyles"
-import { useFormContext } from "../../contexts/form-context"
+} from "../commonStyles"
+import { useFormContext } from "../../../contexts/form-context"
 
 const Minimal3 = () => {
   const {

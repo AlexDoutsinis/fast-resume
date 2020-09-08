@@ -1,15 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 
-import { useFormContext } from "../../contexts/form-context"
+import { useFormContext } from "../../../contexts/form-context"
 import {
   SectionHeadingStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
   SideStyled,
-} from "./commonStyles"
+} from "../commonStyles"
 
-const Minimal1 = () => {
+const Minimal2 = () => {
   const {
     profile,
     skills,
@@ -22,9 +22,16 @@ const Minimal1 = () => {
 
   return (
     <>
-      <HeaderStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-        <span>{profile.fullName}</span>
-        <div>{profile.subtitle}</div>
+      <HeaderStyled>
+        <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
+          <FullNameStyled>{profile.fullName}</FullNameStyled>
+          <SubtitleStyled>{profile.subtitle}</SubtitleStyled>
+        </TitleStyled>
+        <ContactStyled>
+          {contactList.map(item => (
+            <div key={item.id}>{item.contactItem}</div>
+          ))}
+        </ContactStyled>
       </HeaderStyled>
       <MainStyled>
         <SideStyled pr>
@@ -40,27 +47,6 @@ const Minimal1 = () => {
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
           >
-            Skills
-          </SectionHeadingStyled>
-          <SectionContentStyled>{skills}</SectionContentStyled>
-          <SectionHeadingStyled
-            uppercase={uppercaseHeading}
-            letterSpacing={letterSpacing}
-          >
-            Contact
-          </SectionHeadingStyled>
-          <SectionContentStyled>
-            {contactList.map(item => (
-              <div key={item.id}>{item.contactItem}</div>
-            ))}
-          </SectionContentStyled>
-        </SideStyled>
-        <SideStyled>
-          <SectionHeadingStyled
-            first
-            uppercase={uppercaseHeading}
-            letterSpacing={letterSpacing}
-          >
             Experience
           </SectionHeadingStyled>
           {experienceList.map(item => (
@@ -72,6 +58,16 @@ const Minimal1 = () => {
               <SectionContentStyled>{item.description}</SectionContentStyled>
             </div>
           ))}
+        </SideStyled>
+        <SideStyled>
+          <SectionHeadingStyled
+            first
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+          >
+            Skills
+          </SectionHeadingStyled>
+          <SectionContentStyled>{skills}</SectionContentStyled>
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
@@ -97,36 +93,57 @@ const Minimal1 = () => {
   )
 }
 
-type Header = {
+const HeaderStyled = styled.div`
+  height: 170px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  padding: 0 32px;
+`
+
+type Title = {
   uppercase: boolean
   letterSpacing: number
 }
 
-const HeaderStyled = styled.div<Header>`
+const TitleStyled = styled.div<Title>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 120px;
   ${props => props.uppercase && "text-transform: uppercase;"};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
+`
 
-  span {
-    font-size: 28px;
-    font-weight: 700;
-  }
+const FullNameStyled = styled.div`
+  font-size: 32px;
+  font-weight: 700;
+`
+
+const SubtitleStyled = styled.div`
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 10px;
+`
+
+const ContactStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 32px;
 
   div {
-    font-size: 16px;
-    margin-top: 12px;
+    margin-top: 5px;
+
+    &:first-child {
+      margin: 0;
+    }
   }
 `
 
 const MainStyled = styled.div`
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 60% 40%;
   padding: 0 32px;
 `
 
-export default Minimal1
+export default Minimal2

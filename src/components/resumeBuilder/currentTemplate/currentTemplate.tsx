@@ -5,11 +5,13 @@ import {
   CurrentTemplateWrapperStyled,
 } from "../../../styled/resumeBuilderStyles"
 import { useFormContext } from "../../../contexts/form-context"
-import Minimal1 from "../../resumeTemplates/minimal1"
-import Minimal2 from "../../resumeTemplates/minimal2"
 import { useTemplateListContext } from "../../../contexts/templateList-context"
-import Minimal3 from "../../resumeTemplates/minimal3"
-import Minimal4 from "../../resumeTemplates/minimal4"
+import {
+  Minimal1,
+  Minimal2,
+  Minimal3,
+  Minimal4,
+} from "../../resumeTemplates/minimal"
 
 const CurrentTemplate = () => {
   const {

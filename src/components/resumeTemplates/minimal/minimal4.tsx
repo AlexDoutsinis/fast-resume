@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-import { SectionSubHeadingStyled } from "./commonStyles"
-import { useFormContext } from "../../contexts/form-context"
+import { SectionSubHeadingStyled } from "../commonStyles"
+import { useFormContext } from "../../../contexts/form-context"
 
 const Minimal4 = () => {
   const {
