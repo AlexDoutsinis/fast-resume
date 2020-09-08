@@ -1,11 +1,17 @@
 import styled from "styled-components"
 
+import { device } from "../utils/device"
+
 export const TemplateWrapperStyled = styled.section`
   h3 {
     margin: 2rem 0;
     text-align: center;
     font-size: 1.3rem;
     font-weight: 700;
+
+    ${device.tablet`
+      margin: 2.5rem 0;
+    `};
   }
 `
 
@@ -21,4 +27,9 @@ export const TemplateStyled = styled.div`
     box-shadow: 0px 0px 7px 1px var(--light-blue-color);
     border-radius: 5px;
   }
+
+  ${device.tablet`
+     grid-template-columns: repeat(4, 120px);
+     column-gap: 2rem;
+  `};
 `

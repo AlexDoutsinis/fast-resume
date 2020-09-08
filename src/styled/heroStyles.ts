@@ -1,14 +1,28 @@
 import styled from "styled-components"
 
+import { device } from "../utils/device"
+
 export const HeroWrapperStyled = styled.section`
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  ${device.tablet`
+    flex-direction: row;
+    justify-content: space-between;
+  `};
 `
 
 export const HeroContentStyled = styled.div`
+  ${device.tablet`
+    margin-top: 1rem;
+    margin-left: 1rem;
+    flex-basis: 300px;
+    margin-bottom: 1.5rem;
+  `};
+
   h2 {
     font-size: 1.7rem;
     font-weight: 700;
@@ -33,4 +47,9 @@ export const HeroContentStyled = styled.div`
 
 export const HeroIllustrationStyled = styled.div`
   margin-top: 2.5rem;
+
+  ${device.tablet`
+    max-width: 350px;
+    margin: 0;
+  `};
 `

@@ -1,5 +1,7 @@
 import styled from "styled-components"
 
+import { device } from "../utils/device"
+
 export const HeaderStyled = styled.header`
   display: flex;
   justify-content: flex-start;
@@ -16,4 +18,8 @@ export const HeaderStyled = styled.header`
       color: inherit;
     }
   }
+
+  ${device.tablet`
+    padding-left: 2.5rem;
+  `}
 `
