@@ -9,18 +9,14 @@ import {
 import { Svg } from "../hero/hero"
 
 const Features: React.FC<{}> = ({ children }) => {
-  const { allFile }: Svg = useStaticQuery(graphql`
+  const { file }: Svg = useStaticQuery(graphql`
     query {
-      allFile(filter: { name: { eq: "undraw_Outer_space" } }) {
-        edges {
-          node {
-            publicURL
-          }
-        }
+      file(name: { eq: "undraw_Outer_space" }) {
+        publicURL
       }
     }
   `)
-  const outerSpaceSvg = allFile.edges[0].node.publicURL
+  const outerSpaceSvg = file.publicURL
 
   return (
     <FeaturesWrapperStyled>

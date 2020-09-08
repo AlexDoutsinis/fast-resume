@@ -8,28 +8,20 @@ import {
 } from "../../styled/heroStyles"
 
 export type Svg = {
-  allFile: {
-    edges: {
-      node: {
-        publicURL: string
-      }
-    }[]
+  file: {
+    publicURL: string
   }
 }
 
 const Hero: React.FC<{}> = ({ children }) => {
-  const { allFile }: Svg = useStaticQuery(graphql`
+  const { file }: Svg = useStaticQuery(graphql`
     query {
-      allFile(filter: { name: { eq: "undraw_hire" } }) {
-        edges {
-          node {
-            publicURL
-          }
-        }
+      file(name: { eq: "undraw_hire" }) {
+        publicURL
       }
     }
   `)
-  const hireSvg = allFile.edges[0].node.publicURL
+  const hireSvg = file.publicURL
 
   return (
     <HeroWrapperStyled>
