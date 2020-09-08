@@ -19,7 +19,7 @@ export const HeaderStyled = styled.header`
     }
   }
 
-  ${device.tablet`
+  ${device.mobileL`
     padding-left: 2.5rem;
   `}
 `

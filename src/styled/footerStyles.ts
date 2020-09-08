@@ -12,6 +12,11 @@ export const FooterStyled = styled.footer`
     font-style: italic;
   }
 
+  ${device.mobileL`
+    padding: 1.5rem 1.5rem;
+    padding-bottom: 2rem;
+  `};
+
   ${device.tablet`
     padding: 2rem 1.5rem;
   `};

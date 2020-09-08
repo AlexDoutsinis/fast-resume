@@ -9,6 +9,10 @@ export const HeroWrapperStyled = styled.section`
   justify-content: center;
   align-items: center;
 
+  ${device.mobileL`
+    padding-left: 2.5rem;
+  `};
+
   ${device.tablet`
     flex-direction: row;
     justify-content: space-between;
@@ -16,9 +20,12 @@ export const HeroWrapperStyled = styled.section`
 `
 
 export const HeroContentStyled = styled.div`
+  ${device.mobileL`
+    margin-top: .5rem;
+  `};
+
   ${device.tablet`
     margin-top: 1rem;
-    margin-left: 1rem;
     flex-basis: 300px;
     margin-bottom: 1.5rem;
   `};
