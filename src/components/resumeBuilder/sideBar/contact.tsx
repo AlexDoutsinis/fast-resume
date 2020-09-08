@@ -48,11 +48,3 @@ const Contact = () => {
 }
 
 export default Contact
-
-//todo:
-
-// na valw k alla templates
-// na ftiaksw to ui tou landing page responsive gia oles tis othones
-// na ftiaksw to export pdf button
-// na kanw optimize to performance
-// na ftiaksw to SEO
