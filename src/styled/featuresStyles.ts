@@ -3,34 +3,45 @@ import styled from "styled-components"
 import { device } from "../utils/device"
 
 export const FeaturesWrapperStyled = styled.div`
-  /* padding: 2.5rem 1.5rem; */
-  /* padding: 0.5rem 0; */
   padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  /* background-color: var(--light-blue-color); */
 
   ${device.tablet`
-    /* padding-left: 2.5rem; */
     flex-direction: row;
     justify-content: space-between;
   `}
+
+  ${device.laptop`
+    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    margin-left: 4rem;
+  `};
+
+  ${device.laptopL`
+    margin-left: 5rem;
+  `};
 `
 
 export const FeaturesContentStyled = styled.div`
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 700;
   }
 
   p {
+    font-size: 1.1rem;
     margin-top: 1.5rem;
   }
 
   ${device.tablet`
     flex-basis: 300px;
+  `}
+
+  ${device.laptopL`
+    flex-basis: 420px;
   `}
 `
 
@@ -38,6 +49,19 @@ export const FeaturesIllustrationStyled = styled.div`
   margin-top: 2rem;
 
   ${device.tablet`
-    max-width: 400px;
+    max-width: 350px;
   `};
+
+  ${device.laptop`
+    max-width: 400px;
+    margin-left: 10rem;
+    margin-bottom: 1rem;
+  `};
+
+  ${device.laptopL`
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    margin-left: 13rem;
+    max-width: 600px;
+  `}
 `

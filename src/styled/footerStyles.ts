@@ -24,4 +24,8 @@ export const FooterStyled = styled.footer`
   ${device.laptop`
     padding: 3rem 1.5rem;
   `};
+
+  ${device.laptopL`
+    padding-top: 4rem;
+  `};
 `

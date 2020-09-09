@@ -12,6 +12,17 @@ export const HeroWrapperStyled = styled.div`
     flex-direction: row;
     justify-content: space-between;
   `};
+
+  ${device.laptop`
+    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    margin-left: 4rem;
+  `};
+
+  ${device.laptopL`
+    margin-left: 5rem;
+  `};
 `
 
 export const HeroContentStyled = styled.div`
@@ -51,13 +62,17 @@ export const HeroContentStyled = styled.div`
     flex-basis: 350px;
 
     h2 {
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
 
     p {
       font-size: 1.2rem;
     }
   `};
+
+  ${device.laptopL`
+    flex-basis: 420px;
+  `}
 `
 
 export const HeroIllustrationStyled = styled.div`
@@ -70,5 +85,13 @@ export const HeroIllustrationStyled = styled.div`
 
   ${device.laptop`
     max-width: 400px;
+    margin-left: 10rem;
   `};
+
+  ${device.laptopL`
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    margin-left: 13rem;
+    max-width: 600px;
+  `}
 `
