@@ -14,7 +14,6 @@ export const HeroWrapperStyled = styled.div`
   `};
 
   ${device.laptop`
-    justify-content: center;
     justify-content: flex-start;
     margin-top: 1rem;
     margin-left: 4rem;
@@ -90,7 +89,7 @@ export const HeroIllustrationStyled = styled.div`
 
   ${device.laptopL`
     margin-top: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     margin-left: 13rem;
     max-width: 600px;
   `}

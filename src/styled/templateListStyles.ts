@@ -6,7 +6,7 @@ export const TemplateWrapperStyled = styled.section`
   h3 {
     margin: 2rem 0;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
 
     ${device.tablet`

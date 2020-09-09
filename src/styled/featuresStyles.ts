@@ -14,7 +14,6 @@ export const FeaturesWrapperStyled = styled.div`
   `}
 
   ${device.laptop`
-    justify-content: center;
     justify-content: flex-start;
     margin-top: 1rem;
     margin-left: 4rem;
@@ -55,7 +54,6 @@ export const FeaturesIllustrationStyled = styled.div`
   ${device.laptop`
     max-width: 400px;
     margin-left: 10rem;
-    margin-bottom: 1rem;
   `};
 
   ${device.laptopL`
