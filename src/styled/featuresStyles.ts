@@ -46,20 +46,3 @@ export const FeaturesContentStyled = styled.div`
     flex-basis: 420px;
   `}
 `
-
-export const FeaturesIllustrationStyled = styled.div`
-  margin-top: 2.5rem;
-
-  ${device.tablet`
-    margin: 0;
-    max-width: 320px;
-  `};
-
-  ${device.laptop`
-    max-width: 400px;
-  `};
-
-  ${device.laptopL`
-    max-width: 600px;
-  `}
-`

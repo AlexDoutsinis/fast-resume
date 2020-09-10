@@ -10,11 +10,19 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/images/resumeTemplates`,
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /Illustrations/,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

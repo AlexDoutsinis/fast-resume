@@ -67,20 +67,3 @@ export const HeroContentStyled = styled.div`
     flex-basis: 500px;
   `};
 `
-
-export const HeroIllustrationStyled = styled.div`
-  margin-top: 2.5rem;
-
-  ${device.tablet`
-    margin: 0;
-    max-width: 320px;
-  `};
-
-  ${device.laptop`
-    max-width: 400px;
-  `};
-
-  ${device.laptopL`
-    max-width: 600px;
-  `}
-`
