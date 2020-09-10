@@ -31,7 +31,7 @@ const IndexPage = () => (
       </Features>
     </SectionStyled>
     <TemplateListContextProvider>
-      <SectionStyled bgGray>
+      <SectionStyled>
         <TemplateList>
           <ResumeBuilder />
         </TemplateList>
@@ -42,12 +42,10 @@ const IndexPage = () => (
 
 type Section = {
   bgBlue?: boolean
-  bgGray?: boolean
 }
 
 const SectionStyled = styled.section<Section>`
   ${props => props.bgBlue && "background-color: var(--light-blue-color);"};
-  ${props => props.bgGray && "background-color: var(--light-gray-color);"};
 
   > div {
     width: 85%;

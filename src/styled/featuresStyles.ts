@@ -25,6 +25,14 @@ export const FeaturesContentStyled = styled.div`
     ${device.desktop`
       font-size: 2rem;
     `};
+
+    &:last-of-type {
+      margin-top: 1.5rem;
+
+      ${device.desktop`
+        margin-top: 2rem;
+      `};
+    }
   }
 
   p {
@@ -43,6 +51,10 @@ export const FeaturesContentStyled = styled.div`
   `}
 
   ${device.laptopL`
+    flex-basis: 370px;
+  `}
+
+  ${device.desktop`
     flex-basis: 420px;
   `}
 `
