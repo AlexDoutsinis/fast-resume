@@ -74,8 +74,7 @@ a {
   --dark-blue-color: #0f4c75;
   --blue-color: #3282b8;
   --light-blue-color: #bbe1fa;
-
-  --header-height: 5vh;
+  --light-gray-color: #f2f5fa;
 }
 
 html {

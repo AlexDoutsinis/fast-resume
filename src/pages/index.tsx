@@ -25,25 +25,29 @@ const IndexPage = () => (
         <HeroContent />
       </Hero>
     </SectionStyled>
-    <SectionStyled bg>
+    <SectionStyled bgBlue>
       <Features>
         <FeaturesContent />
       </Features>
     </SectionStyled>
     <TemplateListContextProvider>
-      <TemplateList>
-        <ResumeBuilder />
-      </TemplateList>
+      <SectionStyled bgGray>
+        <TemplateList>
+          <ResumeBuilder />
+        </TemplateList>
+      </SectionStyled>
     </TemplateListContextProvider>
   </Layout>
 )
 
 type Section = {
-  bg?: boolean
+  bgBlue?: boolean
+  bgGray?: boolean
 }
 
 const SectionStyled = styled.section<Section>`
-  ${props => props.bg && "background-color: var(--light-blue-color);"};
+  ${props => props.bgBlue && "background-color: var(--light-blue-color);"};
+  ${props => props.bgGray && "background-color: var(--light-gray-color);"};
 
   > div {
     width: 85%;

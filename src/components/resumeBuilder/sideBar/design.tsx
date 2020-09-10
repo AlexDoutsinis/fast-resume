@@ -157,11 +157,11 @@ type ImgWrapperStyledProps = {
 
 const ImgWrapperStyled = styled.div<ImgWrapperStyledProps>`
   cursor: pointer;
-  border: solid var(--light-blue-color) 0.5px;
+  border: solid var(--light-blue-color) 1px;
   box-shadow: 0px 0px 7px 1px var(--light-blue-color);
   border-radius: 5px;
 
-  ${props => props.selected && "border: solid var(--blue-color) 0.5px;"};
+  ${props => props.selected && "border: solid var(--blue-color) 1px;"};
   ${props =>
     props.selected && "box-shadow: 0px 0px 7px 1px var(--blue-color);"};
 `

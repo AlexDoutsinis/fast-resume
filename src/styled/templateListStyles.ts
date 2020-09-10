@@ -2,19 +2,28 @@ import styled from "styled-components"
 
 import { device } from "../utils/device"
 
-export const TemplateWrapperStyled = styled.section`
+export const TemplateWrapperStyled = styled.div`
   h3 {
-    margin: 2rem 0;
+    margin-bottom: 2rem;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
 
+    ${device.mobileL`
+      font-size: 1.4rem;
+    `}
+
     ${device.tablet`
-      margin: 2.5rem 0;
+      margin-bottom: 2.5rem;
     `};
 
     ${device.laptop`
-      margin: 3.5rem 0;
+      margin-bottom: 3.5rem;
+    `};
+
+    ${device.desktop`
+      font-size: 2rem;
+      margin-bottom: 4.5rem;
     `};
   }
 `
@@ -26,14 +35,18 @@ export const TemplateStyled = styled.div`
   grid-gap: 1.5rem;
 
   div {
-    border: solid 0.5px var(--light-blue-color);
+    border: solid 1px var(--blue-color);
     cursor: pointer;
-    box-shadow: 0px 0px 7px 1px var(--light-blue-color);
     border-radius: 5px;
   }
 
   ${device.tablet`
      grid-template-columns: repeat(4, 120px);
      column-gap: 2rem;
+  `};
+
+  ${device.desktop`
+     grid-template-columns: repeat(4, 150px);
+     column-gap: 2.5rem;
   `};
 `
