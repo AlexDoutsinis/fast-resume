@@ -12,38 +12,31 @@ export const HeroWrapperStyled = styled.div`
     flex-direction: row;
     justify-content: space-between;
   `};
-
-  ${device.laptop`
-    justify-content: flex-start;
-    margin-top: 1rem;
-    margin-left: 4rem;
-  `};
-
-  ${device.laptopL`
-    margin-left: 5rem;
-  `};
 `
 
 export const HeroContentStyled = styled.div`
-  ${device.mobileL`
-    margin-top: .5rem;
-  `};
-
-  ${device.tablet`
-    margin-top: 1rem;
-    flex-basis: 300px;
-    margin-bottom: 1.5rem;
-  `};
-
   h2 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 700;
+
+    ${device.mobileL`
+      font-size: 1.7rem;
+    `};
+
+    ${device.desktop`
+      font-size: 2.5rem;
+    `};
   }
 
   p {
     margin-top: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 300;
+
+    ${device.desktop`
+      font-size: 1.4rem;
+      margin-top: 2rem;
+    `};
   }
 
   button {
@@ -55,42 +48,39 @@ export const HeroContentStyled = styled.div`
     margin-top: 2rem;
     cursor: pointer;
     font-size: 14px;
+
+    ${device.desktop`
+      font-size: 1rem;
+      margin-top: 2.5rem;
+    `};
   }
 
-  ${device.laptop`
-    flex-basis: 350px;
-
-    h2 {
-      font-size: 1.6rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-    }
+  ${device.tablet`
+    flex-basis: 300px;
   `};
 
   ${device.laptopL`
     flex-basis: 420px;
-  `}
+  `};
+
+  ${device.desktop`
+    flex-basis: 500px;
+  `};
 `
 
 export const HeroIllustrationStyled = styled.div`
   margin-top: 2.5rem;
 
   ${device.tablet`
-    max-width: 350px;
     margin: 0;
+    max-width: 320px;
   `};
 
   ${device.laptop`
     max-width: 400px;
-    margin-left: 10rem;
   `};
 
   ${device.laptopL`
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    margin-left: 13rem;
     max-width: 600px;
   `}
 `

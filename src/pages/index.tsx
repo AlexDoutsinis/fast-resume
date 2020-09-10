@@ -45,16 +45,25 @@ type Section = {
 const SectionStyled = styled.section<Section>`
   ${props => props.bg && "background-color: var(--light-blue-color);"};
 
-  padding: 2rem 1.5rem;
+  > div {
+    width: 85%;
+    margin: auto;
+    padding: 2.5rem 0;
 
-  ${device.mobileL`
-    padding-left: 2.5rem;
-  `};
+    ${device.tablet`
+      padding: 3rem 0;
+      width: 90%;
+    `};
 
-  ${device.laptop`
-    padding-left: 3.5rem;
-    padding-right: 2.5rem;
-  `};
+    ${device.laptopL`
+      padding: 5rem 0;
+    `};
+
+    ${device.desktop`
+      padding: 6.5rem 0;
+      width: 70%;
+    `};
+  }
 `
 
 export default IndexPage
