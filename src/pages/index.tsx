@@ -51,7 +51,7 @@ const SectionStyled = styled.section<Section>`
     padding: 2.5rem 0;
 
     ${device.tablet`
-      padding: 3rem 0;
+      padding: 3.5rem 0;
       width: 90%;
     `};
 
