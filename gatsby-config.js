@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `craftyourresume.io`,
-    description: `The most simple way to craft a resume that will get you hired.`,
+    description: `The Most Simple and Fastest way to Craft a Resume. 100% Free Resume Builder - Open Source. Easy to Use and Customizable. Resume Templates.`,
     author: 'Alexis Doutsinis',
   },
   plugins: [

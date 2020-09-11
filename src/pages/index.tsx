@@ -15,7 +15,7 @@ import { device } from '../utils/device'
 const IndexPage = () => (
   <Layout>
     <SEO
-      title="The Fattest Way to Craft a Resume"
+      title="A Simple Way to Craft a Resume | 100% Free"
       meta={[]}
       lang="en"
       description=""

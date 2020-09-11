@@ -1,13 +1,13 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
 import {
   SideStyled,
   SectionHeadingStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
-} from "../commonStyles"
-import { useFormContext } from "../../../contexts/form-context"
+} from '../commonStyles'
+import { useFormContext } from '../../../contexts/form-context'
 
 const Minimal3 = () => {
   const {
@@ -19,6 +19,10 @@ const Minimal3 = () => {
     uppercaseHeading,
     letterSpacing,
   } = useFormContext()
+
+  const isContactListEmpty = contactList.reduce((isEmpty, value) => {
+    return value.contactItem !== '' ? false : isEmpty
+  }, true)
 
   return (
     <WrapperStyled>
@@ -35,7 +39,7 @@ const Minimal3 = () => {
           Profile
         </SectionHeadingStyled>
         <SectionContentStyled>{profile.profileSummary}</SectionContentStyled>
-        <ContactStyled>
+        <ContactStyled isEmpty={isContactListEmpty}>
           {contactList.map(item => (
             <div key={item.id}>{item.contactItem}</div>
           ))}
@@ -108,7 +112,7 @@ const TitleStyled = styled.div<Title>`
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  ${props => props.uppercase && "text-transform: uppercase;"};
+  ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 
@@ -125,13 +129,17 @@ const TitleStyled = styled.div<Title>`
   }
 `
 
-const ContactStyled = styled.div`
+type Contact = {
+  isEmpty: boolean
+}
+
+const ContactStyled = styled.div<Contact>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   margin: auto;
-  margin-top: 32px;
+  ${props => !props.isEmpty && 'margin-top: 32px;'};
 
   div {
     margin-top: 5px;
