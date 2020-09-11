@@ -1,16 +1,16 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Hero from "../components/hero/hero"
-import HeroContent from "../components/hero/heroContent"
-import Features from "../components/features/features"
-import FeaturesContent from "../components/features/featuresContent"
-import TemplateList from "../components/templateList/templateList"
-import ResumeBuilder from "../components/resumeBuilder/resumeBuilder"
-import { TemplateListContextProvider } from "../contexts/templateList-context"
-import { device } from "../utils/device"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Hero from '../components/hero/hero'
+import HeroContent from '../components/hero/heroContent'
+import Features from '../components/features/features'
+import FeaturesContent from '../components/features/featuresContent'
+import TemplateList from '../components/templateList/templateList'
+import ResumeBuilder from '../components/resumeBuilder/resumeBuilder'
+import { TemplateListContextProvider } from '../contexts/templateList-context'
+import { device } from '../utils/device'
 
 const IndexPage = () => (
   <Layout>
@@ -45,7 +45,7 @@ type Section = {
 }
 
 const SectionStyled = styled.section<Section>`
-  ${props => props.bgBlue && "background-color: var(--light-blue-color);"};
+  ${props => props.bgBlue && 'background-color: var(--light-blue-color);'};
 
   > div {
     width: 85%;
