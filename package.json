@@ -23,10 +23,11 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.2",
     "@types/react-helmet": "^6.1.0",
     "@types/react-modal": "^3.10.6",
+    "@types/styled-components": "^5.1.2",
     "gatsby-cli": "^2.12.87",
+    "gatsby-disable-404": "^0.2.1",
     "prettier": "2.0.5"
   },
   "keywords": [

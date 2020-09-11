@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `craftyourresume.io`,
     description: `The most simple way to craft a resume that will get you hired.`,
-    author: "Alexis Doutsinis",
+    author: 'Alexis Doutsinis',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,13 +16,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
           include: /Illustrations/,
         },
       },
     },
+    'gatsby-disable-404',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
