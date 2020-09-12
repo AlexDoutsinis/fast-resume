@@ -1,16 +1,16 @@
-import React from "react"
+import React from 'react'
 
-import { useFormContext, ExperienceList } from "../../../contexts/form-context"
-import RemoveInputBtn from "./removeInputBtn"
-import { useHandleForm } from "../../../hooks/use-handleForm"
-import AddInputBtn from "./addInputBtn"
-import { FormWrapperStyled } from "../../../styled/resumeBuilderStyles"
+import { useFormContext, ExperienceList } from '../../../contexts/form-context'
+import RemoveInputBtn from './removeInputBtn'
+import { useHandleForm } from '../../../hooks/use-handleForm'
+import AddInputBtn from './addInputBtn'
+import { FormWrapperStyled } from '../../../styled/resumeBuilderStyles'
 
 const Experience = () => {
   const { experienceList, setExperienceList } = useFormContext()
   const handlers = useHandleForm<ExperienceList>(
     experienceList,
-    setExperienceList
+    setExperienceList,
   )
 
   const {
@@ -34,20 +34,20 @@ const Experience = () => {
                 value={experience.role}
                 onChange={e => handleInputChange(e, index)}
                 type="text"
-                placeholder={"Role"}
+                placeholder={'Position'}
               />
               <input
                 type="text"
                 name="company"
                 value={experience.company}
                 onChange={e => handleInputChange(e, index)}
-                placeholder={"Company & Work period"}
+                placeholder={'Company & Work period'}
               />
               <textarea
                 name="description"
                 value={experience.description}
                 onChange={e => handleInputChange(e, index)}
-                placeholder={"Describe your role"}
+                placeholder={'Describe what you do'}
               ></textarea>
             </div>
             <RemoveInputBtn

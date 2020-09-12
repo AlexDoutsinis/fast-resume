@@ -25,7 +25,7 @@ const Minimal2 = () => {
       <HeaderStyled>
         <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
           <FullNameStyled>{profile.fullName}</FullNameStyled>
-          <SubtitleStyled>{profile.subtitle}</SubtitleStyled>
+          <SubtitleStyled>{profile.currentPosition}</SubtitleStyled>
         </TitleStyled>
         <ContactStyled>
           {contactList.map(item => (

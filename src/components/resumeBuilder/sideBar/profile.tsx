@@ -1,15 +1,15 @@
-import React from "react"
+import React from 'react'
 
-import { useFormContext } from "../../../contexts/form-context"
-import { FormWrapperStyled } from "../../../styled/resumeBuilderStyles"
-import { useFocus } from "../../../hooks/use-focus"
+import { useFormContext } from '../../../contexts/form-context'
+import { FormWrapperStyled } from '../../../styled/resumeBuilderStyles'
+import { useFocus } from '../../../hooks/use-focus'
 
 const Profile = () => {
   const { profile, setProfile } = useFormContext()
   const { ref } = useFocus()
 
   function handleInputChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
     setProfile({ ...profile, [e.target.name]: e.target.value })
   }
@@ -21,21 +21,21 @@ const Profile = () => {
           <input
             ref={ref}
             type="text"
-            placeholder={"Full name"}
-            name={"fullName"}
+            placeholder={'Your name'}
+            name={'fullName'}
             value={profile.fullName}
             onChange={handleInputChange}
           />
           <input
             type="text"
-            placeholder={"Subtitle"}
-            name={"subtitle"}
-            value={profile.subtitle}
+            placeholder={'Current Position'}
+            name={'currentPosition'}
+            value={profile.currentPosition}
             onChange={handleInputChange}
           />
           <textarea
-            placeholder={"Profile summary"}
-            name={"profileSummary"}
+            placeholder={'Tell us about yourself'}
+            name={'profileSummary'}
             value={profile.profileSummary}
             onChange={handleInputChange}
           ></textarea>

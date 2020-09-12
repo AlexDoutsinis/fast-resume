@@ -18,7 +18,7 @@ const Minimal4 = () => {
     <WrapperStyled>
       <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
         <div>{profile.fullName}</div>
-        <span>{profile.subtitle}</span>
+        <span>{profile.currentPosition}</span>
       </TitleStyled>
       <SectionStyled first>
         <SectionHeadingStyled

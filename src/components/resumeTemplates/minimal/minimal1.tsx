@@ -24,7 +24,7 @@ const Minimal1 = () => {
     <>
       <HeaderStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
         <span>{profile.fullName}</span>
-        <div>{profile.subtitle}</div>
+        <div>{profile.currentPosition}</div>
       </HeaderStyled>
       <MainStyled>
         <SideStyled>

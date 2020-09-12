@@ -29,7 +29,7 @@ const Minimal3 = () => {
       <SideStyled>
         <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
           <div>{profile.fullName}</div>
-          <span>{profile.subtitle}</span>
+          <span>{profile.currentPosition}</span>
         </TitleStyled>
         <SectionHeadingStyled
           center

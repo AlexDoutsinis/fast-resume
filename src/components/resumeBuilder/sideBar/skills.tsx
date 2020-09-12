@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
-import { useFormContext } from "../../../contexts/form-context"
-import { FormWrapperStyled } from "../../../styled/resumeBuilderStyles"
-import { useFocus } from "../../../hooks/use-focus"
+import { useFormContext } from '../../../contexts/form-context'
+import { FormWrapperStyled } from '../../../styled/resumeBuilderStyles'
+import { useFocus } from '../../../hooks/use-focus'
 
 const Skills = () => {
   const { skills, setSkills } = useFormContext()
@@ -18,10 +18,10 @@ const Skills = () => {
         <div>
           <textarea
             ref={ref}
-            name={"skills"}
+            name={'skills'}
             value={skills}
             onChange={handleInputChange}
-            placeholder={"Describe your skills"}
+            placeholder={'Tell us about your skills'}
           ></textarea>
         </div>
       </FormWrapperStyled>

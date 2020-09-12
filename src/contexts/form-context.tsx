@@ -1,9 +1,9 @@
-import React, { useState, createContext, useContext } from "react"
-import { nanoid } from "nanoid"
+import React, { useState, createContext, useContext } from 'react'
+import { nanoid } from 'nanoid'
 
 type Profile = {
   fullName: string
-  subtitle: string
+  currentPosition: string
   profileSummary: string
 }
 
@@ -49,29 +49,29 @@ const FormContext = createContext({} as FormContextProps)
 
 export const FormContextProvider: React.FC<{}> = ({ children }) => {
   const [profile, setProfile] = useState({
-    fullName: "",
-    subtitle: "",
-    profileSummary: "",
+    fullName: '',
+    currentPosition: '',
+    profileSummary: '',
   } as Profile)
-  const [skills, setSkills] = useState("")
+  const [skills, setSkills] = useState('')
   const [contactList, setContactList] = useState(
-    Array(1).fill({ id: nanoid(), contactItem: "" }) as ContactList
+    Array(1).fill({ id: nanoid(), contactItem: '' }) as ContactList,
   )
   const [experienceList, setExperienceList] = useState(
     Array(1).fill({
       id: nanoid(),
-      role: "",
-      company: "",
-      description: "",
-    }) as ExperienceList
+      role: '',
+      company: '',
+      description: '',
+    }) as ExperienceList,
   )
   const [educationList, setEducationList] = useState(
     Array(1).fill({
       id: nanoid(),
-      university: "",
-      specialize: "",
-      website: "",
-    }) as EducationList
+      university: '',
+      specialize: '',
+      website: '',
+    }) as EducationList,
   )
   const [lineHeight, setLineHeight] = useState(1.3)
   const [uppercaseHeading, setUppercaseHeading] = useState(false)
