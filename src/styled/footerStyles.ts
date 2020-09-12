@@ -1,17 +1,28 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { device } from "../utils/device"
+import { device } from '../utils/device'
 
 export const FooterStyled = styled.footer`
   margin-top: 2.5rem;
-  padding: 1rem 1.5rem;
-  text-align: center;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--dark-blue-color);
   color: white;
+  font-size: 14px;
 
-  a {
+  div span,
+  div a {
     color: inherit;
+  }
+
+  div a {
     font-style: italic;
+  }
+
+  div a:hover {
+    text-decoration: underline;
   }
 
   ${device.mobileL`

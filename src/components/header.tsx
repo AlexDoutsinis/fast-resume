@@ -1,6 +1,5 @@
-import { Link } from "gatsby"
-import React from "react"
-import { HeaderStyled } from "../styled/headerStyles"
+import React from 'react'
+import { HeaderStyled } from '../styled/headerStyles'
 
 type Props = {
   siteTitle: string
@@ -9,7 +8,7 @@ type Props = {
 const Header = ({ siteTitle }: Props) => (
   <HeaderStyled>
     <h1>
-      <Link to="/">{siteTitle}</Link>
+      <a href="#">{siteTitle}</a>
     </h1>
   </HeaderStyled>
 )

@@ -1,12 +1,20 @@
-import React from "react"
+import React from 'react'
 
-import { FooterStyled } from "../../styled/footerStyles"
+import { FooterStyled } from '../../styled/footerStyles'
 
 const Footer = () => {
   return (
     <FooterStyled>
-      © {new Date().getFullYear()}, Built with
-      {` `} 💙 by <a href="https://github.com/Alexiosdut">Alexis Doutsinis</a>
+      <div>
+        <div>
+          Licensed under <span>MIT</span>
+        </div>
+        <div>
+          Built with
+          {` `} 💙 by{' '}
+          <a href="https://github.com/Alexiosdut">Alexis Doutsinis</a>
+        </div>
+      </div>
     </FooterStyled>
   )
 }
