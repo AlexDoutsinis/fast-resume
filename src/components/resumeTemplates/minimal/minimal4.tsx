@@ -1,8 +1,8 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
-import { SectionSubHeadingStyled } from "../commonStyles"
-import { useFormContext } from "../../../contexts/form-context"
+import { SectionSubHeadingStyled } from '../commonStyles'
+import { useFormContext } from '../../../contexts/form-context'
 
 const Minimal4 = () => {
   const {
@@ -36,17 +36,19 @@ const Minimal4 = () => {
         >
           Experience
         </SectionHeadingStyled>
-        {experienceList.map(item => (
-          <div key={item.id}>
-            <SectionSubHeadingStyled noMargin>
-              {item.role}
-            </SectionSubHeadingStyled>
-            <SectionSubHeadingStyled noMargin sm>
-              {item.company}
-            </SectionSubHeadingStyled>
-            <div>{item.description}</div>
-          </div>
-        ))}
+        <div>
+          {experienceList.map(item => (
+            <BoxStyled key={item.id}>
+              <SectionSubHeadingStyled noMargin>
+                {item.role}
+              </SectionSubHeadingStyled>
+              <SectionSubHeadingStyled noMargin sm>
+                {item.company}
+              </SectionSubHeadingStyled>
+              <div>{item.description}</div>
+            </BoxStyled>
+          ))}
+        </div>
       </SectionStyled>
       <SectionStyled>
         <SectionHeadingStyled
@@ -55,19 +57,21 @@ const Minimal4 = () => {
         >
           Education
         </SectionHeadingStyled>
-        {educationList.map(item => (
-          <div key={item.id}>
-            <SectionSubHeadingStyled noMargin>
-              {item.university}
-            </SectionSubHeadingStyled>
-            <SectionSubHeadingStyled noMargin sm>
-              {item.specialize}
-            </SectionSubHeadingStyled>
-            <SectionSubHeadingStyled noMargin sm>
-              {item.website}
-            </SectionSubHeadingStyled>
-          </div>
-        ))}
+        <div>
+          {educationList.map(item => (
+            <BoxStyled key={item.id}>
+              <SectionSubHeadingStyled noMargin>
+                {item.university}
+              </SectionSubHeadingStyled>
+              <SectionSubHeadingStyled noMargin sm>
+                {item.specialize}
+              </SectionSubHeadingStyled>
+              <SectionSubHeadingStyled noMargin sm>
+                {item.website}
+              </SectionSubHeadingStyled>
+            </BoxStyled>
+          ))}
+        </div>
       </SectionStyled>
       <SectionStyled>
         <SectionHeadingStyled
@@ -76,9 +80,11 @@ const Minimal4 = () => {
         >
           Contact
         </SectionHeadingStyled>
-        {contactList.map(item => (
-          <div key={item.id}>{item.contactItem}</div>
-        ))}
+        <div>
+          {contactList.map(item => (
+            <div key={item.id}>{item.contactItem}</div>
+          ))}
+        </div>
       </SectionStyled>
     </WrapperStyled>
   )
@@ -100,7 +106,7 @@ const TitleStyled = styled.div<Title>`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  ${props => props.uppercase && "text-transform: uppercase;"};
+  ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 
@@ -123,8 +129,8 @@ type Section = {
 const SectionStyled = styled.div<Section>`
   display: flex;
   flex-direction: row;
-  margin-top: 40px;
-  ${props => props.first && "margin: 0;"};
+  margin-top: 32px;
+  ${props => props.first && 'margin: 0;'};
 `
 
 type SectionHeadingStyledProps = {
@@ -140,9 +146,17 @@ const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
   min-width: 110px;
   max-width: 110px;
   text-align: end;
-  ${props => props.uppercase && "text-transform: uppercase;"};
+  ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
+`
+
+const BoxStyled = styled.div`
+  margin-top: 1rem;
+
+  &:first-of-type {
+    margin: 0;
+  }
 `
 
 export default Minimal4
