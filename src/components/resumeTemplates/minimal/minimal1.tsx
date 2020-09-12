@@ -1,13 +1,13 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
-import { useFormContext } from "../../../contexts/form-context"
+import { useFormContext } from '../../../contexts/form-context'
 import {
   SectionHeadingStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
   SideStyled,
-} from "../commonStyles"
+} from '../commonStyles'
 
 const Minimal1 = () => {
   const {
@@ -27,7 +27,7 @@ const Minimal1 = () => {
         <div>{profile.subtitle}</div>
       </HeaderStyled>
       <MainStyled>
-        <SideStyled pr>
+        <SideStyled>
           <SectionHeadingStyled
             first
             uppercase={uppercaseHeading}
@@ -55,7 +55,7 @@ const Minimal1 = () => {
             ))}
           </SectionContentStyled>
         </SideStyled>
-        <SideStyled>
+        <SideStyled pl>
           <SectionHeadingStyled
             first
             uppercase={uppercaseHeading}
@@ -108,7 +108,7 @@ const HeaderStyled = styled.div<Header>`
   justify-content: center;
   align-items: center;
   height: 120px;
-  ${props => props.uppercase && "text-transform: uppercase;"};
+  ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 

@@ -1,13 +1,13 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
-import { useFormContext } from "../../../contexts/form-context"
+import { useFormContext } from '../../../contexts/form-context'
 import {
   SectionHeadingStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
   SideStyled,
-} from "../commonStyles"
+} from '../commonStyles'
 
 const Minimal2 = () => {
   const {
@@ -109,7 +109,7 @@ const TitleStyled = styled.div<Title>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  ${props => props.uppercase && "text-transform: uppercase;"};
+  ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 `

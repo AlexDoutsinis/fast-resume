@@ -91,8 +91,7 @@ const Minimal4 = () => {
 }
 
 const WrapperStyled = styled.div`
-  padding: 0 40px;
-  padding-bottom: 40px;
+  padding: 0 50px;
 `
 
 type Title = {

@@ -26,7 +26,7 @@ const Minimal3 = () => {
 
   return (
     <WrapperStyled>
-      <SideStyled pr>
+      <SideStyled>
         <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
           <div>{profile.fullName}</div>
           <span>{profile.subtitle}</span>
@@ -68,7 +68,7 @@ const Minimal3 = () => {
         </EducationStyled>
       </SideStyled>
 
-      <SideStyled>
+      <SideStyled pl>
         <SectionHeadingStyled
           first
           uppercase={uppercaseHeading}
