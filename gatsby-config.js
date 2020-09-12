@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `craftyourresume.io`,
-    description: `The Most Simple and Fastest way to Craft a Resume. 100% Free Resume Builder - Open Source. Easy to Use and Customizable. Resume Templates.`,
+    title: `CraftResume`,
+    description: `CraftResume - The Most Simple and Fastest way to Craft a Resume. 100% Free Resume Builder - Open Source. Easy to Use and Customizable. Resume Templates.`,
     author: 'Alexis Doutsinis',
   },
   plugins: [
@@ -30,8 +30,8 @@ module.exports = {
         name: `Craft Your Resume`,
         short_name: `Craft Your Resume`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#0f4c75`,
+        theme_color: `#0f4c75`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
