@@ -5,6 +5,8 @@ export {
   SectionContentStyled,
   SectionSubHeadingStyled,
   SideStyled,
+  FullNameStyled,
+  CurrentPositionStyled,
 }
 
 type SectionHeadingStyledProps = {
@@ -55,4 +57,20 @@ const SideStyled = styled.div<SideStyledProps>`
 
   ${props => props.pr && 'padding-right: 40px;'};
   ${props => props.pl && 'padding-left: 40px;'};
+`
+
+const FullNameStyled = styled.div`
+  font-size: 28px;
+  font-weight: 700;
+`
+
+type currentPosition = {
+  italic?: boolean
+}
+
+const CurrentPositionStyled = styled.div<currentPosition>`
+  font-size: 16px;
+  margin-top: 10px;
+
+  ${props => props.italic && 'font-style: italic;'};
 `

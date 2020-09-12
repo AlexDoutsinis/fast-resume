@@ -7,6 +7,8 @@ import {
   SectionContentStyled,
   SectionSubHeadingStyled,
   SideStyled,
+  FullNameStyled,
+  CurrentPositionStyled,
 } from '../commonStyles'
 
 const Minimal1 = () => {
@@ -23,8 +25,8 @@ const Minimal1 = () => {
   return (
     <>
       <HeaderStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-        <span>{profile.fullName}</span>
-        <div>{profile.currentPosition}</div>
+        <FullNameStyled>{profile.fullName}</FullNameStyled>
+        <CurrentPositionStyled>{profile.currentPosition}</CurrentPositionStyled>
       </HeaderStyled>
       <MainStyled>
         <SideStyled>
@@ -107,20 +109,10 @@ const HeaderStyled = styled.div<Header>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 120px;
+  height: 130px;
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
-
-  span {
-    font-size: 28px;
-    font-weight: 700;
-  }
-
-  div {
-    font-size: 16px;
-    margin-top: 12px;
-  }
 `
 
 const MainStyled = styled.div`

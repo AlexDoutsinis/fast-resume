@@ -7,6 +7,8 @@ import {
   SectionContentStyled,
   SectionSubHeadingStyled,
   SideStyled,
+  FullNameStyled,
+  CurrentPositionStyled,
 } from '../commonStyles'
 
 const Minimal2 = () => {
@@ -25,7 +27,9 @@ const Minimal2 = () => {
       <HeaderStyled>
         <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
           <FullNameStyled>{profile.fullName}</FullNameStyled>
-          <SubtitleStyled>{profile.currentPosition}</SubtitleStyled>
+          <CurrentPositionStyled italic>
+            {profile.currentPosition}
+          </CurrentPositionStyled>
         </TitleStyled>
         <ContactStyled>
           {contactList.map(item => (
@@ -112,17 +116,6 @@ const TitleStyled = styled.div<Title>`
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
-`
-
-const FullNameStyled = styled.div`
-  font-size: 32px;
-  font-weight: 700;
-`
-
-const SubtitleStyled = styled.div`
-  font-size: 18px;
-  font-style: italic;
-  margin-top: 10px;
 `
 
 const ContactStyled = styled.div`

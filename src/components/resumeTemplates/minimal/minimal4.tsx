@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { SectionSubHeadingStyled } from '../commonStyles'
+import {
+  CurrentPositionStyled,
+  FullNameStyled,
+  SectionSubHeadingStyled,
+} from '../commonStyles'
 import { useFormContext } from '../../../contexts/form-context'
 
 const Minimal4 = () => {
@@ -17,8 +21,10 @@ const Minimal4 = () => {
   return (
     <WrapperStyled>
       <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-        <div>{profile.fullName}</div>
-        <span>{profile.currentPosition}</span>
+        <FullNameStyled>{profile.fullName}</FullNameStyled>
+        <CurrentPositionStyled italic>
+          {profile.currentPosition}
+        </CurrentPositionStyled>
       </TitleStyled>
       <SectionStyled first>
         <SectionHeadingStyled
@@ -108,17 +114,6 @@ const TitleStyled = styled.div<Title>`
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
-
-  div {
-    font-size: 32px;
-    font-weight: 700;
-  }
-
-  span {
-    margin-top: 6px;
-    font-size: 14px;
-    font-style: italic;
-  }
 `
 
 type Section = {
