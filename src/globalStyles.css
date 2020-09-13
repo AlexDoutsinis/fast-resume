@@ -1,8 +1,8 @@
 /* Fonts */
 @font-face {
   font-family: Lato;
-  src: url("fonts/lato-regular.woff2") format("woff2"),
-    url("fonts/lato-regular.woff") format("woof");
+  src: url('fonts/lato-regular.woff2') format('woff2'),
+    url('fonts/lato-regular.woff') format('woof');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -10,8 +10,8 @@
 
 @font-face {
   font-family: Lato;
-  src: url("fonts/lato-bold.woff2") format("woff2"),
-    url("fonts/lato-bold.woff") format("woof");
+  src: url('fonts/lato-bold.woff2') format('woff2'),
+    url('fonts/lato-bold.woff') format('woof');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -19,8 +19,8 @@
 
 @font-face {
   font-family: Lato;
-  src: url("fonts/lato-italic.woff2") format("woff2"),
-    url("fonts/lato-italic.woff") format("woof");
+  src: url('fonts/lato-italic.woff2') format('woff2'),
+    url('fonts/lato-italic.woff') format('woof');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -78,9 +78,10 @@ a {
 }
 
 html {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   color: var(--font-color);
   background-color: white;
+  scroll-behavior: smooth;
 }
 
 @keyframes wobble {

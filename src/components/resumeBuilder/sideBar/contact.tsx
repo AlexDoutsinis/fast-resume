@@ -1,10 +1,10 @@
-import React from "react"
+import React from 'react'
 
-import { useFormContext, ContactList } from "../../../contexts/form-context"
-import AddInputBtn from "./addInputBtn"
-import { FormWrapperStyled } from "../../../styled/resumeBuilderStyles"
-import { useHandleForm } from "../../../hooks/use-handleForm"
-import RemoveInputBtn from "./removeInputBtn"
+import { useFormContext, ContactList } from '../../../contexts/form-context'
+import AddInputBtn from './addInputBtn'
+import { FormWrapperStyled } from '../../../styled/resumeBuilderStyles'
+import { useHandleForm } from '../../../hooks/use-handleForm'
+import RemoveInputBtn from './removeInputBtn'
 
 const Contact = () => {
   const { contactList, setContactList } = useFormContext()
@@ -30,7 +30,7 @@ const Contact = () => {
                 name="contactItem"
                 value={contact.contactItem}
                 onChange={e => handleInputChange(e, index)}
-                placeholder={"Mobile, Email, e.g."}
+                placeholder={'Mobile, Email, e.g.'}
                 ref={ref}
               />
             </div>

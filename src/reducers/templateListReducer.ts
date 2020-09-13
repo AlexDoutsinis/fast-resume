@@ -1,4 +1,4 @@
-import { useReducer } from "react"
+import { useReducer } from 'react'
 
 type State = {
   isModalOpen: boolean
@@ -8,16 +8,16 @@ type State = {
 
 type Action = {
   type:
-    | "openModal_startWobble"
-    | "closeModal_stopWobble"
-    | "stopWobble"
-    | "setCurrentTemplate"
+    | 'openModal_startWobble'
+    | 'closeModal_stopWobble'
+    | 'stopWobble'
+    | 'setCurrentTemplate'
   templateName?: string
 }
 
 export function templateListReducer(state: State, action: Action): State {
   switch (action.type) {
-    case "openModal_startWobble": {
+    case 'openModal_startWobble': {
       return {
         ...state,
         isModalOpen: true,
@@ -25,13 +25,13 @@ export function templateListReducer(state: State, action: Action): State {
         wobble: 1,
       }
     }
-    case "closeModal_stopWobble": {
+    case 'closeModal_stopWobble': {
       return { ...state, isModalOpen: false, wobble: 0 }
     }
-    case "stopWobble": {
+    case 'stopWobble': {
       return { ...state, wobble: 0 }
     }
-    case "setCurrentTemplate": {
+    case 'setCurrentTemplate': {
       return { ...state, currentTemplate: action.templateName }
     }
   }
@@ -39,7 +39,7 @@ export function templateListReducer(state: State, action: Action): State {
 
 const initialState: State = {
   isModalOpen: false,
-  currentTemplate: "",
+  currentTemplate: '',
   wobble: 0,
 }
 

@@ -73,7 +73,7 @@ export const FormContextProvider: React.FC<{}> = ({ children }) => {
       website: '',
     }) as EducationList,
   )
-  const [lineHeight, setLineHeight] = useState(1.3)
+  const [lineHeight, setLineHeight] = useState(1.15)
   const [uppercaseHeading, setUppercaseHeading] = useState(false)
   const [letterSpacing, setLetterSpacing] = useState(1)
 

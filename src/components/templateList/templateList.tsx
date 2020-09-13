@@ -1,33 +1,33 @@
-import React from "react"
+import React from 'react'
 
 import {
   TemplateWrapperStyled,
   TemplateStyled,
-} from "../../styled/templateListStyles"
-import { useTemplates } from "../../hooks/use-templates"
-import Template from "./template"
-import Modal from "./modal"
-import { FormContextProvider } from "../../contexts/form-context"
-import { useTemplateListContext } from "../../contexts/templateList-context"
+} from '../../styled/templateListStyles'
+import { useTemplates } from '../../hooks/use-templates'
+import Template from './template'
+import Modal from './modal'
+import { FormContextProvider } from '../../contexts/form-context'
+import { useTemplateListContext } from '../../contexts/templateList-context'
 
 const TemplateList: React.FC<{}> = ({ children: ResumeBuilder }) => {
   const { edges: templates } = useTemplates()
   const { state, dispatch } = useTemplateListContext()
 
   function openModal(templateName: string): void {
-    dispatch({ type: "openModal_startWobble", templateName })
+    dispatch({ type: 'openModal_startWobble', templateName })
   }
 
   function closeModal(): void {
-    dispatch({ type: "closeModal_stopWobble" })
+    dispatch({ type: 'closeModal_stopWobble' })
   }
 
   const modalProps = {
     isModalOpen: state.isModalOpen,
-    closeModal: closeModal,
+    closeModal,
     currentTemplate: state.currentTemplate,
     wobble: state.wobble,
-    stopWobble: () => dispatch({ type: "stopWobble" }),
+    stopWobble: () => dispatch({ type: 'stopWobble' }),
   }
 
   return (

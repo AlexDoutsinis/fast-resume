@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
@@ -12,33 +12,41 @@ import ResumeBuilder from '../components/resumeBuilder/resumeBuilder'
 import { TemplateListContextProvider } from '../contexts/templateList-context'
 import { device } from '../utils/device'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO
-      title="A Simple Way to Craft a Resume | 100% Free"
-      meta={[]}
-      lang="en"
-      description=""
-    />
-    <SectionStyled>
-      <Hero>
-        <HeroContent />
-      </Hero>
-    </SectionStyled>
-    <SectionStyled bgBlue>
-      <Features>
-        <FeaturesContent />
-      </Features>
-    </SectionStyled>
-    <TemplateListContextProvider>
+const scrollToRef = (ref: React.MutableRefObject<HTMLElement>) =>
+  window.scrollTo(0, ref.current.offsetTop)
+
+const IndexPage = () => {
+  const ref = useRef<HTMLElement>(null)
+  const executeScroll = () => scrollToRef(ref)
+
+  return (
+    <Layout>
+      <SEO
+        title="A Simple Way to Craft a Resume | 100% Free"
+        meta={[]}
+        lang="en"
+        description=""
+      />
       <SectionStyled>
-        <TemplateList>
-          <ResumeBuilder />
-        </TemplateList>
+        <Hero>
+          <HeroContent executeScroll={executeScroll} />
+        </Hero>
       </SectionStyled>
-    </TemplateListContextProvider>
-  </Layout>
-)
+      <SectionStyled bgBlue>
+        <Features>
+          <FeaturesContent />
+        </Features>
+      </SectionStyled>
+      <TemplateListContextProvider>
+        <SectionStyled ref={ref}>
+          <TemplateList>
+            <ResumeBuilder />
+          </TemplateList>
+        </SectionStyled>
+      </TemplateListContextProvider>
+    </Layout>
+  )
+}
 
 type Section = {
   bgBlue?: boolean
