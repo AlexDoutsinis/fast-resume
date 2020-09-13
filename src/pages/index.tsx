@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
@@ -11,13 +11,10 @@ import TemplateList from '../components/templateList/templateList'
 import ResumeBuilder from '../components/resumeBuilder/resumeBuilder'
 import { TemplateListContextProvider } from '../contexts/templateList-context'
 import { device } from '../utils/device'
-
-const scrollToRef = (ref: React.MutableRefObject<HTMLElement>) =>
-  window.scrollTo(0, ref.current.offsetTop)
+import { useScroll } from '../hooks/use-scroll'
 
 const IndexPage = () => {
-  const ref = useRef<HTMLElement>(null)
-  const executeScroll = () => scrollToRef(ref)
+  const { ref, executeScroll } = useScroll()
 
   return (
     <Layout>
