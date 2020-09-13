@@ -1,11 +1,11 @@
-import React from "react"
-import Img from "gatsby-image"
-import styled from "styled-components"
+import React from 'react'
+import Img from 'gatsby-image'
+import styled from 'styled-components'
 
-import { useTemplates } from "../../../hooks/use-templates"
-import { useFormContext } from "../../../contexts/form-context"
-import { device } from "../../../utils/device"
-import { useTemplateListContext } from "../../../contexts/templateList-context"
+import { useTemplates } from '../../../hooks/use-templates'
+import { useFormContext } from '../../../contexts/form-context'
+import { device } from '../../../utils/device'
+import { useTemplateListContext } from '../../../contexts/templateList-context'
 
 const Design = () => {
   const { edges: templates } = useTemplates()
@@ -41,10 +41,10 @@ const Design = () => {
   return (
     <>
       <InputWrapperStyled>
-        <label htmlFor="lineHeight">Line Height</label>
+        <label htmlFor="lineHeight">Line Height - Body</label>
         <input
           type="number"
-          step={"0.05"}
+          step={'0.05'}
           name="lineHeight"
           value={lineHeight}
           onChange={handleLineHeightChange}
@@ -54,7 +54,7 @@ const Design = () => {
         <label htmlFor="letterSpacing">Letter Spacing - Headings</label>
         <input
           type="number"
-          step={"0.5"}
+          step={'0.5'}
           name="letterSpacing"
           value={letterSpacing}
           onChange={handleLetterSpacingChange}
@@ -78,7 +78,7 @@ const Design = () => {
             selected={currentTemplate === node.name ? true : false}
             key={node.name}
             onClick={() =>
-              dispatch({ type: "setCurrentTemplate", templateName: node.name })
+              dispatch({ type: 'setCurrentTemplate', templateName: node.name })
             }
           >
             <Img
@@ -161,9 +161,9 @@ const ImgWrapperStyled = styled.div<ImgWrapperStyledProps>`
   box-shadow: 0px 0px 7px 1px var(--light-blue-color);
   border-radius: 5px;
 
-  ${props => props.selected && "border: solid var(--blue-color) 1px;"};
+  ${props => props.selected && 'border: solid var(--blue-color) 1px;'};
   ${props =>
-    props.selected && "box-shadow: 0px 0px 7px 1px var(--blue-color);"};
+    props.selected && 'box-shadow: 0px 0px 7px 1px var(--blue-color);'};
 `
 
 export default Design

@@ -28,8 +28,10 @@ const Minimal3 = () => {
     <WrapperStyled>
       <SideStyled>
         <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-          <div>{profile.fullName}</div>
-          <span>{profile.currentPosition}</span>
+          <FullNameStyled>{profile.fullName}</FullNameStyled>
+          <CurrentPositionStyled>
+            {profile.currentPosition}
+          </CurrentPositionStyled>
         </TitleStyled>
         <SectionHeadingStyled
           center
@@ -67,7 +69,6 @@ const Minimal3 = () => {
           ))}
         </EducationStyled>
       </SideStyled>
-
       <SideStyled pl>
         <SectionHeadingStyled
           first
@@ -115,18 +116,18 @@ const TitleStyled = styled.div<Title>`
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
+`
 
-  div {
-    font-size: 24px;
-    font-weight: 700;
-    text-align: center;
-  }
+const FullNameStyled = styled.div`
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+`
 
-  span {
-    margin-top: 10px;
-    font-size: 14px;
-    font-style: italic;
-  }
+const CurrentPositionStyled = styled.div`
+  margin-top: 8px;
+  font-size: 14px;
+  font-style: italic;
 `
 
 type Contact = {

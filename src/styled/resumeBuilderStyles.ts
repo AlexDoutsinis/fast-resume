@@ -1,7 +1,11 @@
-import styled from "styled-components"
-import { IoIosPhonePortrait } from "react-icons/io"
+import styled from 'styled-components'
+import { IoIosPhonePortrait } from 'react-icons/io'
 
-import { device } from "../utils/device"
+import { device } from '../utils/device'
+import {
+  SectionContentStyled,
+  SectionSubHeadingStyled,
+} from '../components/resumeTemplates/commonStyles'
 
 export const RotateIconWrapperStyled = styled.div`
   position: absolute;
@@ -97,7 +101,7 @@ export const NavItemStyled = styled.li<NavItemStyledProps>`
 
   ${props =>
     props.selectedNavItem === props.index &&
-    "color: var(--blue-color); font-weight: 700;"};
+    'color: var(--blue-color); font-weight: 700;'};
 `
 
 export const SideBarStyled = styled.div`
@@ -146,8 +150,8 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: ${props => (props.mb ? "1rem;" : "1.5rem;")};
-  ${props => props.mb05 && "margin-bottom: .5rem;"};
+  margin-bottom: ${props => (props.mb ? '1rem;' : '1.5rem;')};
+  ${props => props.mb05 && 'margin-bottom: .5rem;'};
 
   div {
     flex-basis: 60%;
@@ -236,9 +240,8 @@ export const CurrentTemplateBoxStyled = styled.div<
 >`
   width: 55%;
   display: inline-block;
-  ${props => props.lineHeight && `line-height: ${props.lineHeight};`};
+  line-height: 1.3;
   font-size: 12px;
-  word-wrap: break-word;
   overflow: auto;
   margin-top: 1rem;
   margin-left: 5%;
@@ -251,6 +254,10 @@ export const CurrentTemplateBoxStyled = styled.div<
   ${device.desktop`
     width: 65%
   `};
+
+  ${SectionContentStyled}, ${SectionSubHeadingStyled} {
+    ${props => props.lineHeight && `line-height: ${props.lineHeight};`};
+  }
 `
 
 export const CurrentTemplateWrapperStyled = styled.div`
