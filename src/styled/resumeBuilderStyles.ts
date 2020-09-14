@@ -109,7 +109,7 @@ export const SideBarStyled = styled.div`
   display: inline-block;
   width: 40%;
   vertical-align: top;
-  overflow-y: auto;
+  overflow: auto;
 
   ${device.tablet`
     padding-left: 8.5px;

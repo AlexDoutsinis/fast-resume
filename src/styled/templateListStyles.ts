@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { device } from "../utils/device"
+import { device } from '../utils/device'
 
 export const TemplateWrapperStyled = styled.div`
   h3 {
@@ -41,12 +41,17 @@ export const TemplateStyled = styled.div`
   }
 
   ${device.tablet`
-     grid-template-columns: repeat(4, 120px);
+     grid-template-columns: repeat(5, 100px);
+     column-gap: 2rem;
+  `};
+
+  ${device.laptop`
+     grid-template-columns: repeat(5, 120px);
      column-gap: 2rem;
   `};
 
   ${device.desktop`
-     grid-template-columns: repeat(4, 150px);
+     grid-template-columns: repeat(5, 150px);
      column-gap: 2.5rem;
   `};
 `

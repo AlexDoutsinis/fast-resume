@@ -72,30 +72,36 @@ const Design = () => {
         </div>
       </CheckboxWrapperStyled>
 
-      <ImgBoxStyled>
-        {templates.map(({ node }) => (
-          <ImgWrapperStyled
-            selected={currentTemplate === node.name ? true : false}
-            key={node.name}
-            onClick={() =>
-              dispatch({ type: 'setCurrentTemplate', templateName: node.name })
-            }
-          >
-            <Img
-              fluid={node.childImageSharp.fluid}
-              alt={`Resume template: '${node.name}'`}
-            />
-          </ImgWrapperStyled>
-        ))}
-      </ImgBoxStyled>
+      <HeadingStyled>Template</HeadingStyled>
+      <ImgBoxWrapperStyled>
+        <ImgBoxStyled>
+          {templates.map(({ node }) => (
+            <ImgWrapperStyled
+              selected={currentTemplate === node.name ? true : false}
+              key={node.name}
+              onClick={() =>
+                dispatch({
+                  type: 'setCurrentTemplate',
+                  templateName: node.name,
+                })
+              }
+            >
+              <Img
+                fluid={node.childImageSharp.fluid}
+                alt={`Resume template: '${node.name}'`}
+              />
+            </ImgWrapperStyled>
+          ))}
+        </ImgBoxStyled>
+      </ImgBoxWrapperStyled>
     </>
   )
 }
 
 const InputWrapperStyled = styled.div`
   width: 70%;
-  margin-bottom: 1.5rem;
-
+  margin-bottom: 1rem;
+  
   label {
     display: block;
     font-size: 14px;
@@ -125,6 +131,7 @@ const CheckboxWrapperStyled = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 1.2rem;
 
   div {
     flex-basis: 50px;
@@ -136,19 +143,26 @@ const CheckboxWrapperStyled = styled.div`
     margin: 0;
   }
 `
+const HeadingStyled = styled.div`
+  margin-bottom: 1rem;
+`
+
+const ImgBoxWrapperStyled = styled.div`
+  overflow: auto;
+`
 
 const ImgBoxStyled = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 60px);
+  grid-template-columns: repeat(5, 60px);
   grid-gap: 1.2rem;
   padding: 7px;
-  margin-top: 2.5rem;
-  overflow: auto;
+  width: 390px;
 
   ${device.tablet`
+    width: 510px;
     grid-gap: 1.5rem;
-    grid-template-columns: repeat(4, 80px);
-  `}
+    grid-template-columns: repeat(5, 80px);
+  `};
 `
 
 type ImgWrapperStyledProps = {

@@ -1,13 +1,13 @@
-import React from "react"
+import React from 'react'
 
-import { SideBarStyled } from "../../../styled/resumeBuilderStyles"
-import Profile from "./profile"
-import Skills from "./skills"
-import Contact from "./contact"
-import Experience from "./Experience"
-import Education from "./education"
-import Design from "./design"
-import { useSelectedNavItemContext } from "../../../contexts/selectedNavItem-context"
+import { SideBarStyled } from '../../../styled/resumeBuilderStyles'
+import Profile from './profile'
+import Skills from './skills'
+import Contact from './contact'
+import Experience from './Experience'
+import Education from './education'
+import Design from './design'
+import { useSelectedNavItemContext } from '../../../contexts/selectedNavItem-context'
 
 const SideBar = () => {
   const { selectedNavItem } = useSelectedNavItemContext()
@@ -15,12 +15,12 @@ const SideBar = () => {
   return (
     <>
       <SideBarStyled>
-        {selectedNavItem === "Profile" && <Profile />}
-        {selectedNavItem === "Skills" && <Skills />}
-        {selectedNavItem === "Contact" && <Contact />}
-        {selectedNavItem === "Experience" && <Experience />}
-        {selectedNavItem === "Education" && <Education />}
-        {selectedNavItem === "Design" && <Design />}
+        {selectedNavItem === 'Profile' && <Profile />}
+        {selectedNavItem === 'Skills' && <Skills />}
+        {selectedNavItem === 'Contact' && <Contact />}
+        {selectedNavItem === 'Experience' && <Experience />}
+        {selectedNavItem === 'Education' && <Education />}
+        {selectedNavItem === 'Design' && <Design />}
       </SideBarStyled>
     </>
   )
