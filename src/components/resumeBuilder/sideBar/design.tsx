@@ -131,7 +131,7 @@ const CheckboxWrapperStyled = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.3rem;
 
   div {
     flex-basis: 50px;
@@ -143,8 +143,9 @@ const CheckboxWrapperStyled = styled.div`
     margin: 0;
   }
 `
+
 const HeadingStyled = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
 `
 
 const ImgBoxWrapperStyled = styled.div`

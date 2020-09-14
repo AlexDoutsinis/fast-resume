@@ -30,9 +30,9 @@ export const TemplateWrapperStyled = styled.div`
 
 export const TemplateStyled = styled.div`
   display: grid;
-  grid-template-columns: 100px 100px;
-  justify-content: center;
-  grid-gap: 1.5rem;
+  grid-template-columns: repeat(5, 80px);
+  grid-gap: 1rem;
+  overflow: auto;
 
   div {
     border: solid 1px var(--blue-color);
@@ -42,6 +42,7 @@ export const TemplateStyled = styled.div`
 
   ${device.tablet`
      grid-template-columns: repeat(5, 100px);
+     justify-content: center;
      column-gap: 2rem;
   `};
 
