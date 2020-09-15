@@ -86,11 +86,15 @@ const Design = () => {
         </div>
       </CheckboxWrapperStyled>
       <HeadingStyled>Color</HeadingStyled>
-      <CirclePicker
-        colors={colors}
-        color={color}
-        onChange={handleColorChange}
-      />
+      <CirclePickerWrapperStyled>
+        <CirclePicker
+          colors={colors}
+          color={color}
+          onChange={handleColorChange}
+          circleSize={24}
+          circleSpacing={12}
+        />
+      </CirclePickerWrapperStyled>
       <HeadingStyled mt>Font</HeadingStyled>
       <SelectWrapperStyled>
         <SelectStyled value={font} onChange={handleFontChange}>
@@ -246,4 +250,14 @@ const SelectStyled = styled.select`
   `};
 `
 
+const CirclePickerWrapperStyled = styled.div`
+  ${device.mobileS`
+    overflow-x: auto;
+    overflow-y: hidden;
+  `}
+
+  ${device.tablet`
+    overflow: visible;
+  `}
+`
 export default Design
