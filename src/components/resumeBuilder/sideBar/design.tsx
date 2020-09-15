@@ -24,6 +24,8 @@ const Design = () => {
     setLetterSpacing,
     color,
     setColor,
+    font,
+    setFont,
   } = useFormContext()
 
   function handleLineHeightChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -42,12 +44,12 @@ const Design = () => {
     if (value <= maxValue && value >= minValue) setLetterSpacing(value)
   }
 
-  type Color = {
-    hex: string
+  function handleColorChange({ hex }: { hex: string }) {
+    setColor(hex)
   }
 
-  function updateColor(updatedColor: Color) {
-    setColor(updatedColor.hex)
+  function handleFontChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    setFont(e.target.value)
   }
 
   return (
@@ -84,16 +86,20 @@ const Design = () => {
         </div>
       </CheckboxWrapperStyled>
       <HeadingStyled>Color</HeadingStyled>
-      <CirclePicker colors={colors} color={color} onChange={updateColor} />
+      <CirclePicker
+        colors={colors}
+        color={color}
+        onChange={handleColorChange}
+      />
       <HeadingStyled mt>Font</HeadingStyled>
       <SelectWrapperStyled>
-        <SelectStyled>
-          <option value="grapefruit">Grapefruit</option>
-          <option value="lime">Lime</option>
-          <option selected value="coconut">
-            Coconut
-          </option>
-          <option value="mango">Mango</option>
+        <SelectStyled value={font} onChange={handleFontChange}>
+          <option value="Lato">Lato</option>
+          <option value="Montserrat">Montserrat</option>
+          <option value="Karla">Karla</option>
+          <option value="Source Sans Pro">Source Sans Pro</option>
+          <option value="Titillium Web">Titillium Web</option>
+          <option value="Arvo">Arvo</option>
         </SelectStyled>
       </SelectWrapperStyled>
       <HeadingStyled>Template</HeadingStyled>

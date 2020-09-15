@@ -240,6 +240,7 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
 
 type CurrentTemplateBoxStyledProps = {
   lineHeight: number
+  font: string
 }
 
 export const CurrentTemplateBoxStyled = styled.div<
@@ -265,6 +266,8 @@ export const CurrentTemplateBoxStyled = styled.div<
   ${SectionContentStyled}, ${SectionSubHeadingStyled} {
     ${props => props.lineHeight && `line-height: ${props.lineHeight};`};
   }
+
+  ${props => props.font && `font-family: '${props.font}';`};
 `
 
 export const CurrentTemplateWrapperStyled = styled.div`

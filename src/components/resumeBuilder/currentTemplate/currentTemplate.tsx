@@ -18,10 +18,10 @@ const CurrentTemplate = () => {
   const {
     state: { currentTemplate },
   } = useTemplateListContext()
-  const { lineHeight } = useFormContext()
+  const { lineHeight, font } = useFormContext()
 
   return (
-    <CurrentTemplateBoxStyled lineHeight={lineHeight}>
+    <CurrentTemplateBoxStyled lineHeight={lineHeight} font={font}>
       <CurrentTemplateWrapperStyled>
         {currentTemplate === 'minimal-1' && <Minimal1 />}
         {currentTemplate === 'minimal-2' && <Minimal2 />}
