@@ -25,6 +25,37 @@ module.exports = {
     },
     'gatsby-disable-404',
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Lato`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Montserrat`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Karla`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Source Sans Pro`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Titillium Web`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Arvo`,
+            variants: [`400`, `700`],
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Craft Your Resume`,
