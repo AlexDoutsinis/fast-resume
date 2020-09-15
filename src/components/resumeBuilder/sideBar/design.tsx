@@ -7,20 +7,7 @@ import { useTemplates } from '../../../hooks/use-templates'
 import { useFormContext } from '../../../contexts/form-context'
 import { device } from '../../../utils/device'
 import { useTemplateListContext } from '../../../contexts/templateList-context'
-
-const colors = [
-  '#46b3e6',
-  '#1b262c',
-  '#3e978b',
-  '#e84545',
-  '#ff935c',
-  '#4a69bb',
-  '#b063c5',
-  '#b5525c',
-  '#d789d7',
-  '#8f71ff',
-  '#cbaf87',
-]
+import { colors } from '../../../utils/colorPicker'
 
 const Design = () => {
   const { edges: templates } = useTemplates()
@@ -98,7 +85,18 @@ const Design = () => {
       </CheckboxWrapperStyled>
       <HeadingStyled>Color</HeadingStyled>
       <CirclePicker colors={colors} color={color} onChange={updateColor} />
-      <HeadingStyled mt>Template</HeadingStyled>
+      <HeadingStyled mt>Font</HeadingStyled>
+      <SelectWrapperStyled>
+        <SelectStyled>
+          <option value="grapefruit">Grapefruit</option>
+          <option value="lime">Lime</option>
+          <option selected value="coconut">
+            Coconut
+          </option>
+          <option value="mango">Mango</option>
+        </SelectStyled>
+      </SelectWrapperStyled>
+      <HeadingStyled>Template</HeadingStyled>
       <ImgBoxWrapperStyled>
         <ImgBoxStyled>
           {templates.map(({ node }) => (
@@ -214,6 +212,32 @@ const ImgWrapperStyled = styled.div<ImgWrapperStyledProps>`
   ${props => props.selected && 'border: solid var(--blue-color) 1px;'};
   ${props =>
     props.selected && 'box-shadow: 0px 0px 7px 1px var(--blue-color);'};
+`
+
+const SelectWrapperStyled = styled.div`
+  width: 70%;
+  margin-bottom: 1.2rem;
+`
+
+const SelectStyled = styled.select`
+  padding: 6px 10px;
+  width: 70%;
+
+  option {
+    padding: 6px 10px;
+  }
+
+  ${device.tablet`
+    width: 40%;
+  `};
+
+  ${device.laptop`
+    width: 35%;
+  `};
+
+  ${device.laptopL`
+    width: 30%;
+  `};
 `
 
 export default Design

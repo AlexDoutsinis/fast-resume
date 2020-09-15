@@ -138,6 +138,13 @@ export const SideBarStyled = styled.div`
     max-height: 200px;
     margin-bottom: 0;
   }
+
+  select {
+    font-size: 12px;
+    line-height: 1.3;
+    outline: none;
+    border: solid var(--blue-color) 1px;
+  }
 `
 
 type FormWrapperStyledProps = {
