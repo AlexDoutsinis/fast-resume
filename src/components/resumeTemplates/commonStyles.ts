@@ -19,6 +19,7 @@ type SectionHeadingStyledProps = {
   mt20?: boolean
   uppercase: boolean
   letterSpacing: number
+  color: string
 }
 
 const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
@@ -35,6 +36,8 @@ const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
     props.underline &&
     'padding-bottom: 5px; border-bottom: solid var(--font-color) 1px;'};
   ${props => props.mt20 && 'margin-top: 20px;'};
+  ${props =>
+    props.color && `color: ${props.color}; border-color: ${props.color};`};
 `
 
 type SectionContentStyledProps = {
@@ -73,9 +76,18 @@ const SideStyled = styled.div<SideStyledProps>`
   ${props => props.pl && 'padding-left: 40px;'};
 `
 
-const FullNameStyled = styled.div`
+type FullNameStyledProps = {
+  sm?: boolean
+  center?: boolean
+  color: string
+}
+
+const FullNameStyled = styled.div<FullNameStyledProps>`
   font-size: 28px;
   font-weight: 700;
+  ${props => props.sm && 'font-size: 24px;'};
+  ${props => props.center && 'text-align: center;'};
+  ${props => props.color && `color: ${props.color};`};
 `
 
 type currentPosition = {

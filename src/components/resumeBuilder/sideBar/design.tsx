@@ -1,11 +1,26 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import { CirclePicker } from 'react-color'
 
 import { useTemplates } from '../../../hooks/use-templates'
 import { useFormContext } from '../../../contexts/form-context'
 import { device } from '../../../utils/device'
 import { useTemplateListContext } from '../../../contexts/templateList-context'
+
+const colors = [
+  '#ffa372',
+  '#ed6663',
+  '#931a25',
+  '#cf7500',
+  '#43658b',
+  '#5d54a4',
+  '#1b262c',
+  '#9d65c9',
+  '#d789d7',
+  '#91d18b',
+  '#206a5d',
+]
 
 const Design = () => {
   const { edges: templates } = useTemplates()
@@ -20,6 +35,8 @@ const Design = () => {
     setUppercaseHeading,
     letterSpacing,
     setLetterSpacing,
+    color,
+    setColor,
   } = useFormContext()
 
   function handleLineHeightChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -36,6 +53,14 @@ const Design = () => {
     const value = parseFloat(e.target.value)
 
     if (value <= maxValue && value >= minValue) setLetterSpacing(value)
+  }
+
+  type Color = {
+    hex: string
+  }
+
+  function updateColor(updatedColor: Color) {
+    setColor(updatedColor.hex)
   }
 
   return (
@@ -71,8 +96,9 @@ const Design = () => {
           />
         </div>
       </CheckboxWrapperStyled>
-
-      <HeadingStyled>Template</HeadingStyled>
+      <HeadingStyled>Color</HeadingStyled>
+      <CirclePicker colors={colors} color={color} onChange={updateColor} />
+      <HeadingStyled mt>Template</HeadingStyled>
       <ImgBoxWrapperStyled>
         <ImgBoxStyled>
           {templates.map(({ node }) => (
@@ -148,8 +174,13 @@ const CheckboxWrapperStyled = styled.div`
   }
 `
 
-const HeadingStyled = styled.div`
+type HeadingStyledProps = {
+  mt?: boolean
+}
+
+const HeadingStyled = styled.div<HeadingStyledProps>`
   margin-bottom: 1.2rem;
+  ${props => props.mt && 'margin-top: 1.2rem;'}
 `
 
 const ImgBoxWrapperStyled = styled.div`

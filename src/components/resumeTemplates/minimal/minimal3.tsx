@@ -6,6 +6,8 @@ import {
   SectionHeadingStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
+  CurrentPositionStyled,
+  FullNameStyled,
 } from '../commonStyles'
 import { useFormContext } from '../../../contexts/form-context'
 
@@ -18,6 +20,7 @@ const Minimal3 = () => {
     educationList,
     uppercaseHeading,
     letterSpacing,
+    color,
   } = useFormContext()
 
   const isContactListEmpty = contactList.reduce((isEmpty, value) => {
@@ -28,8 +31,10 @@ const Minimal3 = () => {
     <WrapperStyled>
       <SideStyled>
         <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-          <FullNameStyled>{profile.fullName}</FullNameStyled>
-          <CurrentPositionStyled>
+          <FullNameStyled sm center color={color}>
+            {profile.fullName}
+          </FullNameStyled>
+          <CurrentPositionStyled mt5 sm italic>
             {profile.currentPosition}
           </CurrentPositionStyled>
         </TitleStyled>
@@ -37,6 +42,7 @@ const Minimal3 = () => {
           center
           uppercase={uppercaseHeading}
           letterSpacing={letterSpacing}
+          color={color}
         >
           Profile
         </SectionHeadingStyled>
@@ -50,6 +56,7 @@ const Minimal3 = () => {
           center
           uppercase={uppercaseHeading}
           letterSpacing={letterSpacing}
+          color={color}
         >
           Education
         </SectionHeadingStyled>
@@ -74,6 +81,7 @@ const Minimal3 = () => {
           first
           uppercase={uppercaseHeading}
           letterSpacing={letterSpacing}
+          color={color}
         >
           Experience
         </SectionHeadingStyled>
@@ -87,6 +95,7 @@ const Minimal3 = () => {
         <SectionHeadingStyled
           uppercase={uppercaseHeading}
           letterSpacing={letterSpacing}
+          color={color}
         >
           Skills
         </SectionHeadingStyled>
@@ -118,17 +127,17 @@ const TitleStyled = styled.div<Title>`
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 `
 
-const FullNameStyled = styled.div`
-  font-size: 24px;
-  font-weight: 700;
-  text-align: center;
-`
+// const FullNameStyled = styled.div`
+//   font-size: 24px;
+//   font-weight: 700;
+//   text-align: center;
+// `
 
-const CurrentPositionStyled = styled.div`
-  margin-top: 8px;
-  font-size: 14px;
-  font-style: italic;
-`
+// const CurrentPositionStyled = styled.div`
+//   margin-top: 8px;
+//   font-size: 14px;
+//   font-style: italic;
+// `
 
 type Contact = {
   isEmpty: boolean

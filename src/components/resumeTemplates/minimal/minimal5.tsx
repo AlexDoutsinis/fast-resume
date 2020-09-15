@@ -21,13 +21,14 @@ const Minimal5 = () => {
     educationList,
     uppercaseHeading,
     letterSpacing,
+    color,
   } = useFormContext()
 
   return (
     <WrapperStyled>
       <TemplateWrapperStyled>
         <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-          <FullNameStyled>{profile.fullName}</FullNameStyled>
+          <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
           <CurrentPositionStyled mt5 sm bold>
             {profile.currentPosition}
           </CurrentPositionStyled>
@@ -46,6 +47,7 @@ const Minimal5 = () => {
           large
           underline
           mt20
+          color={color}
         >
           Experience
         </SectionHeadingStyled>
@@ -68,6 +70,7 @@ const Minimal5 = () => {
           large
           underline
           mt20
+          color={color}
         >
           Education
         </SectionHeadingStyled>
@@ -92,6 +95,7 @@ const Minimal5 = () => {
           large
           underline
           mt20
+          color={color}
         >
           Skills
         </SectionHeadingStyled>

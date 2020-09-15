@@ -16,6 +16,7 @@
     "gatsby-transformer-sharp": "^2.5.12",
     "nanoid": "^3.1.12",
     "react": "^16.12.0",
+    "react-color": "^2.18.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-modal": "^3.11.2",

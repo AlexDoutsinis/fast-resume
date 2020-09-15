@@ -18,12 +18,13 @@ const Minimal4 = () => {
     educationList,
     uppercaseHeading,
     letterSpacing,
+    color,
   } = useFormContext()
 
   return (
     <WrapperStyled>
       <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-        <FullNameStyled>{profile.fullName}</FullNameStyled>
+        <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
         <CurrentPositionStyled italic>
           {profile.currentPosition}
         </CurrentPositionStyled>
@@ -32,6 +33,7 @@ const Minimal4 = () => {
         <SectionHeadingStyled
           uppercase={uppercaseHeading}
           letterSpacing={letterSpacing}
+          color={color}
         >
           About Me
         </SectionHeadingStyled>
@@ -41,6 +43,7 @@ const Minimal4 = () => {
         <SectionHeadingStyled
           uppercase={uppercaseHeading}
           letterSpacing={letterSpacing}
+          color={color}
         >
           Experience
         </SectionHeadingStyled>
@@ -62,6 +65,7 @@ const Minimal4 = () => {
         <SectionHeadingStyled
           uppercase={uppercaseHeading}
           letterSpacing={letterSpacing}
+          color={color}
         >
           Education
         </SectionHeadingStyled>
@@ -85,6 +89,7 @@ const Minimal4 = () => {
         <SectionHeadingStyled
           uppercase={uppercaseHeading}
           letterSpacing={letterSpacing}
+          color={color}
         >
           Contact
         </SectionHeadingStyled>
@@ -128,6 +133,7 @@ const SectionStyled = styled.div<Section>`
 type SectionHeadingStyledProps = {
   uppercase: boolean
   letterSpacing: number
+  color: string
 }
 
 const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
@@ -141,6 +147,7 @@ const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
+  ${props => props.color && `color: ${props.color};`};
 `
 
 export default Minimal4

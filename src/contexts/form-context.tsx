@@ -43,6 +43,8 @@ type FormContextProps = {
   setUppercaseHeading: React.Dispatch<React.SetStateAction<boolean>>
   letterSpacing: number
   setLetterSpacing: React.Dispatch<React.SetStateAction<number>>
+  color: string
+  setColor: React.Dispatch<React.SetStateAction<string>>
 }
 
 const FormContext = createContext({} as FormContextProps)
@@ -76,6 +78,7 @@ export const FormContextProvider: React.FC<{}> = ({ children }) => {
   const [lineHeight, setLineHeight] = useState(1.15)
   const [uppercaseHeading, setUppercaseHeading] = useState(false)
   const [letterSpacing, setLetterSpacing] = useState(1)
+  const [color, setColor] = useState('#1b262c')
 
   const FormContextState = {
     profile,
@@ -94,6 +97,8 @@ export const FormContextProvider: React.FC<{}> = ({ children }) => {
     setUppercaseHeading,
     letterSpacing,
     setLetterSpacing,
+    color,
+    setColor,
   }
 
   return (

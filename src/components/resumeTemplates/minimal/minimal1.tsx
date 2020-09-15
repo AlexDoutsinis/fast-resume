@@ -20,12 +20,13 @@ const Minimal1 = () => {
     educationList,
     uppercaseHeading,
     letterSpacing,
+    color,
   } = useFormContext()
 
   return (
     <>
       <HeaderStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-        <FullNameStyled>{profile.fullName}</FullNameStyled>
+        <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
         <CurrentPositionStyled>{profile.currentPosition}</CurrentPositionStyled>
       </HeaderStyled>
       <MainStyled>
@@ -34,6 +35,7 @@ const Minimal1 = () => {
             first
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
+            color={color}
           >
             Profile
           </SectionHeadingStyled>
@@ -41,6 +43,7 @@ const Minimal1 = () => {
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
+            color={color}
           >
             Skills
           </SectionHeadingStyled>
@@ -48,6 +51,7 @@ const Minimal1 = () => {
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
+            color={color}
           >
             Contact
           </SectionHeadingStyled>
@@ -62,6 +66,7 @@ const Minimal1 = () => {
             first
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
+            color={color}
           >
             Experience
           </SectionHeadingStyled>
@@ -77,6 +82,7 @@ const Minimal1 = () => {
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
+            color={color}
           >
             Education
           </SectionHeadingStyled>
