@@ -9,17 +9,17 @@ import { device } from '../../../utils/device'
 import { useTemplateListContext } from '../../../contexts/templateList-context'
 
 const colors = [
-  '#ffa372',
-  '#ed6663',
-  '#931a25',
-  '#cf7500',
-  '#43658b',
-  '#5d54a4',
+  '#46b3e6',
   '#1b262c',
-  '#9d65c9',
+  '#3e978b',
+  '#e84545',
+  '#ff935c',
+  '#4a69bb',
+  '#b063c5',
+  '#b5525c',
   '#d789d7',
-  '#91d18b',
-  '#206a5d',
+  '#8f71ff',
+  '#cbaf87',
 ]
 
 const Design = () => {
