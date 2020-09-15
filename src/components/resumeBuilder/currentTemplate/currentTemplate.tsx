@@ -11,6 +11,7 @@ import {
   Minimal2,
   Minimal3,
   Minimal4,
+  Minimal5,
 } from '../../resumeTemplates/minimal'
 
 const CurrentTemplate = () => {
@@ -26,6 +27,7 @@ const CurrentTemplate = () => {
         {currentTemplate === 'minimal-2' && <Minimal2 />}
         {currentTemplate === 'minimal-3' && <Minimal3 />}
         {currentTemplate === 'minimal-4' && <Minimal4 />}
+        {currentTemplate === 'minimal-5' && <Minimal5 />}
       </CurrentTemplateWrapperStyled>
     </CurrentTemplateBoxStyled>
   )

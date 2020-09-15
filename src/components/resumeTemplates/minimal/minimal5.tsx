@@ -1,18 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { useFormContext } from '../../../contexts/form-context'
 import {
   BoxStyled,
   CurrentPositionStyled,
   FullNameStyled,
+  SectionContentStyled,
+  SectionHeadingStyled,
   SectionSubHeadingStyled,
   WrapperStyled,
 } from '../commonStyles'
-import { useFormContext } from '../../../contexts/form-context'
 
-const Minimal4 = () => {
+const Minimal5 = () => {
   const {
     profile,
+    skills,
     contactList,
     experienceList,
     educationList,
@@ -22,29 +25,31 @@ const Minimal4 = () => {
 
   return (
     <WrapperStyled>
-      <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-        <FullNameStyled>{profile.fullName}</FullNameStyled>
-        <CurrentPositionStyled italic>
-          {profile.currentPosition}
-        </CurrentPositionStyled>
-      </TitleStyled>
-      <SectionStyled first>
+      <TemplateWrapperStyled>
+        <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
+          <FullNameStyled>{profile.fullName}</FullNameStyled>
+          <CurrentPositionStyled mt5 sm bold>
+            {profile.currentPosition}
+          </CurrentPositionStyled>
+        </TitleStyled>
+        <ContactWrapperStyled>
+          {contactList.map(item => (
+            <div key={item.id}>{item.contactItem}</div>
+          ))}
+        </ContactWrapperStyled>
+        <SectionContentStyled mt10>
+          {profile.profileSummary}
+        </SectionContentStyled>
         <SectionHeadingStyled
           uppercase={uppercaseHeading}
           letterSpacing={letterSpacing}
-        >
-          About Me
-        </SectionHeadingStyled>
-        <div>{profile.profileSummary}</div>
-      </SectionStyled>
-      <SectionStyled>
-        <SectionHeadingStyled
-          uppercase={uppercaseHeading}
-          letterSpacing={letterSpacing}
+          large
+          underline
+          mt20
         >
           Experience
         </SectionHeadingStyled>
-        <div>
+        <SectionContentStyled mt10>
           {experienceList.map(item => (
             <BoxStyled key={item.id}>
               <SectionSubHeadingStyled noMargin>
@@ -56,16 +61,17 @@ const Minimal4 = () => {
               <div>{item.description}</div>
             </BoxStyled>
           ))}
-        </div>
-      </SectionStyled>
-      <SectionStyled>
+        </SectionContentStyled>
         <SectionHeadingStyled
           uppercase={uppercaseHeading}
           letterSpacing={letterSpacing}
+          large
+          underline
+          mt20
         >
           Education
         </SectionHeadingStyled>
-        <div>
+        <SectionContentStyled mt10>
           {educationList.map(item => (
             <BoxStyled key={item.id}>
               <SectionSubHeadingStyled noMargin>
@@ -79,24 +85,26 @@ const Minimal4 = () => {
               </SectionSubHeadingStyled>
             </BoxStyled>
           ))}
-        </div>
-      </SectionStyled>
-      <SectionStyled>
+        </SectionContentStyled>
         <SectionHeadingStyled
           uppercase={uppercaseHeading}
           letterSpacing={letterSpacing}
+          large
+          underline
+          mt20
         >
-          Contact
+          Skills
         </SectionHeadingStyled>
-        <div>
-          {contactList.map(item => (
-            <div key={item.id}>{item.contactItem}</div>
-          ))}
-        </div>
-      </SectionStyled>
+        <SectionContentStyled mt10>{skills}</SectionContentStyled>
+      </TemplateWrapperStyled>
     </WrapperStyled>
   )
 }
+
+const TemplateWrapperStyled = styled.div`
+  padding: 0 20px;
+  padding-top: 30px;
+`
 
 type Title = {
   uppercase: boolean
@@ -104,43 +112,13 @@ type Title = {
 }
 
 const TitleStyled = styled.div<Title>`
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 `
 
-type Section = {
-  first?: boolean
-}
-
-const SectionStyled = styled.div<Section>`
-  display: flex;
-  flex-direction: row;
-  margin-top: 32px;
-  ${props => props.first && 'margin: 0;'};
+const ContactWrapperStyled = styled.div`
+  margin-top: 5px;
 `
 
-type SectionHeadingStyledProps = {
-  uppercase: boolean
-  letterSpacing: number
-}
-
-const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
-  margin-right: 20px;
-  margin-top: -2px;
-  font-size: 14px;
-  font-weight: 700;
-  min-width: 110px;
-  max-width: 110px;
-  text-align: end;
-  ${props => props.uppercase && 'text-transform: uppercase;'};
-  ${props =>
-    props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
-`
-
-export default Minimal4
+export default Minimal5

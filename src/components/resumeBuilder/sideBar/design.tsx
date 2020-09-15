@@ -39,7 +39,7 @@ const Design = () => {
   }
 
   return (
-    <>
+    <DesignTabWrapperStyled>
       <InputWrapperStyled>
         <label htmlFor="lineHeight">Line Height - Body</label>
         <input
@@ -94,23 +94,27 @@ const Design = () => {
           ))}
         </ImgBoxStyled>
       </ImgBoxWrapperStyled>
-    </>
+    </DesignTabWrapperStyled>
   )
 }
 
+const DesignTabWrapperStyled = styled.div`
+  font-size: 14px;
+`
+
 const InputWrapperStyled = styled.div`
   width: 70%;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   
   label {
     display: block;
-    font-size: 14px;
     margin-bottom: 0.8rem;
   }
 
   input {
     width: 70%;
     padding: 6px 10px;
+    margin: 0;
 
     ${device.tablet`
       width: 40%;
@@ -131,7 +135,7 @@ const CheckboxWrapperStyled = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.2rem;
 
   div {
     flex-basis: 50px;
@@ -145,7 +149,7 @@ const CheckboxWrapperStyled = styled.div`
 `
 
 const HeadingStyled = styled.div`
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.2rem;
 `
 
 const ImgBoxWrapperStyled = styled.div`
