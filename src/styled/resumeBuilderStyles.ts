@@ -76,9 +76,10 @@ export const NavStyled = styled.nav`
     background: none;
     margin-left: 10px;
     font-size: inherit;
-    border: solid var(--blue-color) 1px;
+    border: solid var(--blue-color) 2px;
     display: inline-block;
     cursor: pointer;
+    outline: none;
 
     ${device.tablet`
       padding: 3px 6px;

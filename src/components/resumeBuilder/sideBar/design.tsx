@@ -172,14 +172,26 @@ const CheckboxWrapperStyled = styled.div`
   margin-bottom: 1.2rem;
 
   div {
-    flex-basis: 50px;
-    height: 1rem;
+    flex-basis: 40px;
+    height: 0.8rem;
   }
 
   input {
     cursor: pointer;
     margin: 0;
   }
+
+  ${device.mobileM`
+    width: 80%;
+  `}
+
+  ${device.mobileL`
+    width: 75%;
+  `}
+
+  ${device.tablet`
+    width: 100%;
+  `}
 `
 
 type HeadingStyledProps = {
