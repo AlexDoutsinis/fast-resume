@@ -33,7 +33,10 @@ const Design = () => {
     const minValue = 1
     const value = parseFloat(e.target.value)
 
-    if (value <= maxValue && value >= minValue) setLineHeight(value)
+    if (value <= maxValue && value >= minValue) {
+      setLineHeight(value)
+      localStorage.setItem('lineHeight', value.toString())
+    }
   }
 
   function handleLetterSpacingChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -41,15 +44,25 @@ const Design = () => {
     const minValue = 1
     const value = parseFloat(e.target.value)
 
-    if (value <= maxValue && value >= minValue) setLetterSpacing(value)
+    if (value <= maxValue && value >= minValue) {
+      setLetterSpacing(value)
+      localStorage.setItem('letterSpacing', value.toString())
+    }
+  }
+
+  function handleUppercaseChange() {
+    setUppercaseHeading(isUppercase => !isUppercase)
+    localStorage.setItem('uppercaseHeading', `${!uppercaseHeading}`)
   }
 
   function handleColorChange({ hex }: { hex: string }) {
     setColor(hex)
+    localStorage.setItem('color', hex)
   }
 
   function handleFontChange(e: React.ChangeEvent<HTMLSelectElement>) {
     setFont(e.target.value)
+    localStorage.setItem('font', e.target.value)
   }
 
   return (
@@ -81,7 +94,7 @@ const Design = () => {
             name="uppercase"
             type="checkbox"
             checked={uppercaseHeading}
-            onChange={() => setUppercaseHeading(isUppercase => !isUppercase)}
+            onChange={handleUppercaseChange}
           />
         </div>
       </CheckboxWrapperStyled>

@@ -8,6 +8,12 @@ const storedFullName = localStorage.getItem('fullName')
 const storedCurrentPosition = localStorage.getItem('currentPosition')
 const storedProfileSummary = localStorage.getItem('profileSummary')
 const storedSkills = localStorage.getItem('skills')
+const storedLineHeight = parseFloat(localStorage.getItem('lineHeight'))
+const storedLetterSpacing = parseFloat(localStorage.getItem('letterSpacing'))
+const storedUppercaseHeading =
+  localStorage.getItem('uppercaseHeading') == 'true'
+const storedColor = localStorage.getItem('color')
+const storedFont = localStorage.getItem('font')
 
 const storeContactList: ContactList = JSON.parse(
   localStorage.getItem('ContactList'),
@@ -27,6 +33,11 @@ type StoredData = {
   storeContactList: ContactList
   storeExperienceList: ExperienceList
   storeEducationList: EducationList
+  storedLineHeight: number
+  storedLetterSpacing: number
+  storedUppercaseHeading: boolean
+  storedColor: string
+  storedFont: string
 }
 
 export const useStoredData = (): StoredData => {
@@ -38,5 +49,10 @@ export const useStoredData = (): StoredData => {
     storeContactList,
     storeExperienceList,
     storeEducationList,
+    storedLineHeight,
+    storedLetterSpacing,
+    storedUppercaseHeading,
+    storedColor,
+    storedFont,
   }
 }

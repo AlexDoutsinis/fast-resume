@@ -61,6 +61,11 @@ const {
   storeContactList,
   storeExperienceList,
   storeEducationList,
+  storedLineHeight,
+  storedLetterSpacing,
+  storedUppercaseHeading,
+  storedColor,
+  storedFont,
 } = useStoredData()
 
 export const FormContextProvider: React.FC<{}> = ({ children }) => {
@@ -92,11 +97,13 @@ export const FormContextProvider: React.FC<{}> = ({ children }) => {
         website: '',
       }) as EducationList),
   )
-  const [lineHeight, setLineHeight] = useState(1.15)
-  const [uppercaseHeading, setUppercaseHeading] = useState(false)
-  const [letterSpacing, setLetterSpacing] = useState(1)
-  const [color, setColor] = useState('#1b262c')
-  const [font, setFont] = useState('Lato')
+  const [lineHeight, setLineHeight] = useState(storedLineHeight || 1.15)
+  const [uppercaseHeading, setUppercaseHeading] = useState(
+    storedUppercaseHeading || false,
+  )
+  const [letterSpacing, setLetterSpacing] = useState(storedLetterSpacing || 1)
+  const [color, setColor] = useState(storedColor || '#1b262c')
+  const [font, setFont] = useState(storedFont || 'Lato')
 
   const FormContextState = {
     profile,
