@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby'
 
 type Site = {
   site: SiteMetadata
@@ -9,6 +9,7 @@ type SiteMetadata = {
     title: string
     description: string
     author: string
+    keywords: string
   }
 }
 
@@ -21,10 +22,11 @@ function useMetaData(): SiteMetadata {
             title
             description
             author
+            keywords
           }
         }
       }
-    `
+    `,
   )
 
   return { siteMetadata: site.siteMetadata }

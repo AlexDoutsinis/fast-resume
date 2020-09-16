@@ -18,12 +18,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO
-        title="A Simple Way to Craft a Resume | 100% Free"
-        meta={[]}
-        lang="en"
-        description=""
-      />
+      <SEO />
       <SectionStyled>
         <Hero>
           <HeroContent executeScroll={executeScroll} />

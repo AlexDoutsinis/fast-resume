@@ -3,6 +3,7 @@ module.exports = {
     title: `CraftResume`,
     description: `CraftResume - The Most Simple and Fastest way to Craft a Resume. 100% Free Resume Builder - Open Source. Easy to Use and Customizable. Resume Templates.`,
     author: 'Alexis Doutsinis',
+    keywords: 'craftresume, free, resume, builder, cv, easy, simple, templates',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

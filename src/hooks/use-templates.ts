@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby'
 
 type TemplatesQuery = {
   allFile: Templates
@@ -34,7 +34,7 @@ export function useTemplates(): Templates {
           }
         }
       }
-    `
+    `,
   )
 
   return { edges: allFile.edges }

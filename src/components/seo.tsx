@@ -1,23 +1,17 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import useMetaData from "../hooks/use-Metadata"
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import useMetaData from '../hooks/use-Metadata'
 
-type Props = {
-  description?: string
-  lang?: string
-  meta?: []
-  title: string
-}
-
-function SEO({ description, lang, meta, title }: Props) {
+function SEO() {
   const { siteMetadata } = useMetaData()
 
-  const metaDescription = description || siteMetadata.description
+  const title = 'A Simple Way to Craft a Resume | 100% Free'
+  const metaDescription = siteMetadata.description
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: 'en',
       }}
       title={title}
       titleTemplate={`%s | ${siteMetadata.title}`}
@@ -39,6 +33,10 @@ function SEO({ description, lang, meta, title }: Props) {
           content: `website`,
         },
         {
+          property: `og:url`,
+          content: ``,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -54,7 +52,11 @@ function SEO({ description, lang, meta, title }: Props) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+        {
+          name: 'keywords',
+          content: siteMetadata.keywords,
+        },
+      ]}
     />
   )
 }

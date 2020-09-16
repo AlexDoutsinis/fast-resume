@@ -23,11 +23,11 @@ const CurrentTemplate = () => {
   return (
     <CurrentTemplateBoxStyled lineHeight={lineHeight} font={font}>
       <CurrentTemplateWrapperStyled>
-        {currentTemplate === 'minimal-1' && <Minimal1 />}
-        {currentTemplate === 'minimal-2' && <Minimal2 />}
-        {currentTemplate === 'minimal-3' && <Minimal3 />}
-        {currentTemplate === 'minimal-4' && <Minimal4 />}
-        {currentTemplate === 'minimal-5' && <Minimal5 />}
+        {currentTemplate === 'minimal1' && <Minimal1 />}
+        {currentTemplate === 'minimal2' && <Minimal2 />}
+        {currentTemplate === 'minimal3' && <Minimal3 />}
+        {currentTemplate === 'minimal4' && <Minimal4 />}
+        {currentTemplate === 'minimal5' && <Minimal5 />}
       </CurrentTemplateWrapperStyled>
     </CurrentTemplateBoxStyled>
   )
