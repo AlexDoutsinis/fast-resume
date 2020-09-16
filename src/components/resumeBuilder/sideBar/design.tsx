@@ -91,8 +91,8 @@ const Design = () => {
           colors={colors}
           color={color}
           onChange={handleColorChange}
-          circleSize={24}
-          circleSpacing={12}
+          circleSize={22}
+          circleSpacing={10}
         />
       </CirclePickerWrapperStyled>
       <HeadingStyled mt>Font</HeadingStyled>

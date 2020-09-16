@@ -220,21 +220,21 @@ export const FormWrapperStyled = styled.div<FormWrapperStyledProps>`
 
   ${device.laptopL`
     div {
-      flex-basis: 90%;
+      flex-basis: 88%;
     }
 
     button {
-      flex-basis: 5%;
+      flex-basis: 7%;
     }
   `};
 
   ${device.desktop`
     div {
-      flex-basis: 92%;
+      flex-basis: 90%;
     }
 
     button {
-      flex-basis: 3%;
+      flex-basis: 5%;
     }
   `};
 `
