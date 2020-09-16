@@ -2,6 +2,7 @@ import { nanoid } from 'nanoid'
 
 import { useFocus } from './use-focus'
 import { deepCopy } from '../utils/deepCopy'
+import { storeList } from '../utils/storeList'
 
 export const useHandleForm = <T extends any[]>(
   list: T,
@@ -16,24 +17,13 @@ export const useHandleForm = <T extends any[]>(
     const newList = deepCopy(list)
     newList[index][e.target.name] = e.target.value
     setList(newList)
-
-    const isContactList: boolean = newList[0].hasOwnProperty('contactItem')
-    const isExperienceList: boolean = newList[0].hasOwnProperty('role')
-    const isEducationList: boolean = newList[0].hasOwnProperty('university')
-
-    if (isContactList)
-      localStorage.setItem('ContactList', JSON.stringify(newList))
-    if (isExperienceList)
-      localStorage.setItem('ExperienceList', JSON.stringify(newList))
-    if (isEducationList)
-      localStorage.setItem('EducationList', JSON.stringify(newList))
+    storeList(newList)
   }
 
   function handleAddContact() {
     const newList = deepCopy(list)
     newList.push({ id: nanoid(), contactItem: '' })
     toggleFocus()
-
     setList(newList)
   }
 
@@ -41,7 +31,6 @@ export const useHandleForm = <T extends any[]>(
     const newList = deepCopy(list)
     newList.push({ id: nanoid(), role: '', company: '', description: '' })
     toggleFocus()
-
     setList(newList)
   }
 
@@ -49,15 +38,14 @@ export const useHandleForm = <T extends any[]>(
     const newList = deepCopy(list)
     newList.push({ id: nanoid(), university: '', specialize: '', website: '' })
     toggleFocus()
-
     setList(newList)
   }
 
   function handleRemoveInput(index: number) {
     const newList = deepCopy(list)
     newList.splice(index, 1)
-
     setList(newList)
+    storeList(newList)
   }
 
   return {
