@@ -209,15 +209,17 @@ const ImgBoxWrapperStyled = styled.div`
 
 const ImgBoxStyled = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 60px);
+  grid-template-columns: repeat(5, 50px);
   grid-gap: 1.2rem;
   padding: 7px;
   width: 390px;
+  width: 340px;
 
   ${device.tablet`
     width: 510px;
+    width: 390px;
     grid-gap: 1.5rem;
-    grid-template-columns: repeat(5, 80px);
+    grid-template-columns: repeat(5, 60px);
   `};
 `
 
