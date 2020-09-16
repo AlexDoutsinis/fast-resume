@@ -212,11 +212,9 @@ const ImgBoxStyled = styled.div`
   grid-template-columns: repeat(5, 50px);
   grid-gap: 1.2rem;
   padding: 7px;
-  width: 390px;
   width: 340px;
 
-  ${device.tablet`
-    width: 510px;
+  ${device.laptop`
     width: 390px;
     grid-gap: 1.5rem;
     grid-template-columns: repeat(5, 60px);
