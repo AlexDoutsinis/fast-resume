@@ -10,6 +10,7 @@ const Skills = () => {
 
   function handleInputChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setSkills(e.target.value)
+    localStorage.setItem('skills', e.target.value)
   }
 
   return (

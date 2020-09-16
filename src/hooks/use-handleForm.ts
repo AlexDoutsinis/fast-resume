@@ -15,8 +15,18 @@ export const useHandleForm = <T extends any[]>(
   ) {
     const newList = deepCopy(list)
     newList[index][e.target.name] = e.target.value
-
     setList(newList)
+
+    const isContactList: boolean = newList[0].hasOwnProperty('contactItem')
+    const isExperienceList: boolean = newList[0].hasOwnProperty('role')
+    const isEducationList: boolean = newList[0].hasOwnProperty('university')
+
+    if (isContactList)
+      localStorage.setItem('ContactList', JSON.stringify(newList))
+    if (isExperienceList)
+      localStorage.setItem('ExperienceList', JSON.stringify(newList))
+    if (isEducationList)
+      localStorage.setItem('EducationList', JSON.stringify(newList))
   }
 
   function handleAddContact() {

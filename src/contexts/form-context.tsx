@@ -1,6 +1,8 @@
 import React, { useState, createContext, useContext } from 'react'
 import { nanoid } from 'nanoid'
 
+import { useStoredData } from '../hooks/use-storedData'
+
 type Profile = {
   fullName: string
   currentPosition: string
@@ -51,31 +53,44 @@ type FormContextProps = {
 
 const FormContext = createContext({} as FormContextProps)
 
+const {
+  storedFullName,
+  storedCurrentPosition,
+  storedProfileSummary,
+  storedSkills,
+  storeContactList,
+  storeExperienceList,
+  storeEducationList,
+} = useStoredData()
+
 export const FormContextProvider: React.FC<{}> = ({ children }) => {
   const [profile, setProfile] = useState({
-    fullName: '',
-    currentPosition: '',
-    profileSummary: '',
+    fullName: storedFullName || '',
+    currentPosition: storedCurrentPosition || '',
+    profileSummary: storedProfileSummary || '',
   } as Profile)
-  const [skills, setSkills] = useState('')
+  const [skills, setSkills] = useState(storedSkills || '')
   const [contactList, setContactList] = useState(
-    Array(1).fill({ id: nanoid(), contactItem: '' }) as ContactList,
+    storeContactList ||
+      (Array(1).fill({ id: nanoid(), contactItem: '' }) as ContactList),
   )
   const [experienceList, setExperienceList] = useState(
-    Array(1).fill({
-      id: nanoid(),
-      role: '',
-      company: '',
-      description: '',
-    }) as ExperienceList,
+    storeExperienceList ||
+      (Array(1).fill({
+        id: nanoid(),
+        role: '',
+        company: '',
+        description: '',
+      }) as ExperienceList),
   )
   const [educationList, setEducationList] = useState(
-    Array(1).fill({
-      id: nanoid(),
-      university: '',
-      specialize: '',
-      website: '',
-    }) as EducationList,
+    storeEducationList ||
+      (Array(1).fill({
+        id: nanoid(),
+        university: '',
+        specialize: '',
+        website: '',
+      }) as EducationList),
   )
   const [lineHeight, setLineHeight] = useState(1.15)
   const [uppercaseHeading, setUppercaseHeading] = useState(false)
