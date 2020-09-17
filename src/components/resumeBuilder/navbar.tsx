@@ -1,24 +1,24 @@
-import React from "react"
+import React from 'react'
 
-import { NavStyled, NavItemStyled } from "../../styled/resumeBuilderStyles"
-import { useSelectedNavItemContext } from "../../contexts/selectedNavItem-context"
+import { NavStyled, NavItemStyled } from '../../styled/resumeBuilderStyles'
+import { useSelectedNavItemContext } from '../../contexts/selectedNavItem-context'
 
 type NavItems = [
-  "Profile",
-  "Skills",
-  "Contact",
-  "Experience",
-  "Education",
-  "Design"
+  'Profile',
+  'Skills',
+  'Contact',
+  'Experience',
+  'Education',
+  'Design',
 ]
 
 const navItems: NavItems = [
-  "Profile",
-  "Skills",
-  "Contact",
-  "Experience",
-  "Education",
-  "Design",
+  'Profile',
+  'Skills',
+  'Contact',
+  'Experience',
+  'Education',
+  'Design',
 ]
 
 const Navbar = () => {

@@ -25,7 +25,7 @@ const Minimal4 = () => {
     <WrapperStyled>
       <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
         <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
-        <CurrentPositionStyled italic>
+        <CurrentPositionStyled mt5 italic>
           {profile.currentPosition}
         </CurrentPositionStyled>
       </TitleStyled>

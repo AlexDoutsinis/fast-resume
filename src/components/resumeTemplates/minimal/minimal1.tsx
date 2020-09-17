@@ -6,6 +6,7 @@ import {
   SectionHeadingStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
+  MainStyled,
   SideStyled,
   FullNameStyled,
   CurrentPositionStyled,
@@ -30,7 +31,7 @@ const Minimal1 = () => {
         <CurrentPositionStyled>{profile.currentPosition}</CurrentPositionStyled>
       </HeaderStyled>
       <MainStyled>
-        <SideStyled>
+        <SideStyled width={'40%'}>
           <SectionHeadingStyled
             first
             uppercase={uppercaseHeading}
@@ -61,7 +62,7 @@ const Minimal1 = () => {
             ))}
           </SectionContentStyled>
         </SideStyled>
-        <SideStyled pl>
+        <SideStyled pl width={'60%'}>
           <SectionHeadingStyled
             first
             uppercase={uppercaseHeading}
@@ -119,12 +120,6 @@ const HeaderStyled = styled.div<Header>`
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
-`
-
-const MainStyled = styled.div`
-  display: grid;
-  grid-template-columns: 40% 60%;
-  padding: 0 32px;
 `
 
 export default Minimal1

@@ -9,6 +9,7 @@ import {
   SideStyled,
   FullNameStyled,
   CurrentPositionStyled,
+  MainStyled,
 } from '../commonStyles'
 
 const Minimal2 = () => {
@@ -39,7 +40,7 @@ const Minimal2 = () => {
         </ContactStyled>
       </HeaderStyled>
       <MainStyled>
-        <SideStyled pr>
+        <SideStyled pr width={'60%'}>
           <SectionHeadingStyled
             first
             uppercase={uppercaseHeading}
@@ -66,7 +67,7 @@ const Minimal2 = () => {
             </div>
           ))}
         </SideStyled>
-        <SideStyled>
+        <SideStyled width={'40%'}>
           <SectionHeadingStyled
             first
             uppercase={uppercaseHeading}
@@ -103,10 +104,20 @@ const Minimal2 = () => {
 }
 
 const HeaderStyled = styled.div`
-  height: 170px;
-  display: grid;
-  grid-template-columns: 60% 40%;
-  padding: 0 32px;
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  padding: 0 40px;
+
+  > div {
+    &:first-child {
+      width: 60%;
+    }
+
+    &:last-child {
+      width: 40%;
+    }
+  }
 `
 
 type Title = {
@@ -136,12 +147,6 @@ const ContactStyled = styled.div`
       margin: 0;
     }
   }
-`
-
-const MainStyled = styled.div`
-  display: grid;
-  grid-template-columns: 60% 40%;
-  padding: 0 32px;
 `
 
 export default Minimal2

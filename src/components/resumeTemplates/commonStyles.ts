@@ -4,6 +4,7 @@ export {
   SectionHeadingStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
+  MainStyled,
   SideStyled,
   FullNameStyled,
   CurrentPositionStyled,
@@ -62,18 +63,27 @@ const SectionSubHeadingStyled = styled.div<SectionSubHeadingStyledProps>`
   ${props => props.noMargin && 'margin: 0;'};
 `
 
+const MainStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 0 40px;
+`
+
 type SideStyledProps = {
   pr?: boolean
   pl?: boolean
+  width: string
 }
 
 const SideStyled = styled.div<SideStyledProps>`
   display: flex;
   flex-direction: column;
-  padding: 16px 0;
+  padding-top: 16px;
+  padding-bottom: 32px;
 
   ${props => props.pr && 'padding-right: 40px;'};
   ${props => props.pl && 'padding-left: 40px;'};
+  ${props => props.width && `width: ${props.width};`};
 `
 
 type FullNameStyledProps = {

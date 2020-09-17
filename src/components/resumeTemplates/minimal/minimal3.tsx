@@ -8,6 +8,7 @@ import {
   SectionSubHeadingStyled,
   CurrentPositionStyled,
   FullNameStyled,
+  MainStyled,
 } from '../commonStyles'
 import { useFormContext } from '../../../contexts/form-context'
 
@@ -29,86 +30,91 @@ const Minimal3 = () => {
 
   return (
     <WrapperStyled>
-      <SideStyled>
-        <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-          <FullNameStyled sm center color={color}>
-            {profile.fullName}
-          </FullNameStyled>
-          <CurrentPositionStyled mt5 sm italic>
-            {profile.currentPosition}
-          </CurrentPositionStyled>
-        </TitleStyled>
-        <SectionHeadingStyled
-          center
-          uppercase={uppercaseHeading}
-          letterSpacing={letterSpacing}
-          color={color}
-        >
-          Profile
-        </SectionHeadingStyled>
-        <SectionContentStyled>{profile.profileSummary}</SectionContentStyled>
-        <ContactStyled isEmpty={isContactListEmpty}>
-          {contactList.map(item => (
-            <div key={item.id}>{item.contactItem}</div>
-          ))}
-        </ContactStyled>
-        <SectionHeadingStyled
-          center
-          uppercase={uppercaseHeading}
-          letterSpacing={letterSpacing}
-          color={color}
-        >
-          Education
-        </SectionHeadingStyled>
-        <EducationStyled>
-          {educationList.map(item => (
+      <MainStyled>
+        <SideStyled width={'40%'}>
+          <TitleStyled
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+          >
+            <FullNameStyled sm center color={color}>
+              {profile.fullName}
+            </FullNameStyled>
+            <CurrentPositionStyled mt5 sm italic>
+              {profile.currentPosition}
+            </CurrentPositionStyled>
+          </TitleStyled>
+          <SectionHeadingStyled
+            center
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+            color={color}
+          >
+            Profile
+          </SectionHeadingStyled>
+          <SectionContentStyled>{profile.profileSummary}</SectionContentStyled>
+          <ContactStyled isEmpty={isContactListEmpty}>
+            {contactList.map(item => (
+              <div key={item.id}>{item.contactItem}</div>
+            ))}
+          </ContactStyled>
+          <SectionHeadingStyled
+            center
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+            color={color}
+          >
+            Education
+          </SectionHeadingStyled>
+          <EducationStyled>
+            {educationList.map(item => (
+              <div key={item.id}>
+                <SectionSubHeadingStyled>
+                  {item.university}
+                </SectionSubHeadingStyled>
+                <SectionSubHeadingStyled sm>
+                  {item.specialize}
+                </SectionSubHeadingStyled>
+                <SectionSubHeadingStyled sm>
+                  {item.website}
+                </SectionSubHeadingStyled>
+              </div>
+            ))}
+          </EducationStyled>
+        </SideStyled>
+        <SideStyled pl width={'60%'}>
+          <SectionHeadingStyled
+            first
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+            color={color}
+          >
+            Experience
+          </SectionHeadingStyled>
+          {experienceList.map(item => (
             <div key={item.id}>
-              <SectionSubHeadingStyled>
-                {item.university}
-              </SectionSubHeadingStyled>
+              <SectionSubHeadingStyled>{item.role}</SectionSubHeadingStyled>
               <SectionSubHeadingStyled sm>
-                {item.specialize}
+                {item.company}
               </SectionSubHeadingStyled>
-              <SectionSubHeadingStyled sm>
-                {item.website}
-              </SectionSubHeadingStyled>
+              <SectionContentStyled>{item.description}</SectionContentStyled>
             </div>
           ))}
-        </EducationStyled>
-      </SideStyled>
-      <SideStyled pl>
-        <SectionHeadingStyled
-          first
-          uppercase={uppercaseHeading}
-          letterSpacing={letterSpacing}
-          color={color}
-        >
-          Experience
-        </SectionHeadingStyled>
-        {experienceList.map(item => (
-          <div key={item.id}>
-            <SectionSubHeadingStyled>{item.role}</SectionSubHeadingStyled>
-            <SectionSubHeadingStyled sm>{item.company}</SectionSubHeadingStyled>
-            <SectionContentStyled>{item.description}</SectionContentStyled>
-          </div>
-        ))}
-        <SectionHeadingStyled
-          uppercase={uppercaseHeading}
-          letterSpacing={letterSpacing}
-          color={color}
-        >
-          Skills
-        </SectionHeadingStyled>
-        <SectionContentStyled>{skills}</SectionContentStyled>
-      </SideStyled>
+          <SectionHeadingStyled
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+            color={color}
+          >
+            Skills
+          </SectionHeadingStyled>
+          <SectionContentStyled>{skills}</SectionContentStyled>
+        </SideStyled>
+      </MainStyled>
     </WrapperStyled>
   )
 }
 
 const WrapperStyled = styled.div`
-  display: grid;
-  grid-template-columns: 40% 60%;
-  padding: 32px 40px;
+  padding-top: 25px;
 `
 
 type Title = {
@@ -126,18 +132,6 @@ const TitleStyled = styled.div<Title>`
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 `
-
-// const FullNameStyled = styled.div`
-//   font-size: 24px;
-//   font-weight: 700;
-//   text-align: center;
-// `
-
-// const CurrentPositionStyled = styled.div`
-//   margin-top: 8px;
-//   font-size: 14px;
-//   font-style: italic;
-// `
 
 type Contact = {
   isEmpty: boolean
