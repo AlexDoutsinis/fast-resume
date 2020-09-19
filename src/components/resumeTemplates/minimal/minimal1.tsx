@@ -10,6 +10,7 @@ import {
   SideStyled,
   FullNameStyled,
   CurrentPositionStyled,
+  WrapperStyled,
 } from '../commonStyles'
 
 const Minimal1 = () => {
@@ -25,7 +26,7 @@ const Minimal1 = () => {
   } = useFormContext()
 
   return (
-    <>
+    <WrapperStyled>
       <HeaderStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
         <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
         <CurrentPositionStyled>{profile.currentPosition}</CurrentPositionStyled>
@@ -102,7 +103,7 @@ const Minimal1 = () => {
           ))}
         </SideStyled>
       </MainStyled>
-    </>
+    </WrapperStyled>
   )
 }
 
@@ -114,9 +115,8 @@ type Header = {
 const HeaderStyled = styled.div<Header>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 130px;
+  margin-bottom: 32px;
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};

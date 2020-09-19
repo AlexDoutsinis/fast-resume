@@ -23,12 +23,12 @@ const Minimal4 = () => {
 
   return (
     <WrapperStyled>
-      <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
+      <HeaderStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
         <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
         <CurrentPositionStyled mt5 italic>
           {profile.currentPosition}
         </CurrentPositionStyled>
-      </TitleStyled>
+      </HeaderStyled>
       <SectionStyled first>
         <SectionHeadingStyled
           uppercase={uppercaseHeading}
@@ -108,12 +108,11 @@ type Title = {
   letterSpacing: number
 }
 
-const TitleStyled = styled.div<Title>`
-  height: 150px;
+const HeaderStyled = styled.div<Title>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-end;
+  margin-bottom: 32px;
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};

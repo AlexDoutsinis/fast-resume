@@ -31,7 +31,6 @@ const CurrentPositionStyled = styled.Text`
 
 const MainStyled = styled.View`
   flex-direction: row;
-  padding: 0 50px;
 `
 
 const SideStyled = styled.View`
@@ -85,6 +84,5 @@ const PageStyled = styled.Page`
   font-size: 12px;
   line-height: 1.3;
   ${props => props.font && `font-family: '${props.font}';`};
+  padding: 32px 50px;
 `
-
-// ${props => props.font && `font-family: '${props.font}';`};

@@ -9,6 +9,7 @@ import {
   CurrentPositionStyled,
   FullNameStyled,
   MainStyled,
+  WrapperStyled,
 } from '../commonStyles'
 import { useFormContext } from '../../../contexts/form-context'
 
@@ -113,9 +114,9 @@ const Minimal3 = () => {
   )
 }
 
-const WrapperStyled = styled.div`
-  padding-top: 25px;
-`
+// const WrapperStyled = styled.div`
+//   padding-top: 25px;
+// `
 
 type Title = {
   uppercase: boolean
@@ -142,7 +143,7 @@ const ContactStyled = styled.div<Contact>`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin: auto;
+  margin: 0 auto;
   ${props => !props.isEmpty && 'margin-top: 32px;'};
 
   div {

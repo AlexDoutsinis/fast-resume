@@ -158,9 +158,8 @@ const PdfMinimal1 = (props: Props) => {
 
 const HeaderStyled = styled.View`
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 130px;
+  margin-bottom: 32px;
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};

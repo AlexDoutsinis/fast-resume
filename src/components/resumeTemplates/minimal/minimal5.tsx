@@ -107,7 +107,7 @@ const Minimal5 = () => {
 
 const TemplateWrapperStyled = styled.div`
   padding: 0 20px;
-  padding-top: 30px;
+  padding-top: 20px;
 `
 
 type Title = {

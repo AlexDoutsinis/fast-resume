@@ -66,7 +66,6 @@ const SectionSubHeadingStyled = styled.div<SectionSubHeadingStyledProps>`
 const MainStyled = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 0 50px;
 `
 
 type SideStyledProps = {
@@ -117,8 +116,7 @@ const CurrentPositionStyled = styled.div<currentPosition>`
 `
 
 const WrapperStyled = styled.div`
-  padding: 0 50px;
-  padding-bottom: 32px;
+  padding: 32px 50px;
 `
 
 const BoxStyled = styled.div`

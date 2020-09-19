@@ -10,6 +10,7 @@ import {
   FullNameStyled,
   CurrentPositionStyled,
   MainStyled,
+  WrapperStyled,
 } from '../commonStyles'
 
 const Minimal2 = () => {
@@ -25,7 +26,7 @@ const Minimal2 = () => {
   } = useFormContext()
 
   return (
-    <>
+    <WrapperStyled>
       <HeaderStyled>
         <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
           <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
@@ -99,15 +100,14 @@ const Minimal2 = () => {
           ))}
         </SideStyled>
       </MainStyled>
-    </>
+    </WrapperStyled>
   )
 }
 
 const HeaderStyled = styled.div`
   display: flex;
   flex-direction: row;
-  height: 150px;
-  padding: 0 50px;
+  margin-bottom: 32px;
 
   > div {
     &:first-child {
