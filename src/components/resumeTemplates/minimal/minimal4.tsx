@@ -37,7 +37,14 @@ const Minimal4 = () => {
         >
           About Me
         </SectionHeadingStyled>
-        <div>{profile.profileSummary}</div>
+        <div>
+          {profile.profileSummary.split('\n').map(item => (
+            <span>
+              {item}
+              <br />
+            </span>
+          ))}
+        </div>
       </SectionStyled>
       <SectionStyled>
         <SectionHeadingStyled
@@ -140,8 +147,8 @@ const SectionHeadingStyled = styled.div<SectionHeadingStyledProps>`
   margin-top: -2px;
   font-size: 14px;
   font-weight: 700;
-  min-width: 110px;
-  max-width: 110px;
+  min-width: 122px;
+  max-width: 122px;
   text-align: end;
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>

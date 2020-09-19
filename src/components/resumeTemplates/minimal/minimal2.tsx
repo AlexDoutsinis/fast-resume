@@ -50,7 +50,14 @@ const Minimal2 = () => {
           >
             Profile
           </SectionHeadingStyled>
-          <SectionContentStyled>{profile.profileSummary}</SectionContentStyled>
+          <SectionContentStyled>
+            {profile.profileSummary.split('\n').map(item => (
+              <span>
+                {item}
+                <br />
+              </span>
+            ))}
+          </SectionContentStyled>
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
@@ -77,7 +84,14 @@ const Minimal2 = () => {
           >
             Skills
           </SectionHeadingStyled>
-          <SectionContentStyled>{skills}</SectionContentStyled>
+          <SectionContentStyled>
+            {skills.split('\n').map(item => (
+              <span>
+                {item}
+                <br />
+              </span>
+            ))}
+          </SectionContentStyled>
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}

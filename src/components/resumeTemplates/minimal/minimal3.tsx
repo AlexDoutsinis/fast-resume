@@ -52,7 +52,14 @@ const Minimal3 = () => {
           >
             Profile
           </SectionHeadingStyled>
-          <SectionContentStyled>{profile.profileSummary}</SectionContentStyled>
+          <SectionContentStyled>
+            {profile.profileSummary.split('\n').map(item => (
+              <span>
+                {item}
+                <br />
+              </span>
+            ))}
+          </SectionContentStyled>
           <ContactStyled isEmpty={isContactListEmpty}>
             {contactList.map(item => (
               <div key={item.id}>{item.contactItem}</div>
@@ -107,7 +114,14 @@ const Minimal3 = () => {
           >
             Skills
           </SectionHeadingStyled>
-          <SectionContentStyled>{skills}</SectionContentStyled>
+          <SectionContentStyled>
+            {skills.split('\n').map(item => (
+              <span>
+                {item}
+                <br />
+              </span>
+            ))}
+          </SectionContentStyled>
         </SideStyled>
       </MainStyled>
     </WrapperStyled>

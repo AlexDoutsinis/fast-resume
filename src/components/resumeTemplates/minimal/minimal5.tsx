@@ -39,7 +39,12 @@ const Minimal5 = () => {
           ))}
         </ContactWrapperStyled>
         <SectionContentStyled mt10>
-          {profile.profileSummary}
+          {profile.profileSummary.split('\n').map(item => (
+            <span>
+              {item}
+              <br />
+            </span>
+          ))}
         </SectionContentStyled>
         <SectionHeadingStyled
           uppercase={uppercaseHeading}
@@ -99,7 +104,14 @@ const Minimal5 = () => {
         >
           Skills
         </SectionHeadingStyled>
-        <SectionContentStyled mt10>{skills}</SectionContentStyled>
+        <SectionContentStyled mt10>
+          {skills.split('\n').map(item => (
+            <span>
+              {item}
+              <br />
+            </span>
+          ))}
+        </SectionContentStyled>
       </TemplateWrapperStyled>
     </WrapperStyled>
   )
