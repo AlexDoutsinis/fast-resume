@@ -2,6 +2,10 @@ import React from 'react'
 
 import { NavStyled, NavItemStyled } from '../../styled/resumeBuilderStyles'
 import { useSelectedNavItemContext } from '../../contexts/selectedNavItem-context'
+import { useTemplateListContext } from '../../contexts/templateList-context'
+import SaveAsPdf from './saveAsPdf'
+import PdfMinimal1 from '../../pdfTemplates/minimal/pdfMinimal1'
+import { useFormContext } from '../../contexts/form-context'
 
 type NavItems = [
   'Profile',
@@ -23,6 +27,34 @@ const navItems: NavItems = [
 
 const Navbar = () => {
   const { selectedNavItem, setSelectedNavItem } = useSelectedNavItemContext()
+  const {
+    state: { currentTemplate },
+  } = useTemplateListContext()
+  const {
+    profile,
+    skills,
+    contactList,
+    experienceList,
+    educationList,
+    uppercaseHeading,
+    letterSpacing,
+    color,
+    lineHeight,
+    font,
+  } = useFormContext()
+
+  const pdfProps = {
+    profile,
+    skills,
+    contactList,
+    experienceList,
+    educationList,
+    uppercaseHeading,
+    letterSpacing,
+    color,
+    lineHeight,
+    font,
+  }
 
   return (
     <NavStyled>
@@ -38,7 +70,10 @@ const Navbar = () => {
           </NavItemStyled>
         ))}
       </ul>
-      <button>Export PDF</button>
+
+      <SaveAsPdf>
+        {currentTemplate === 'minimal1' && <PdfMinimal1 {...pdfProps} />}
+      </SaveAsPdf>
     </NavStyled>
   )
 }

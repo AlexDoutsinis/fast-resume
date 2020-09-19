@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid'
 
 import { useStoredData } from '../hooks/use-storedData'
 
-type Profile = {
+export type Profile = {
   fullName: string
   currentPosition: string
   profileSummary: string

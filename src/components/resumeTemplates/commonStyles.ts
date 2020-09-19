@@ -56,17 +56,17 @@ type SectionSubHeadingStyledProps = {
 }
 
 const SectionSubHeadingStyled = styled.div<SectionSubHeadingStyledProps>`
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 16px;
   ${props =>
-    props.sm && 'font-size: 13px; font-style: italic; margin-top: 12px;'};
+    props.sm && 'font-size: 12px; font-style: italic; margin-top: 5px;'};
   ${props => props.noMargin && 'margin: 0;'};
 `
 
 const MainStyled = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 0 40px;
+  padding: 0 50px;
 `
 
 type SideStyledProps = {
@@ -79,7 +79,6 @@ const SideStyled = styled.div<SideStyledProps>`
   display: flex;
   flex-direction: column;
   padding-top: 16px;
-  padding-bottom: 32px;
 
   ${props => props.pr && 'padding-right: 40px;'};
   ${props => props.pl && 'padding-left: 40px;'};
@@ -93,9 +92,9 @@ type FullNameStyledProps = {
 }
 
 const FullNameStyled = styled.div<FullNameStyledProps>`
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
-  ${props => props.sm && 'font-size: 24px;'};
+  ${props => props.sm && 'font-size: 22px;'};
   ${props => props.center && 'text-align: center;'};
   ${props => props.color && `color: ${props.color};`};
 `

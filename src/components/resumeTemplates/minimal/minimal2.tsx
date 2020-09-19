@@ -107,7 +107,7 @@ const HeaderStyled = styled.div`
   display: flex;
   flex-direction: row;
   height: 150px;
-  padding: 0 40px;
+  padding: 0 50px;
 
   > div {
     &:first-child {
