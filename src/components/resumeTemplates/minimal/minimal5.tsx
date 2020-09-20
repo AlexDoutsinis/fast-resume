@@ -39,8 +39,8 @@ const Minimal5 = () => {
           ))}
         </ContactWrapperStyled>
         <SectionContentStyled mt10>
-          {profile.profileSummary.split('\n').map(item => (
-            <span>
+          {profile.profileSummary.split('\n').map((item, index) => (
+            <span key={index}>
               {item}
               <br />
             </span>
@@ -105,8 +105,8 @@ const Minimal5 = () => {
           Skills
         </SectionHeadingStyled>
         <SectionContentStyled mt10>
-          {skills.split('\n').map(item => (
-            <span>
+          {skills.split('\n').map((item, index) => (
+            <span key={index}>
               {item}
               <br />
             </span>

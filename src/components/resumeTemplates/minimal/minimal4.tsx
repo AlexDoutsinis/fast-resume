@@ -38,8 +38,8 @@ const Minimal4 = () => {
           About Me
         </SectionHeadingStyled>
         <div>
-          {profile.profileSummary.split('\n').map(item => (
-            <span>
+          {profile.profileSummary.split('\n').map((item, index) => (
+            <span key={index}>
               {item}
               <br />
             </span>

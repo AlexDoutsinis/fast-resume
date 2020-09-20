@@ -1,4 +1,5 @@
 import React from 'react'
+import { Document } from '@react-pdf/renderer'
 
 import { NavStyled, NavItemStyled } from '../../styled/resumeBuilderStyles'
 import { useSelectedNavItemContext } from '../../contexts/selectedNavItem-context'
@@ -6,6 +7,7 @@ import { useTemplateListContext } from '../../contexts/templateList-context'
 import SaveAsPdf from './saveAsPdf'
 import PdfMinimal1 from '../../pdfTemplates/minimal/pdfMinimal1'
 import { useFormContext } from '../../contexts/form-context'
+import PdfMinimal2 from '../../pdfTemplates/minimal/pdfMinimal2'
 
 type NavItems = [
   'Profile',
@@ -56,6 +58,11 @@ const Navbar = () => {
     font,
   }
 
+  function pdfTemplate() {
+    if (currentTemplate === 'minimal1') return <PdfMinimal1 {...pdfProps} />
+    if (currentTemplate === 'minimal2') return <PdfMinimal2 {...pdfProps} />
+  }
+
   return (
     <NavStyled>
       <ul>
@@ -72,7 +79,7 @@ const Navbar = () => {
       </ul>
 
       <SaveAsPdf>
-        {currentTemplate === 'minimal1' && <PdfMinimal1 {...pdfProps} />}
+        <Document>{pdfTemplate()}</Document>
       </SaveAsPdf>
     </NavStyled>
   )

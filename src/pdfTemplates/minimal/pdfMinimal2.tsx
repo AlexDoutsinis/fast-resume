@@ -4,18 +4,17 @@ import styled from '@react-pdf/styled-components'
 
 import { PropTypes } from '../PropTypes'
 import {
+  PageStyled,
   FullNameStyled,
+  CurrentPositionStyled,
   MainStyled,
   SideStyled,
   SectionHeadingStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
-  PageStyled,
-  BoxStyled,
-  CurrentPositionStyled,
 } from '../commonStyles'
 
-const PdfMinimal1 = (props: PropTypes) => {
+const PdfMinimal2 = (props: PropTypes) => {
   const {
     profile,
     skills,
@@ -31,12 +30,23 @@ const PdfMinimal1 = (props: PropTypes) => {
 
   return (
     <PageStyled font={font}>
-      <HeaderStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-        <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
-        <CurrentPositionStyled>{profile.currentPosition}</CurrentPositionStyled>
+      <HeaderStyled>
+        <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
+          <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
+          <CurrentPositionStyled italic>
+            {profile.currentPosition}
+          </CurrentPositionStyled>
+        </TitleStyled>
+        <ContactStyled>
+          {contactList.map(item => (
+            <ContactItemStyled key={item.id}>
+              {item.contactItem}
+            </ContactItemStyled>
+          ))}
+        </ContactStyled>
       </HeaderStyled>
       <MainStyled>
-        <SideStyled width={'40%'}>
+        <SideStyled pr width={'60%'}>
           <SectionHeadingStyled
             first
             uppercase={uppercaseHeading}
@@ -49,31 +59,6 @@ const PdfMinimal1 = (props: PropTypes) => {
             {profile.profileSummary}
           </SectionContentStyled>
           <SectionHeadingStyled
-            uppercase={uppercaseHeading}
-            letterSpacing={letterSpacing}
-            color={color}
-          >
-            Skills
-          </SectionHeadingStyled>
-          <SectionContentStyled lineHeight={lineHeight}>
-            {skills}
-          </SectionContentStyled>
-          <SectionHeadingStyled
-            uppercase={uppercaseHeading}
-            letterSpacing={letterSpacing}
-            color={color}
-          >
-            Contact
-          </SectionHeadingStyled>
-          <BoxStyled>
-            {contactList.map(item => (
-              <Text key={item.id}>{item.contactItem}</Text>
-            ))}
-          </BoxStyled>
-        </SideStyled>
-        <SideStyled pl width={'60%'}>
-          <SectionHeadingStyled
-            first
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
             color={color}
@@ -99,6 +84,19 @@ const PdfMinimal1 = (props: PropTypes) => {
               ) : null}
             </View>
           ))}
+        </SideStyled>
+        <SideStyled width={'40%'}>
+          <SectionHeadingStyled
+            first
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+            color={color}
+          >
+            Skills
+          </SectionHeadingStyled>
+          <SectionContentStyled lineHeight={lineHeight}>
+            {skills}
+          </SectionContentStyled>
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
@@ -132,12 +130,32 @@ const PdfMinimal1 = (props: PropTypes) => {
 }
 
 const HeaderStyled = styled.View`
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   margin-bottom: 32px;
+`
+
+const TitleStyled = styled.View`
+  width: 60%;
+  flex-direction: column;
+  justify-content: center;
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 `
 
-export default PdfMinimal1
+const ContactStyled = styled.View`
+  width: 40%;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 32px;
+`
+
+const ContactItemStyled = styled.Text`
+  margin-top: 5px;
+
+  &:first-child {
+    margin: 0;
+  }
+`
+
+export default PdfMinimal2

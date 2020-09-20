@@ -53,8 +53,8 @@ const Minimal3 = () => {
             Profile
           </SectionHeadingStyled>
           <SectionContentStyled>
-            {profile.profileSummary.split('\n').map(item => (
-              <span>
+            {profile.profileSummary.split('\n').map((item, index) => (
+              <span key={index}>
                 {item}
                 <br />
               </span>
@@ -115,8 +115,8 @@ const Minimal3 = () => {
             Skills
           </SectionHeadingStyled>
           <SectionContentStyled>
-            {skills.split('\n').map(item => (
-              <span>
+            {skills.split('\n').map((item, index) => (
+              <span key={index}>
                 {item}
                 <br />
               </span>
