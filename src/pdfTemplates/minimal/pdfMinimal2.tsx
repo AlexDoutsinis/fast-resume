@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from '@react-pdf/renderer'
+import { View } from '@react-pdf/renderer'
 import styled from '@react-pdf/styled-components'
 
 import { PropTypes } from '../PropTypes'
@@ -12,6 +12,7 @@ import {
   SectionHeadingStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
+  ContactItemStyled,
 } from '../commonStyles'
 
 const PdfMinimal2 = (props: PropTypes) => {
@@ -148,14 +149,6 @@ const ContactStyled = styled.View`
   flex-direction: column;
   justify-content: center;
   padding-left: 32px;
-`
-
-const ContactItemStyled = styled.Text`
-  margin-top: 5px;
-
-  &:first-child {
-    margin: 0;
-  }
 `
 
 export default PdfMinimal2

@@ -10,6 +10,7 @@ export {
   BoxStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
+  ContactItemStyled,
 }
 
 const FullNameStyled = styled.Text`
@@ -18,6 +19,7 @@ const FullNameStyled = styled.Text`
   ${props => props.sm && 'font-size: 22px;'};
   ${props => props.center && 'text-align: center;'};
   ${props => props.color && `color: ${props.color};`};
+  padding-right: 34px;
 `
 
 const CurrentPositionStyled = styled.Text`
@@ -85,4 +87,12 @@ const PageStyled = styled.Page`
   line-height: 1.3;
   ${props => props.font && `font-family: '${props.font}';`};
   padding: 32px 50px;
+`
+
+const ContactItemStyled = styled.Text`
+  margin-top: 5px;
+
+  &:first-child {
+    margin: 0;
+  }
 `

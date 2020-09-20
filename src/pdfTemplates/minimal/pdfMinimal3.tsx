@@ -1,19 +1,21 @@
 import React from 'react'
-import styled from 'styled-components'
+import { View } from '@react-pdf/renderer'
+import styled from '@react-pdf/styled-components'
 
+import { PropTypes } from '../PropTypes'
 import {
+  PageStyled,
+  FullNameStyled,
+  CurrentPositionStyled,
+  MainStyled,
   SideStyled,
   SectionHeadingStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
-  CurrentPositionStyled,
-  FullNameStyled,
-  MainStyled,
-  WrapperStyled,
+  ContactItemStyled,
 } from '../commonStyles'
-import { useFormContext } from '../../../contexts/form-context'
 
-const Minimal3 = () => {
+const PdfMinimal3 = (props: PropTypes) => {
   const {
     profile,
     skills,
@@ -23,14 +25,12 @@ const Minimal3 = () => {
     uppercaseHeading,
     letterSpacing,
     color,
-  } = useFormContext()
-
-  const isContactListEmpty = contactList.reduce((isEmpty, value) => {
-    return value.contactItem !== '' ? false : isEmpty
-  }, true)
+    lineHeight,
+    font,
+  } = props
 
   return (
-    <WrapperStyled>
+    <PageStyled font={font}>
       <MainStyled>
         <SideStyled width={'40%'}>
           <TitleStyled
@@ -52,17 +52,14 @@ const Minimal3 = () => {
           >
             Profile
           </SectionHeadingStyled>
-          <SectionContentStyled>
-            {profile.profileSummary.split('\n').map((item, index) => (
-              <span key={index}>
-                {item}
-                <br />
-              </span>
-            ))}
+          <SectionContentStyled lineHeight={lineHeight}>
+            {profile.profileSummary}
           </SectionContentStyled>
-          <ContactStyled isEmpty={isContactListEmpty}>
+          <ContactStyled>
             {contactList.map(item => (
-              <div key={item.id}>{item.contactItem}</div>
+              <ContactItemStyled key={item.id}>
+                {item.contactItem}
+              </ContactItemStyled>
             ))}
           </ContactStyled>
           <SectionHeadingStyled
@@ -75,17 +72,23 @@ const Minimal3 = () => {
           </SectionHeadingStyled>
           <EducationStyled>
             {educationList.map(item => (
-              <div key={item.id}>
-                <SectionSubHeadingStyled>
-                  {item.university}
-                </SectionSubHeadingStyled>
-                <SectionSubHeadingStyled sm>
-                  {item.specialize}
-                </SectionSubHeadingStyled>
-                <SectionSubHeadingStyled sm>
-                  {item.website}
-                </SectionSubHeadingStyled>
-              </div>
+              <View key={item.id}>
+                {item.university ? (
+                  <SectionSubHeadingStyled lineHeight={lineHeight}>
+                    {item.university}
+                  </SectionSubHeadingStyled>
+                ) : null}
+                {item.specialize ? (
+                  <SectionSubHeadingStyled lineHeight={lineHeight} sm>
+                    {item.specialize}
+                  </SectionSubHeadingStyled>
+                ) : null}
+                {item.website ? (
+                  <SectionSubHeadingStyled lineHeight={lineHeight} sm>
+                    {item.website}
+                  </SectionSubHeadingStyled>
+                ) : null}
+              </View>
             ))}
           </EducationStyled>
         </SideStyled>
@@ -99,13 +102,23 @@ const Minimal3 = () => {
             Experience
           </SectionHeadingStyled>
           {experienceList.map(item => (
-            <div key={item.id}>
-              <SectionSubHeadingStyled>{item.role}</SectionSubHeadingStyled>
-              <SectionSubHeadingStyled sm>
-                {item.company}
-              </SectionSubHeadingStyled>
-              <SectionContentStyled>{item.description}</SectionContentStyled>
-            </div>
+            <View key={item.id}>
+              {item.role ? (
+                <SectionSubHeadingStyled lineHeight={lineHeight}>
+                  {item.role}
+                </SectionSubHeadingStyled>
+              ) : null}
+              {item.company ? (
+                <SectionSubHeadingStyled lineHeight={lineHeight} sm>
+                  {item.company}
+                </SectionSubHeadingStyled>
+              ) : null}
+              {item.description ? (
+                <SectionContentStyled lineHeight={lineHeight}>
+                  {item.description}
+                </SectionContentStyled>
+              ) : null}
+            </View>
           ))}
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
@@ -114,27 +127,16 @@ const Minimal3 = () => {
           >
             Skills
           </SectionHeadingStyled>
-          <SectionContentStyled>
-            {skills.split('\n').map((item, index) => (
-              <span key={index}>
-                {item}
-                <br />
-              </span>
-            ))}
+          <SectionContentStyled lineHeight={lineHeight}>
+            {skills}
           </SectionContentStyled>
         </SideStyled>
       </MainStyled>
-    </WrapperStyled>
+    </PageStyled>
   )
 }
 
-type Title = {
-  uppercase: boolean
-  letterSpacing: number
-}
-
-const TitleStyled = styled.div<Title>`
-  display: flex;
+const TitleStyled = styled.View`
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -144,31 +146,17 @@ const TitleStyled = styled.div<Title>`
     props.letterSpacing && `letter-spacing: ${props.letterSpacing}px;`};
 `
 
-type Contact = {
-  isEmpty: boolean
-}
-
-const ContactStyled = styled.div<Contact>`
-  display: flex;
+const ContactStyled = styled.View`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   margin: 0 auto;
   ${props => !props.isEmpty && 'margin-top: 32px;'};
-
-  div {
-    margin-top: 5px;
-
-    &:first-child {
-      margin: 0;
-    }
-  }
 `
 
-const EducationStyled = styled.div`
-  display: flex;
+const EducationStyled = styled.View`
   flex-direction: column;
   align-items: center;
 `
 
-export default Minimal3
+export default PdfMinimal3

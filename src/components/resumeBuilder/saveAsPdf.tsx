@@ -20,6 +20,8 @@ import arvoRegular from '../../fonts/Arvo-Regular.ttf'
 import arvoItalic from '../../fonts/Arvo-Italic.ttf'
 import arvoBold from '../../fonts/Arvo-Bold.ttf'
 
+Font.registerHyphenationCallback(word => [word])
+
 Font.register({
   family: 'Lato',
   fonts: [
