@@ -9,6 +9,7 @@ import PdfMinimal1 from '../../pdfTemplates/minimal/pdfMinimal1'
 import { useFormContext } from '../../contexts/form-context'
 import PdfMinimal2 from '../../pdfTemplates/minimal/pdfMinimal2'
 import PdfMinimal3 from '../../pdfTemplates/minimal/pdfMinimal3'
+import PdfMinimal4 from '../../pdfTemplates/minimal/pdfMinimal4'
 
 type NavItems = [
   'Profile',
@@ -63,6 +64,7 @@ const Navbar = () => {
     if (currentTemplate === 'minimal1') return <PdfMinimal1 {...pdfProps} />
     if (currentTemplate === 'minimal2') return <PdfMinimal2 {...pdfProps} />
     if (currentTemplate === 'minimal3') return <PdfMinimal3 {...pdfProps} />
+    if (currentTemplate === 'minimal4') return <PdfMinimal4 {...pdfProps} />
   }
 
   return (

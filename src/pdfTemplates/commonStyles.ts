@@ -20,6 +20,7 @@ const FullNameStyled = styled.Text`
   ${props => props.center && 'text-align: center;'};
   ${props => props.color && `color: ${props.color};`};
   padding-right: 34px;
+  ${props => props.noPadding && 'padding: 0;'};
 `
 
 const CurrentPositionStyled = styled.Text`
@@ -68,6 +69,7 @@ const BoxStyled = styled.View`
 const SectionContentStyled = styled.Text`
   margin-top: 16px;
   ${props => props.mt10 && 'margin-top: 10px;'};
+  ${props => props.noMargin && 'margin: 0;'};
   ${props => props.lineHeight && `line-height: ${props.lineHeight};`};
 `
 
