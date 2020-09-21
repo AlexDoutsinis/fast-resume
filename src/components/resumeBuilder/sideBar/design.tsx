@@ -35,7 +35,8 @@ const Design = () => {
 
     if (value <= maxValue && value >= minValue) {
       setLineHeight(value)
-      localStorage.setItem('lineHeight', value.toString())
+      if (typeof window !== 'undefined')
+        localStorage.setItem('lineHeight', value.toString())
     }
   }
 
@@ -46,23 +47,26 @@ const Design = () => {
 
     if (value <= maxValue && value >= minValue) {
       setLetterSpacing(value)
-      localStorage.setItem('letterSpacing', value.toString())
+      if (typeof window !== 'undefined')
+        localStorage.setItem('letterSpacing', value.toString())
     }
   }
 
   function handleUppercaseChange() {
     setUppercaseHeading(isUppercase => !isUppercase)
-    localStorage.setItem('uppercaseHeading', `${!uppercaseHeading}`)
+    if (typeof window !== 'undefined')
+      localStorage.setItem('uppercaseHeading', `${!uppercaseHeading}`)
   }
 
   function handleColorChange({ hex }: { hex: string }) {
     setColor(hex)
-    localStorage.setItem('color', hex)
+    if (typeof window !== 'undefined') localStorage.setItem('color', hex)
   }
 
   function handleFontChange(e: React.ChangeEvent<HTMLSelectElement>) {
     setFont(e.target.value)
-    localStorage.setItem('font', e.target.value)
+    if (typeof window !== 'undefined')
+      localStorage.setItem('font', e.target.value)
   }
 
   return (

@@ -4,26 +4,35 @@ import {
   EducationList,
 } from '../contexts/form-context'
 
-const storedFullName = localStorage.getItem('fullName')
-const storedCurrentPosition = localStorage.getItem('currentPosition')
-const storedProfileSummary = localStorage.getItem('profileSummary')
-const storedSkills = localStorage.getItem('skills')
-const storedLineHeight = parseFloat(localStorage.getItem('lineHeight'))
-const storedLetterSpacing = parseFloat(localStorage.getItem('letterSpacing'))
-const storedUppercaseHeading =
-  localStorage.getItem('uppercaseHeading') == 'true'
-const storedColor = localStorage.getItem('color')
-const storedFont = localStorage.getItem('font')
+let storedFullName = null
+let storedCurrentPosition = null
+let storedProfileSummary = null
+let storedSkills = null
+let storedLineHeight = null
+let storedLetterSpacing = null
+let storedUppercaseHeading = null
+let storedColor = null
+let storedFont = null
 
-const storeContactList: ContactList = JSON.parse(
-  localStorage.getItem('ContactList'),
-)
-const storeExperienceList: ExperienceList = JSON.parse(
-  localStorage.getItem('ExperienceList'),
-)
-const storeEducationList: EducationList = JSON.parse(
-  localStorage.getItem('EducationList'),
-)
+let storeContactList: ContactList = null
+let storeExperienceList: ExperienceList = null
+let storeEducationList: EducationList = null
+
+if (typeof window !== 'undefined') {
+  storedFullName = localStorage.getItem('fullName')
+  storedCurrentPosition = localStorage.getItem('currentPosition')
+  storedProfileSummary = localStorage.getItem('profileSummary')
+  storedSkills = localStorage.getItem('skills')
+  storedLineHeight = parseFloat(localStorage.getItem('lineHeight'))
+  storedLetterSpacing = parseFloat(localStorage.getItem('letterSpacing'))
+  storedUppercaseHeading = localStorage.getItem('uppercaseHeading') == 'true'
+  storedColor = localStorage.getItem('color')
+  storedFont = localStorage.getItem('font')
+
+  storeContactList = JSON.parse(localStorage.getItem('ContactList'))
+  storeExperienceList = JSON.parse(localStorage.getItem('ExperienceList'))
+  storeEducationList = JSON.parse(localStorage.getItem('EducationList'))
+}
 
 type StoredData = {
   storedFullName: string
