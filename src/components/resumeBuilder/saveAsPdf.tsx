@@ -149,7 +149,7 @@ const SaveAsPdf = ({ children: PdfTemplate }: Props) => {
     <div>
       <PDFDownloadLink
         document={PdfTemplate}
-        fileName={`CraftResume-${new Date()}.pdf`}
+        fileName={`FastResume-${Date.now()}.pdf`}
       >
         {({ loading }) => (
           <button>{loading ? 'Loading...' : 'Export PDF'}</button>
