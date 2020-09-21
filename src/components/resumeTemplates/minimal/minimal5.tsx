@@ -65,7 +65,14 @@ const Minimal5 = () => {
               <SectionSubHeadingStyled noMargin sm>
                 {item.company}
               </SectionSubHeadingStyled>
-              <div>{item.description}</div>
+              <div>
+                {item.description.split('\n').map((item, index) => (
+                  <span key={index}>
+                    {item}
+                    <br />
+                  </span>
+                ))}
+              </div>
             </BoxStyled>
           ))}
         </SectionContentStyled>

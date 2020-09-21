@@ -104,7 +104,14 @@ const Minimal3 = () => {
               <SectionSubHeadingStyled sm>
                 {item.company}
               </SectionSubHeadingStyled>
-              <SectionContentStyled>{item.description}</SectionContentStyled>
+              <SectionContentStyled>
+                {item.description.split('\n').map((item, index) => (
+                  <span key={index}>
+                    {item}
+                    <br />
+                  </span>
+                ))}
+              </SectionContentStyled>
             </div>
           ))}
           <SectionHeadingStyled
