@@ -5,11 +5,17 @@ type Width = {
 }
 
 export const useViewport = (): Width => {
-  const [width, setWidth] = useState(window?.innerWidth || null)
+  const [width, setWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : null,
+  )
 
   useEffect(() => {
-    const handleWindowResize = () => setWidth(window?.innerWidth || null)
-    window.addEventListener('resize', handleWindowResize)
+    const handleWindowResize = () =>
+      setWidth(typeof window !== 'undefined' ? window.innerWidth : null)
+
+    if (typeof window !== 'undefined')
+      window.addEventListener('resize', handleWindowResize)
+
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
