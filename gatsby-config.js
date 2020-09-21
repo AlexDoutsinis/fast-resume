@@ -63,6 +63,7 @@ module.exports = {
             variants: [`400`, `700`],
           },
         ],
+        fontDisplay: 'block',
       },
     },
     {
