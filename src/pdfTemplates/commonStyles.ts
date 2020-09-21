@@ -55,8 +55,7 @@ const SectionHeadingStyled = styled.Text`
   ${props => props.center && 'text-align: center;'};
   ${props => props.large && 'font-size: 16px;'};
   ${props =>
-    props.underline &&
-    'padding-bottom: 5px; border-bottom: solid var(--font-color) 1px;'};
+    props.underline && 'padding-bottom: 5px; border-bottom: 1 solid #1b262c ;'};
   ${props => props.mt20 && 'margin-top: 20px;'};
   ${props =>
     props.color && `color: ${props.color}; border-color: ${props.color};`};

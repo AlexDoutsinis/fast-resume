@@ -56,7 +56,7 @@ const Minimal5 = () => {
         >
           Experience
         </SectionHeadingStyled>
-        <SectionContentStyled mt10>
+        <SectionContentStyled>
           {experienceList.map(item => (
             <BoxStyled key={item.id}>
               <SectionSubHeadingStyled noMargin>
@@ -79,7 +79,7 @@ const Minimal5 = () => {
         >
           Education
         </SectionHeadingStyled>
-        <SectionContentStyled mt10>
+        <SectionContentStyled>
           {educationList.map(item => (
             <BoxStyled key={item.id}>
               <SectionSubHeadingStyled noMargin>
@@ -104,7 +104,7 @@ const Minimal5 = () => {
         >
           Skills
         </SectionHeadingStyled>
-        <SectionContentStyled mt10>
+        <SectionContentStyled>
           {skills.split('\n').map((item, index) => (
             <span key={index}>
               {item}

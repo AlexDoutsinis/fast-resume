@@ -9,7 +9,6 @@ import {
   CurrentPositionStyled,
   SectionContentStyled,
   SectionSubHeadingStyled,
-  ContactItemStyled,
 } from '../commonStyles'
 
 const PdfMinimal4 = (props: PropTypes) => {
