@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `CraftResume`,
-    description: `CraftResume - The Most Simple and Fastest way to Craft a Resume. 100% Free Resume Builder - Open Source. Easy to Use and Customizable. Resume Templates.`,
+    title: `FastResume`,
+    description: `FastResume - The Most Simple and Fastest way to Craft a Resume. 100% Free Resume Builder - Open Source. Easy to Use and Customizable. Resume Templates.`,
     author: 'Alexis Doutsinis',
-    keywords: 'craftresume, free, resume, builder, cv, easy, simple, templates',
+    keywords:
+      'fastresume, free, resume, builder, cv, easy, simple, fast, templates',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -59,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Craft Your Resume`,
-        short_name: `Craft Your Resume`,
+        name: `FastResume`,
+        short_name: `FastResume`,
         start_url: `/`,
         background_color: `#0f4c75`,
         theme_color: `#0f4c75`,
