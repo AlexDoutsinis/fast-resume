@@ -32,7 +32,9 @@ const PdfMinimal1 = (props: PropTypes) => {
   return (
     <PageStyled font={font}>
       <HeaderStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-        <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
+        <FullNameStyled color={color} noPadding>
+          {profile.fullName}
+        </FullNameStyled>
         <CurrentPositionStyled>{profile.currentPosition}</CurrentPositionStyled>
       </HeaderStyled>
       <MainStyled>
