@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import useMetaData from '../hooks/use-Metadata'
+import useMetaData from '../hooks/use-metadata'
 
 function SEO() {
   const { siteMetadata } = useMetaData()
