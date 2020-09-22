@@ -76,7 +76,7 @@ const Minimal3 = () => {
           <EducationStyled>
             {educationList.map(item => (
               <div key={item.id}>
-                <SectionSubHeadingStyled>
+                <SectionSubHeadingStyled fwNormal>
                   {item.university}
                 </SectionSubHeadingStyled>
                 <SectionSubHeadingStyled sm>

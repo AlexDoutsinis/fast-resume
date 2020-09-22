@@ -89,7 +89,7 @@ const Minimal5 = () => {
         <SectionContentStyled>
           {educationList.map(item => (
             <BoxStyled key={item.id}>
-              <SectionSubHeadingStyled noMargin>
+              <SectionSubHeadingStyled noMargin fwNormal>
                 {item.university}
               </SectionSubHeadingStyled>
               <SectionSubHeadingStyled noMargin sm>

@@ -79,14 +79,14 @@ const SectionContentStyled = styled.Text`
 `
 
 const SectionSubHeadingStyled = styled.Text`
-  font-size: 13px;
+  font-size: 12px;
   margin-top: 16px;
   font-weight: bold;
   ${props =>
-    props.sm &&
-    'font-size: 12px; font-style: italic; font-weight: normal; margin-top: 5px;'};
+    props.sm && 'font-style: italic; font-weight: normal; margin-top: 5px;'};
   ${props => props.noMargin && 'margin: 0;'};
   ${props => props.lineHeight && `line-height: ${props.lineHeight};`};
+  ${props => props.fwNormal && 'font-weight: normal;'};
 `
 
 const PageStyled = styled.Page`

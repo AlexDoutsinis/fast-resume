@@ -111,7 +111,7 @@ const PdfMinimal1 = (props: PropTypes) => {
           {educationList.map(item => (
             <View key={item.id}>
               {item.university ? (
-                <SectionSubHeadingStyled lineHeight={lineHeight}>
+                <SectionSubHeadingStyled lineHeight={lineHeight} fwNormal>
                   {item.university}
                 </SectionSubHeadingStyled>
               ) : null}

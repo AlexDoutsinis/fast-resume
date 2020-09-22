@@ -53,16 +53,17 @@ const SectionContentStyled = styled.div<SectionContentStyledProps>`
 type SectionSubHeadingStyledProps = {
   sm?: boolean
   noMargin?: boolean
+  fwNormal?: boolean
 }
 
 const SectionSubHeadingStyled = styled.div<SectionSubHeadingStyledProps>`
-  font-size: 13px;
+  font-size: 12px;
   margin-top: 16px;
   font-weight: bold;
   ${props =>
-    props.sm &&
-    'font-size: 12px; font-style: italic; font-weight: normal; margin-top: 5px;'};
+    props.sm && 'font-style: italic; font-weight: normal; margin-top: 5px;'};
   ${props => props.noMargin && 'margin: 0;'};
+  ${props => props.fwNormal && 'font-weight: normal;'};
 `
 
 const MainStyled = styled.div`
