@@ -33,7 +33,9 @@ const PdfMinimal2 = (props: PropTypes) => {
     <PageStyled font={font}>
       <HeaderStyled>
         <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-          <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
+          <FullNameStyled noPadding color={color}>
+            {profile.fullName}
+          </FullNameStyled>
           <CurrentPositionStyled mt5 italic>
             {profile.currentPosition}
           </CurrentPositionStyled>
@@ -147,8 +149,6 @@ const TitleStyled = styled.View`
 const ContactStyled = styled.View`
   width: 40%;
   flex-direction: column;
-  justify-content: center;
-  padding-left: 32px;
 `
 
 export default PdfMinimal2

@@ -158,8 +158,6 @@ const TitleStyled = styled.div<Title>`
 const ContactStyled = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-left: 32px;
 
   div {
     margin-top: 5px;

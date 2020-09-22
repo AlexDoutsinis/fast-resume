@@ -42,7 +42,7 @@ const PdfMinimal4 = (props: PropTypes) => {
         >
           About Me
         </SectionHeadingStyled>
-        <SectionContentStyled noMargin lineHeight={lineHeight}>
+        <SectionContentStyled flexItem noMargin lineHeight={lineHeight}>
           {profile.profileSummary}
         </SectionContentStyled>
       </SectionStyled>
@@ -67,7 +67,7 @@ const PdfMinimal4 = (props: PropTypes) => {
               </SectionSubHeadingStyled>
             ) : null}
             {item.description ? (
-              <SectionContentStyled noMargin lineHeight={lineHeight}>
+              <SectionContentStyled flexItem noMargin lineHeight={lineHeight}>
                 {item.description}
               </SectionContentStyled>
             ) : null}

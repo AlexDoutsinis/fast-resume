@@ -7,7 +7,6 @@
     url('fonts/lato-regular.woff') format('woof');
   font-weight: normal;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -16,7 +15,6 @@
     url('fonts/lato-bold.woff') format('woof');
   font-weight: bold;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -25,7 +23,6 @@
     url('fonts/lato-italic.woff') format('woof');
   font-weight: normal;
   font-style: italic;
-  /* font-display: block; */
 }
 
 /* Montserrat */
@@ -35,7 +32,6 @@
     url('fonts/montserrat-regular.woff') format('woof');
   font-weight: normal;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -44,7 +40,6 @@
     url('fonts/montserrat-bold.woff') format('woof');
   font-weight: bold;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -53,7 +48,6 @@
     url('fonts/montserrat-italic.woff') format('woof');
   font-weight: normal;
   font-style: italic;
-  /* font-display: block; */
 }
 
 /* Karla */
@@ -63,7 +57,6 @@
     url('fonts/karla-regular.woff') format('woof');
   font-weight: normal;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -72,7 +65,6 @@
     url('fonts/karla-bold.woff') format('woof');
   font-weight: bold;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -81,7 +73,6 @@
     url('fonts/karla-italic.woff') format('woof');
   font-weight: normal;
   font-style: italic;
-  /* font-display: block; */
 }
 
 /* Source Sans Pro */
@@ -91,7 +82,6 @@
     url('fonts/source-sans-pro-regular.woff') format('woof');
   font-weight: normal;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -100,7 +90,6 @@
     url('fonts/source-sans-pro-bold.woff') format('woof');
   font-weight: bold;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -109,7 +98,6 @@
     url('fonts/source-sans-pro-italic.woff') format('woof');
   font-weight: normal;
   font-style: italic;
-  /* font-display: block; */
 }
 
 /* Titillium Web */
@@ -119,7 +107,6 @@
     url('fonts/titillium-web-regular.woff') format('woof');
   font-weight: normal;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -128,7 +115,6 @@
     url('fonts/titillium-web-bold.woff') format('woof');
   font-weight: bold;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -137,7 +123,6 @@
     url('fonts/titillium-web-italic.woff') format('woof');
   font-weight: normal;
   font-style: italic;
-  /* font-display: block; */
 }
 
 /* Arvo */
@@ -147,7 +132,6 @@
     url('fonts/arvo-regular.woff') format('woof');
   font-weight: normal;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -156,7 +140,6 @@
     url('fonts/arvo-bold.woff') format('woof');
   font-weight: bold;
   font-style: normal;
-  /* font-display: block; */
 }
 
 @font-face {
@@ -165,7 +148,6 @@
     url('fonts/arvo-italic.woff') format('woof');
   font-weight: normal;
   font-style: italic;
-  /* font-display: block; */
 }
 
 /* Reset */

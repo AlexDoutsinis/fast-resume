@@ -19,6 +19,8 @@ const FullNameStyled = styled.Text`
   ${props => props.sm && 'font-size: 22px;'};
   ${props => props.center && 'text-align: center;'};
   ${props => props.color && `color: ${props.color};`};
+  flex: 1;
+  flex-wrap: wrap;
   padding-right: 34px;
   ${props => props.noPadding && 'padding: 0;'};
 `
@@ -26,10 +28,13 @@ const FullNameStyled = styled.Text`
 const CurrentPositionStyled = styled.Text`
   font-size: 16px;
   margin-top: 10px;
+  flex: 1;
+  flex-wrap: wrap;
   ${props => props.italic && 'font-style: italic;'};
   ${props => props.mt5 && 'margin-top: 5px;'};
   ${props => props.sm && 'font-size: 14px;'};
   ${props => props.bold && 'font-weight: bold;'};
+  ${props => props.center && 'text-align: center;'};
 `
 
 const MainStyled = styled.View`
@@ -70,13 +75,16 @@ const SectionContentStyled = styled.Text`
   ${props => props.mt10 && 'margin-top: 10px;'};
   ${props => props.noMargin && 'margin: 0;'};
   ${props => props.lineHeight && `line-height: ${props.lineHeight};`};
+  ${props => props.flexItem && 'flex: 1; flex-wrap: wrap;'};
 `
 
 const SectionSubHeadingStyled = styled.Text`
   font-size: 13px;
   margin-top: 16px;
+  font-weight: bold;
   ${props =>
-    props.sm && 'font-size: 12px; font-style: italic; margin-top: 5px;'};
+    props.sm &&
+    'font-size: 12px; font-style: italic; font-weight: normal; margin-top: 5px;'};
   ${props => props.noMargin && 'margin: 0;'};
   ${props => props.lineHeight && `line-height: ${props.lineHeight};`};
 `
@@ -92,6 +100,8 @@ const PageStyled = styled.Page`
 
 const ContactItemStyled = styled.Text`
   margin-top: 5px;
+  flex: 1;
+  flex-wrap: wrap;
 
   &:first-child {
     margin: 0;

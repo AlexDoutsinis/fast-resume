@@ -37,10 +37,10 @@ const PdfMinimal3 = (props: PropTypes) => {
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
           >
-            <FullNameStyled sm center color={color}>
+            <FullNameStyled noPadding sm center color={color}>
               {profile.fullName}
             </FullNameStyled>
-            <CurrentPositionStyled mt5 sm italic>
+            <CurrentPositionStyled center mt5 sm italic>
               {profile.currentPosition}
             </CurrentPositionStyled>
           </TitleStyled>
@@ -139,7 +139,7 @@ const PdfMinimal3 = (props: PropTypes) => {
 const TitleStyled = styled.View`
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   margin-top: 20px;
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>

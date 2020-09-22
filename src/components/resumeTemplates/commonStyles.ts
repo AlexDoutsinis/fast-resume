@@ -58,8 +58,10 @@ type SectionSubHeadingStyledProps = {
 const SectionSubHeadingStyled = styled.div<SectionSubHeadingStyledProps>`
   font-size: 13px;
   margin-top: 16px;
+  font-weight: bold;
   ${props =>
-    props.sm && 'font-size: 12px; font-style: italic; margin-top: 5px;'};
+    props.sm &&
+    'font-size: 12px; font-style: italic; font-weight: normal; margin-top: 5px;'};
   ${props => props.noMargin && 'margin: 0;'};
 `
 
