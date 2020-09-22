@@ -34,8 +34,8 @@ export const TemplateStyled = styled.div`
   grid-gap: 1rem;
   overflow: auto;
 
-  div {
-    border: solid 1px var(--blue-color);
+  img {
+    border: solid 1.5px var(--blue-color);
     cursor: pointer;
     border-radius: 5px;
   }

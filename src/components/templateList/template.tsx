@@ -1,5 +1,5 @@
-import React from "react"
-import Img from "gatsby-image"
+import React from 'react'
+import Img from 'gatsby-image'
 
 type Props = {
   node: {
@@ -14,10 +14,7 @@ type Props = {
 const Template = ({ node, openModal }: Props) => {
   return (
     <div onClick={() => openModal(node.name)}>
-      <Img
-        fluid={node.childImageSharp.fluid}
-        alt={`Resume template: '${node.name}'`}
-      />
+      <Img fluid={node.childImageSharp.fluid} alt={`'${node.name}'`} />
     </div>
   )
 }
