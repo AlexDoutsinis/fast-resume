@@ -8,7 +8,7 @@ type Props = {
 const Header = ({ siteTitle }: Props) => (
   <HeaderStyled>
     <h1>
-      <a href="#">{siteTitle}</a>
+      <a href="https://fastresume.me/">{siteTitle}</a>
     </h1>
   </HeaderStyled>
 )
