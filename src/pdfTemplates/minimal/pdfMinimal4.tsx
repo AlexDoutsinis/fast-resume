@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from '@react-pdf/renderer'
+import { Text } from '@react-pdf/renderer'
 import styled from '@react-pdf/styled-components'
 
 import { PropTypes } from '../PropTypes'
@@ -54,25 +54,27 @@ const PdfMinimal4 = (props: PropTypes) => {
         >
           Experience
         </SectionHeadingStyled>
-        {experienceList.map(item => (
-          <View key={item.id}>
-            {item.role ? (
-              <SectionSubHeadingStyled noMargin lineHeight={lineHeight}>
-                {item.role}
-              </SectionSubHeadingStyled>
-            ) : null}
-            {item.company ? (
-              <SectionSubHeadingStyled noMargin lineHeight={lineHeight} sm>
-                {item.company}
-              </SectionSubHeadingStyled>
-            ) : null}
-            {item.description ? (
-              <SectionContentStyled flexItem noMargin lineHeight={lineHeight}>
-                {item.description}
-              </SectionContentStyled>
-            ) : null}
-          </View>
-        ))}
+        <FlexChild>
+          {experienceList.map((item, index) => (
+            <ContainerStyled key={item.id} first={index === 0}>
+              {item.role ? (
+                <SectionSubHeadingStyled noMargin lineHeight={lineHeight}>
+                  {item.role}
+                </SectionSubHeadingStyled>
+              ) : null}
+              {item.company ? (
+                <SectionSubHeadingStyled noMargin lineHeight={lineHeight} sm>
+                  {item.company}
+                </SectionSubHeadingStyled>
+              ) : null}
+              {item.description ? (
+                <SectionContentStyled noMargin lineHeight={lineHeight}>
+                  {item.description}
+                </SectionContentStyled>
+              ) : null}
+            </ContainerStyled>
+          ))}
+        </FlexChild>
       </SectionStyled>
       <SectionStyled>
         <SectionHeadingStyled
@@ -82,29 +84,31 @@ const PdfMinimal4 = (props: PropTypes) => {
         >
           Education
         </SectionHeadingStyled>
-        {educationList.map(item => (
-          <View key={item.id}>
-            {item.university ? (
-              <SectionSubHeadingStyled
-                noMargin
-                lineHeight={lineHeight}
-                fwNormal
-              >
-                {item.university}
-              </SectionSubHeadingStyled>
-            ) : null}
-            {item.specialize ? (
-              <SectionSubHeadingStyled noMargin lineHeight={lineHeight} sm>
-                {item.specialize}
-              </SectionSubHeadingStyled>
-            ) : null}
-            {item.website ? (
-              <SectionSubHeadingStyled noMargin lineHeight={lineHeight} sm>
-                {item.website}
-              </SectionSubHeadingStyled>
-            ) : null}
-          </View>
-        ))}
+        <FlexChild>
+          {educationList.map((item, index) => (
+            <ContainerStyled key={item.id} first={index === 0}>
+              {item.university ? (
+                <SectionSubHeadingStyled
+                  noMargin
+                  lineHeight={lineHeight}
+                  fwNormal
+                >
+                  {item.university}
+                </SectionSubHeadingStyled>
+              ) : null}
+              {item.specialize ? (
+                <SectionSubHeadingStyled noMargin lineHeight={lineHeight} sm>
+                  {item.specialize}
+                </SectionSubHeadingStyled>
+              ) : null}
+              {item.website ? (
+                <SectionSubHeadingStyled noMargin lineHeight={lineHeight} sm>
+                  {item.website}
+                </SectionSubHeadingStyled>
+              ) : null}
+            </ContainerStyled>
+          ))}
+        </FlexChild>
       </SectionStyled>
       <SectionStyled>
         <SectionHeadingStyled
@@ -114,15 +118,25 @@ const PdfMinimal4 = (props: PropTypes) => {
         >
           Contact
         </SectionHeadingStyled>
-        <View>
+        <FlexChild>
           {contactList.map(item => (
             <Text key={item.id}>{item.contactItem}</Text>
           ))}
-        </View>
+        </FlexChild>
       </SectionStyled>
     </PageStyled>
   )
 }
+
+const FlexChild = styled.View`
+  flex: 1;
+  flex-wrap: wrap;
+`
+
+const ContainerStyled = styled.View`
+  margin-top: 16px;
+  ${props => props.first && 'margin: 0;'};
+`
 
 const HeaderStyled = styled.View`
   flex-direction: column;
