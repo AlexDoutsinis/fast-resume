@@ -2,6 +2,8 @@
 
 A free resume builder.
 
+[FastResume](https://fastresume.me/)
+
 ## About
 
 FastResume is a free and open source resume builder that helps you craft a resume in a simple and fast way. It's completely secure and customizable.
