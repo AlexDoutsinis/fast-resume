@@ -5,6 +5,7 @@ module.exports = {
     author: 'Alexis Doutsinis',
     keywords:
       'fastresume, free, resume, builder, cv, easy, simple, fast, templates',
+    siteUrl: 'https://fastresume.me',
   },
   plugins: [
     {
@@ -15,6 +16,7 @@ module.exports = {
         anonymize: true,
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
