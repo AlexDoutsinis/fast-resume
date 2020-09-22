@@ -34,7 +34,7 @@ function SEO() {
         },
         {
           property: `og:url`,
-          content: ``,
+          content: `https://fastresume.me/`,
         },
         {
           name: `twitter:card`,
