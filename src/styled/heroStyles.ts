@@ -31,7 +31,6 @@ export const HeroContentStyled = styled.div`
   p {
     margin-top: 1.5rem;
     font-size: 1.2rem;
-    font-weight: 300;
 
     ${device.desktop`
       font-size: 1.4rem;

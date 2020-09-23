@@ -38,7 +38,6 @@ export const FeaturesContentStyled = styled.div`
   p {
     font-size: 1.1rem;
     margin-top: 1.5rem;
-    font-weight: 300;
 
     ${device.desktop`
       margin-top: 2rem;

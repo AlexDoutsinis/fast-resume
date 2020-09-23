@@ -1,0 +1,6 @@
+require("typeface-lato")
+require("typeface-montserrat")
+require("typeface-karla")
+require("typeface-source-sans-pro")
+require("typeface-titillium-web")
+require("typeface-arvo")
