@@ -30,17 +30,17 @@ const PdfMinimal5 = (props: PropTypes) => {
   return (
     <PageStyled font={font}>
       <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-        <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
+        <FullNameStyled noPadding color={color}>
+          {profile.fullName}
+        </FullNameStyled>
         <CurrentPositionStyled mt5 sm bold>
           {profile.currentPosition}
         </CurrentPositionStyled>
       </TitleStyled>
       <ContactWrapperStyled>
-        <View>
-          {contactList.map(item => (
-            <Text key={item.id}>{item.contactItem}</Text>
-          ))}
-        </View>
+        {contactList.map(item => (
+          <Text key={item.id}>{item.contactItem}</Text>
+        ))}
       </ContactWrapperStyled>
       <SectionContentStyled mt10 lineHeight={lineHeight}>
         {profile.profileSummary}

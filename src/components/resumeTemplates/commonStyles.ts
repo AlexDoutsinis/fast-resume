@@ -123,7 +123,7 @@ const WrapperStyled = styled.div`
 `
 
 const BoxStyled = styled.div`
-  margin-top: 1rem;
+  margin-top: 16px;
 
   &:first-of-type {
     margin: 0;

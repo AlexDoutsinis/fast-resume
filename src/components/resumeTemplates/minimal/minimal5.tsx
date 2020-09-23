@@ -26,108 +26,97 @@ const Minimal5 = () => {
 
   return (
     <WrapperStyled>
-      <TemplateWrapperStyled>
-        <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
-          <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
-          <CurrentPositionStyled mt5 sm bold>
-            {profile.currentPosition}
-          </CurrentPositionStyled>
-        </TitleStyled>
-        <ContactWrapperStyled>
-          {contactList.map(item => (
-            <div key={item.id}>{item.contactItem}</div>
-          ))}
-        </ContactWrapperStyled>
-        <SectionContentStyled mt10>
-          {profile.profileSummary.split('\n').map((item, index) => (
-            <span key={index}>
-              {item}
-              <br />
-            </span>
-          ))}
-        </SectionContentStyled>
-        <SectionHeadingStyled
-          uppercase={uppercaseHeading}
-          letterSpacing={letterSpacing}
-          large
-          underline
-          mt20
-          color={color}
-        >
-          Experience
-        </SectionHeadingStyled>
-        <SectionContentStyled>
-          {experienceList.map(item => (
-            <BoxStyled key={item.id}>
-              <SectionSubHeadingStyled noMargin>
-                {item.role}
-              </SectionSubHeadingStyled>
-              <SectionSubHeadingStyled noMargin sm>
-                {item.company}
-              </SectionSubHeadingStyled>
-              <div>
-                {item.description.split('\n').map((item, index) => (
-                  <span key={index}>
-                    {item}
-                    <br />
-                  </span>
-                ))}
-              </div>
-            </BoxStyled>
-          ))}
-        </SectionContentStyled>
-        <SectionHeadingStyled
-          uppercase={uppercaseHeading}
-          letterSpacing={letterSpacing}
-          large
-          underline
-          mt20
-          color={color}
-        >
-          Education
-        </SectionHeadingStyled>
-        <SectionContentStyled>
-          {educationList.map(item => (
-            <BoxStyled key={item.id}>
-              <SectionSubHeadingStyled noMargin fwNormal>
-                {item.university}
-              </SectionSubHeadingStyled>
-              <SectionSubHeadingStyled noMargin sm>
-                {item.specialize}
-              </SectionSubHeadingStyled>
-              <SectionSubHeadingStyled noMargin sm>
-                {item.website}
-              </SectionSubHeadingStyled>
-            </BoxStyled>
-          ))}
-        </SectionContentStyled>
-        <SectionHeadingStyled
-          uppercase={uppercaseHeading}
-          letterSpacing={letterSpacing}
-          large
-          underline
-          mt20
-          color={color}
-        >
-          Skills
-        </SectionHeadingStyled>
-        <SectionContentStyled>
-          {skills.split('\n').map((item, index) => (
-            <span key={index}>
-              {item}
-              <br />
-            </span>
-          ))}
-        </SectionContentStyled>
-      </TemplateWrapperStyled>
+      <TitleStyled uppercase={uppercaseHeading} letterSpacing={letterSpacing}>
+        <FullNameStyled color={color}>{profile.fullName}</FullNameStyled>
+        <CurrentPositionStyled mt5 sm bold>
+          {profile.currentPosition}
+        </CurrentPositionStyled>
+      </TitleStyled>
+      <ContactWrapperStyled>
+        {contactList.map(item => (
+          <div key={item.id}>{item.contactItem}</div>
+        ))}
+      </ContactWrapperStyled>
+      <SectionContentStyled mt10>
+        {profile.profileSummary.split('\n').map((item, index) => (
+          <span key={index}>
+            {item}
+            <br />
+          </span>
+        ))}
+      </SectionContentStyled>
+      <SectionHeadingStyled
+        uppercase={uppercaseHeading}
+        letterSpacing={letterSpacing}
+        large
+        underline
+        mt20
+        color={color}
+      >
+        Experience
+      </SectionHeadingStyled>
+      {experienceList.map(item => (
+        <BoxStyled key={item.id}>
+          <SectionSubHeadingStyled noMargin>
+            {item.role}
+          </SectionSubHeadingStyled>
+          <SectionSubHeadingStyled noMargin sm>
+            {item.company}
+          </SectionSubHeadingStyled>
+          <div>
+            {item.description.split('\n').map((item, index) => (
+              <span key={index}>
+                {item}
+                <br />
+              </span>
+            ))}
+          </div>
+        </BoxStyled>
+      ))}
+      <SectionHeadingStyled
+        uppercase={uppercaseHeading}
+        letterSpacing={letterSpacing}
+        large
+        underline
+        mt20
+        color={color}
+      >
+        Education
+      </SectionHeadingStyled>
+      {educationList.map(item => (
+        <BoxStyled key={item.id}>
+          <SectionSubHeadingStyled noMargin fwNormal>
+            {item.university}
+          </SectionSubHeadingStyled>
+          <SectionSubHeadingStyled noMargin sm>
+            {item.specialize}
+          </SectionSubHeadingStyled>
+          <SectionSubHeadingStyled noMargin sm>
+            {item.website}
+          </SectionSubHeadingStyled>
+        </BoxStyled>
+      ))}
+      <SectionHeadingStyled
+        uppercase={uppercaseHeading}
+        letterSpacing={letterSpacing}
+        large
+        underline
+        mt20
+        color={color}
+      >
+        Skills
+      </SectionHeadingStyled>
+      <SectionContentStyled>
+        {skills.split('\n').map((item, index) => (
+          <span key={index}>
+            {item}
+            <br />
+          </span>
+        ))}
+      </SectionContentStyled>
     </WrapperStyled>
   )
 }
-
-const TemplateWrapperStyled = styled.div`
-  padding: 0 20px;
-  padding-top: 20px;
-`
 
 type Title = {
   uppercase: boolean

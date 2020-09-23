@@ -72,7 +72,7 @@ const Design = () => {
   return (
     <DesignTabWrapperStyled>
       <InputWrapperStyled>
-        <label htmlFor="lineHeight">Line Height - Body</label>
+        <label htmlFor="lineHeight">Line Height - Text</label>
         <input
           type="number"
           step={'0.05'}

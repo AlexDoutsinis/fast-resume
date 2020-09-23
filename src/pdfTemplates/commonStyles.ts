@@ -90,8 +90,6 @@ const SectionSubHeadingStyled = styled.Text`
 `
 
 const PageStyled = styled.Page`
-  width: 595px;
-  min-height: 842px;
   font-size: 12px;
   line-height: 1.3;
   ${props => props.font && `font-family: '${props.font}';`};

@@ -251,7 +251,6 @@ export const CurrentTemplateBoxStyled = styled.div<
   display: inline-block;
   line-height: 1.3;
   font-size: 12px;
-  overflow: auto;
   margin-top: 1rem;
   margin-left: 5%;
 
@@ -272,8 +271,9 @@ export const CurrentTemplateBoxStyled = styled.div<
 `
 
 export const CurrentTemplateWrapperStyled = styled.div`
-  width: 595px;
-  min-height: 842px;
+  width: 595.28px;
+  height: 841.89px;
+  overflow-y: scroll;
   margin: auto;
   border: solid var(--blue-color) 1px;
 `
