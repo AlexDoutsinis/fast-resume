@@ -49,7 +49,7 @@ const PdfMinimal2 = (props: PropTypes) => {
         </ContactStyled>
       </HeaderStyled>
       <MainStyled>
-        <SideStyled pr width={'60%'}>
+        <SideStyled width={'40%'}>
           <SectionHeadingStyled
             first
             uppercase={uppercaseHeading}
@@ -62,6 +62,19 @@ const PdfMinimal2 = (props: PropTypes) => {
             {profile.profileSummary}
           </SectionContentStyled>
           <SectionHeadingStyled
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+            color={color}
+          >
+            Skills
+          </SectionHeadingStyled>
+          <SectionContentStyled lineHeight={lineHeight}>
+            {skills}
+          </SectionContentStyled>
+        </SideStyled>
+        <SideStyled pl width={'60%'}>
+          <SectionHeadingStyled
+            first
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
             color={color}
@@ -87,19 +100,6 @@ const PdfMinimal2 = (props: PropTypes) => {
               ) : null}
             </View>
           ))}
-        </SideStyled>
-        <SideStyled width={'40%'}>
-          <SectionHeadingStyled
-            first
-            uppercase={uppercaseHeading}
-            letterSpacing={letterSpacing}
-            color={color}
-          >
-            Skills
-          </SectionHeadingStyled>
-          <SectionContentStyled lineHeight={lineHeight}>
-            {skills}
-          </SectionContentStyled>
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}

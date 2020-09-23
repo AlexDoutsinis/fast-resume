@@ -41,7 +41,7 @@ const Minimal2 = () => {
         </ContactStyled>
       </HeaderStyled>
       <MainStyled>
-        <SideStyled pr width={'60%'}>
+        <SideStyled width={'40%'}>
           <SectionHeadingStyled
             first
             uppercase={uppercaseHeading}
@@ -59,6 +59,24 @@ const Minimal2 = () => {
             ))}
           </SectionContentStyled>
           <SectionHeadingStyled
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+            color={color}
+          >
+            Skills
+          </SectionHeadingStyled>
+          <SectionContentStyled>
+            {skills.split('\n').map((item, index) => (
+              <span key={index}>
+                {item}
+                <br />
+              </span>
+            ))}
+          </SectionContentStyled>
+        </SideStyled>
+        <SideStyled pl width={'60%'}>
+          <SectionHeadingStyled
+            first
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
             color={color}
@@ -81,24 +99,6 @@ const Minimal2 = () => {
               </SectionContentStyled>
             </div>
           ))}
-        </SideStyled>
-        <SideStyled width={'40%'}>
-          <SectionHeadingStyled
-            first
-            uppercase={uppercaseHeading}
-            letterSpacing={letterSpacing}
-            color={color}
-          >
-            Skills
-          </SectionHeadingStyled>
-          <SectionContentStyled>
-            {skills.split('\n').map((item, index) => (
-              <span key={index}>
-                {item}
-                <br />
-              </span>
-            ))}
-          </SectionContentStyled>
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
             letterSpacing={letterSpacing}
