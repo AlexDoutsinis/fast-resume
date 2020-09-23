@@ -47,6 +47,7 @@ const Minimal3 = () => {
           <SectionHeadingStyled
             center
             uppercase={uppercaseHeading}
+            underline
             letterSpacing={letterSpacing}
             color={color}
           >
@@ -68,6 +69,7 @@ const Minimal3 = () => {
           <SectionHeadingStyled
             center
             uppercase={uppercaseHeading}
+            underline
             letterSpacing={letterSpacing}
             color={color}
           >
@@ -93,6 +95,7 @@ const Minimal3 = () => {
           <SectionHeadingStyled
             first
             uppercase={uppercaseHeading}
+            underline
             letterSpacing={letterSpacing}
             color={color}
           >
@@ -116,6 +119,7 @@ const Minimal3 = () => {
           ))}
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
+            underline
             letterSpacing={letterSpacing}
             color={color}
           >
@@ -173,9 +177,7 @@ const ContactStyled = styled.div<Contact>`
 `
 
 const EducationStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 `
 
 export default Minimal3

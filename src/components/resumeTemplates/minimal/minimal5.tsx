@@ -81,6 +81,24 @@ const Minimal5 = () => {
         mt20
         color={color}
       >
+        Skills
+      </SectionHeadingStyled>
+      <SectionContentStyled>
+        {skills.split('\n').map((item, index) => (
+          <span key={index}>
+            {item}
+            <br />
+          </span>
+        ))}
+      </SectionContentStyled>
+      <SectionHeadingStyled
+        uppercase={uppercaseHeading}
+        letterSpacing={letterSpacing}
+        large
+        underline
+        mt20
+        color={color}
+      >
         Education
       </SectionHeadingStyled>
       {educationList.map(item => (
@@ -96,24 +114,6 @@ const Minimal5 = () => {
           </SectionSubHeadingStyled>
         </BoxStyled>
       ))}
-      <SectionHeadingStyled
-        uppercase={uppercaseHeading}
-        letterSpacing={letterSpacing}
-        large
-        underline
-        mt20
-        color={color}
-      >
-        Skills
-      </SectionHeadingStyled>
-      <SectionContentStyled>
-        {skills.split('\n').map((item, index) => (
-          <span key={index}>
-            {item}
-            <br />
-          </span>
-        ))}
-      </SectionContentStyled>
     </WrapperStyled>
   )
 }

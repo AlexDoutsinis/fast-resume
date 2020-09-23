@@ -82,6 +82,19 @@ const PdfMinimal5 = (props: PropTypes) => {
         mt20
         color={color}
       >
+        Skills
+      </SectionHeadingStyled>
+      <SectionContentStyled lineHeight={lineHeight}>
+        {skills}
+      </SectionContentStyled>
+      <SectionHeadingStyled
+        uppercase={uppercaseHeading}
+        letterSpacing={letterSpacing}
+        large
+        underline
+        mt20
+        color={color}
+      >
         Education
       </SectionHeadingStyled>
       {educationList.map(item => (
@@ -103,19 +116,6 @@ const PdfMinimal5 = (props: PropTypes) => {
           ) : null}
         </BoxStyled>
       ))}
-      <SectionHeadingStyled
-        uppercase={uppercaseHeading}
-        letterSpacing={letterSpacing}
-        large
-        underline
-        mt20
-        color={color}
-      >
-        Skills
-      </SectionHeadingStyled>
-      <SectionContentStyled lineHeight={lineHeight}>
-        {skills}
-      </SectionContentStyled>
     </PageStyled>
   )
 }

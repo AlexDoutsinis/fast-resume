@@ -47,6 +47,7 @@ const PdfMinimal3 = (props: PropTypes) => {
           <SectionHeadingStyled
             center
             uppercase={uppercaseHeading}
+            underline
             letterSpacing={letterSpacing}
             color={color}
           >
@@ -65,6 +66,7 @@ const PdfMinimal3 = (props: PropTypes) => {
           <SectionHeadingStyled
             center
             uppercase={uppercaseHeading}
+            underline
             letterSpacing={letterSpacing}
             color={color}
           >
@@ -96,6 +98,7 @@ const PdfMinimal3 = (props: PropTypes) => {
           <SectionHeadingStyled
             first
             uppercase={uppercaseHeading}
+            underline
             letterSpacing={letterSpacing}
             color={color}
           >
@@ -122,6 +125,7 @@ const PdfMinimal3 = (props: PropTypes) => {
           ))}
           <SectionHeadingStyled
             uppercase={uppercaseHeading}
+            underline
             letterSpacing={letterSpacing}
             color={color}
           >
@@ -139,7 +143,6 @@ const PdfMinimal3 = (props: PropTypes) => {
 const TitleStyled = styled.View`
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
   margin-top: 20px;
   ${props => props.uppercase && 'text-transform: uppercase;'};
   ${props =>
@@ -155,8 +158,7 @@ const ContactStyled = styled.View`
 `
 
 const EducationStyled = styled.View`
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 `
 
 export default PdfMinimal3
