@@ -49,7 +49,7 @@ const SectionStyled = styled.section<Section>`
 
   > div {
     width: 85%;
-    margin: auto;
+    margin: 0 auto;
     padding: 2.5rem 0;
 
     ${device.tablet`

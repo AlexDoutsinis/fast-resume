@@ -1,13 +1,26 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { device } from "../utils/device"
+import { device } from '../utils/device'
 
 export const FeaturesWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   ${device.tablet`
+    flex-direction: row;
+    justify-content: space-between;
+  `}
+
+  ${device.laptopL`
+    display: grid;
+    grid-template-columns: 30% 50%;
+    grid-column-gap: 20%;
+  `}
+
+  ${device.desktop`
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
   `}
