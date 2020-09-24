@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { device } from "../utils/device"
+import { device } from '../utils/device'
 
 export const HeroWrapperStyled = styled.div`
   display: flex;

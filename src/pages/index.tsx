@@ -57,13 +57,19 @@ const SectionStyled = styled.section<Section>`
       width: 90%;
     `};
 
+    ${device.laptop`
+      padding: 4rem 0;
+      width: 80%;
+    `}
+
     ${device.laptopL`
       padding: 5rem 0;
+      width: 85%;
     `};
 
     ${device.desktop`
       padding: 6.5rem 0;
-      width: 70%;
+      width: 60%;
     `};
   }
 `
