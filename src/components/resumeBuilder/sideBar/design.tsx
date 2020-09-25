@@ -120,7 +120,7 @@ const Design = () => {
           <option value="Nunito">Nunito</option>
           <option value="Source Sans Pro">Source Sans Pro</option>
           <option value="Titillium Web">Titillium Web</option>
-          <option value="Arvo">Arvo</option>
+          <option value="EB Garamond">EB Garamond</option>
         </SelectStyled>
       </SelectWrapperStyled>
       <HeadingStyled>Template</HeadingStyled>

@@ -16,9 +16,9 @@ import sourceSansProBold from '../../fonts/source-sans-pro-bold.ttf'
 import titilliumWebRegular from '../../fonts/titillium-web-regular.ttf'
 import titilliumWebItalic from '../../fonts/titillium-web-italic.ttf'
 import titilliumWebBold from '../../fonts/titillium-web-bold.ttf'
-import arvoRegular from '../../fonts/arvo-regular.ttf'
-import arvoItalic from '../../fonts/arvo-italic.ttf'
-import arvoBold from '../../fonts/arvo-bold.ttf'
+import ebGaramondRegular from '../../fonts/eb-garamond-regular.ttf'
+import ebGaramondItalic from '../../fonts/eb-garamond-italic.ttf'
+import ebGaramondBold from '../../fonts/eb-garamond-bold.ttf'
 
 Font.registerHyphenationCallback(word => [word])
 
@@ -120,20 +120,20 @@ Font.register({
 })
 
 Font.register({
-  family: 'Arvo',
+  family: 'EB Garamond',
   fonts: [
     {
-      src: arvoRegular,
+      src: ebGaramondRegular,
       fontStyle: 'normal',
       fontWeight: 'normal',
     },
     {
-      src: arvoItalic,
+      src: ebGaramondItalic,
       fontStyle: 'italic',
       fontWeight: 'normal',
     },
     {
-      src: arvoBold,
+      src: ebGaramondBold,
       fontStyle: 'normal',
       fontWeight: 'bold',
     },

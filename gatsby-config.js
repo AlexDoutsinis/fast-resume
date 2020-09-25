@@ -61,7 +61,7 @@ module.exports = {
             variants: [`400`, `700`],
           },
           {
-            family: `Arvo`,
+            family: `EB Garamond`,
             variants: [`400`, `700`],
           },
         ],
