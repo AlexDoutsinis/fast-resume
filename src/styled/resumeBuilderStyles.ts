@@ -127,7 +127,8 @@ export const SideBarStyled = styled.div`
     width: 100%;
     padding: 3px 6px;
     outline: none;
-    border: solid var(--blue-color) 1px;
+    border: none;
+    background-color: #f5f6f7;
     margin-bottom: 0.5rem;
   }
 
