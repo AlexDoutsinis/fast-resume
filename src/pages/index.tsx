@@ -60,7 +60,7 @@ const SectionStyled = styled.section<Section>`
     ${device.laptop`
       padding: 4rem 0;
       width: 80%;
-      max-width: 900px;
+      max-width: 950px;
     `}
 
     ${device.laptopL`

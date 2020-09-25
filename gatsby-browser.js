@@ -1,6 +1,0 @@
-require('typeface-lato')
-require('typeface-montserrat')
-require('typeface-nunito')
-require('typeface-source-sans-pro')
-require('typeface-titillium-web')
-require('typeface-arvo')

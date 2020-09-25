@@ -36,7 +36,37 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-preload-fonts`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Lato`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Montserrat`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Nunito`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Source Sans Pro`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Titillium Web`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Arvo`,
+            variants: [`400`, `700`],
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
