@@ -60,16 +60,19 @@ const SectionStyled = styled.section<Section>`
     ${device.laptop`
       padding: 4rem 0;
       width: 80%;
+      max-width: 900px;
     `}
 
     ${device.laptopL`
       padding: 5rem 0;
       width: 85%;
+      max-width: 1300px;
     `};
 
     ${device.desktop`
       padding: 6.5rem 0;
       width: 60%;
+      max-width: 1600px;
     `};
   }
 `

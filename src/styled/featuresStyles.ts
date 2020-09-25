@@ -12,18 +12,6 @@ export const FeaturesWrapperStyled = styled.div`
     flex-direction: row;
     justify-content: space-between;
   `}
-
-  ${device.laptopL`
-    display: grid;
-    grid-template-columns: 30% 50%;
-    grid-column-gap: 20%;
-  `}
-
-  ${device.desktop`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  `}
 `
 
 export const FeaturesContentStyled = styled.div`
