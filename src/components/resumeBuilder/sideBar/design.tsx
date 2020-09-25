@@ -117,7 +117,7 @@ const Design = () => {
         <SelectStyled value={font} onChange={handleFontChange}>
           <option value="Lato">Lato</option>
           <option value="Montserrat">Montserrat</option>
-          <option value="Karla">Karla</option>
+          <option value="Nunito">Nunito</option>
           <option value="Source Sans Pro">Source Sans Pro</option>
           <option value="Titillium Web">Titillium Web</option>
           <option value="Arvo">Arvo</option>
@@ -156,7 +156,7 @@ const DesignTabWrapperStyled = styled.div`
 const InputWrapperStyled = styled.div`
   width: 70%;
   margin-bottom: 1.2rem;
-  
+
   label {
     display: block;
     margin-bottom: 0.8rem;

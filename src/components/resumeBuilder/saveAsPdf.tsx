@@ -1,24 +1,26 @@
 import React from 'react'
 import { PDFDownloadLink, Font } from '@react-pdf/renderer'
 
-import latoRegular from '../../fonts/Lato-Regular.ttf'
-import latoItalic from '../../fonts/Lato-Italic.ttf'
-import latoBold from '../../fonts/Lato-Bold.ttf'
-import montserratRegular from '../../fonts/Montserrat-Regular.ttf'
-import montserratItalic from '../../fonts/Montserrat-Italic.ttf'
-import montserratBold from '../../fonts/Montserrat-Bold.ttf'
-import karlaRegular from '../../fonts/Karla-Regular.ttf'
-import karlaItalic from '../../fonts/Karla-Italic.ttf'
-import karlaBold from '../../fonts/Karla-Bold.ttf'
-import sourceSansProRegular from '../../fonts/SourceSansPro-Regular.ttf'
-import sourceSansProItalic from '../../fonts/SourceSansPro-Italic.ttf'
-import sourceSansProBold from '../../fonts/SourceSansPro-Bold.ttf'
-import titilliumWebRegular from '../../fonts/TitilliumWeb-Regular.ttf'
-import titilliumWebItalic from '../../fonts/TitilliumWeb-Italic.ttf'
-import titilliumWebBold from '../../fonts/TitilliumWeb-Bold.ttf'
-import arvoRegular from '../../fonts/Arvo-Regular.ttf'
-import arvoItalic from '../../fonts/Arvo-Italic.ttf'
-import arvoBold from '../../fonts/Arvo-Bold.ttf'
+import latoRegular from '../../fonts/lato-regular.ttf'
+import latoItalic from '../../fonts/lato-italic.ttf'
+import latoBold from '../../fonts/lato-bold.ttf'
+import montserratRegular from '../../fonts/montserrat-regular.ttf'
+import montserratItalic from '../../fonts/montserrat-italic.ttf'
+import montserratBold from '../../fonts/montserrat-bold.ttf'
+import nunitoRegular from '../../fonts/nunito-regular.ttf'
+import nunitoItalic from '../../fonts/nunito-italic.ttf'
+import nunitoBold from '../../fonts/nunito-bold.ttf'
+import sourceSansProRegular from '../../fonts/source-sans-pro-regular.ttf'
+import sourceSansProItalic from '../../fonts/source-sans-pro-italic.ttf'
+import sourceSansProBold from '../../fonts/source-sans-pro-bold.ttf'
+import titilliumWebRegular from '../../fonts/titillium-web-regular.ttf'
+import titilliumWebItalic from '../../fonts/titillium-web-italic.ttf'
+import titilliumWebBold from '../../fonts/titillium-web-bold.ttf'
+import arvoRegular from '../../fonts/arvo-regular.ttf'
+import arvoItalic from '../../fonts/arvo-italic.ttf'
+import arvoBold from '../../fonts/arvo-bold.ttf'
+
+// #F5F6F7
 
 Font.registerHyphenationCallback(word => [word])
 
@@ -57,20 +59,20 @@ Font.register({
 })
 
 Font.register({
-  family: 'Karla',
+  family: 'Nunito',
   fonts: [
     {
-      src: karlaRegular,
+      src: nunitoRegular,
       fontStyle: 'normal',
       fontWeight: 'normal',
     },
     {
-      src: karlaItalic,
+      src: nunitoItalic,
       fontStyle: 'italic',
       fontWeight: 'normal',
     },
     {
-      src: karlaBold,
+      src: nunitoBold,
       fontStyle: 'normal',
       fontWeight: 'bold',
     },
