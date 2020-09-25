@@ -1,11 +1,11 @@
-import React from "react"
-import Wrapper from "react-modal"
+import React from 'react'
+import Wrapper from 'react-modal'
 
 import {
   RotateIconWrapperStyled,
   RotateIconStyled,
-} from "../../styled/resumeBuilderStyles"
-import { useViewport } from "../../hooks/use-viewport"
+} from '../../styled/resumeBuilderStyles'
+import { useViewport } from '../../hooks/use-viewport'
 
 type Props = {
   isModalOpen: boolean
@@ -15,19 +15,19 @@ type Props = {
   stopWobble: () => void
 }
 
-Wrapper.setAppElement("#___gatsby")
+Wrapper.setAppElement('#___gatsby')
 
 const customStyles = {
   overlay: {
-    backgroundColor: "rgba(187,225,250, 0.30)",
+    backgroundColor: 'rgba(187,225,250, 0.30)',
   },
   content: {
-    padding: "10px",
-    top: "2%",
-    left: "5%",
-    right: "5%",
-    bottom: "2%",
-    border: "none",
+    padding: '10px',
+    top: '2%',
+    left: '5%',
+    right: '5%',
+    bottom: '2%',
+    border: 'none',
   },
 }
 

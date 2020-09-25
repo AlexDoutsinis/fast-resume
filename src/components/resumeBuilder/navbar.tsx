@@ -1,5 +1,6 @@
 import React from 'react'
 import { Document } from '@react-pdf/renderer'
+import styled from 'styled-components'
 
 import { NavStyled, NavItemStyled } from '../../styled/resumeBuilderStyles'
 import { useSelectedNavItemContext } from '../../contexts/selectedNavItem-context'
@@ -34,6 +35,7 @@ const Navbar = () => {
   const { selectedNavItem, setSelectedNavItem } = useSelectedNavItemContext()
   const {
     state: { currentTemplate },
+    dispatch,
   } = useTemplateListContext()
   const {
     profile,
@@ -69,26 +71,41 @@ const Navbar = () => {
     if (currentTemplate === 'minimal5') return <PdfMinimal5 {...pdfProps} />
   }
 
-  return (
-    <NavStyled>
-      <ul>
-        {navItems.map((item, index) => (
-          <NavItemStyled
-            onClick={() => setSelectedNavItem(navItems[index])}
-            selectedNavItem={navItems.indexOf(selectedNavItem)}
-            index={index}
-            key={item}
-          >
-            {item}
-          </NavItemStyled>
-        ))}
-      </ul>
+  function closeModal(): void {
+    dispatch({ type: 'closeModal_stopWobble' })
+  }
 
-      <SaveAsPdf>
-        <Document>{pdfTemplate()}</Document>
-      </SaveAsPdf>
-    </NavStyled>
+  return (
+    <>
+      <CloseIconStyled onClick={closeModal}>x</CloseIconStyled>
+      <NavStyled>
+        <ul>
+          {navItems.map((item, index) => (
+            <NavItemStyled
+              onClick={() => setSelectedNavItem(navItems[index])}
+              selectedNavItem={navItems.indexOf(selectedNavItem)}
+              index={index}
+              key={item}
+            >
+              {item}
+            </NavItemStyled>
+          ))}
+        </ul>
+
+        <SaveAsPdf>
+          <Document>{pdfTemplate()}</Document>
+        </SaveAsPdf>
+      </NavStyled>
+    </>
   )
 }
+
+const CloseIconStyled = styled.div`
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 3px;
+`
 
 export default Navbar
