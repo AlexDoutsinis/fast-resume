@@ -20,8 +20,6 @@ import arvoRegular from '../../fonts/arvo-regular.ttf'
 import arvoItalic from '../../fonts/arvo-italic.ttf'
 import arvoBold from '../../fonts/arvo-bold.ttf'
 
-// #F5F6F7
-
 Font.registerHyphenationCallback(word => [word])
 
 Font.register({
