@@ -19,8 +19,7 @@ const FullNameStyled = styled.Text`
   ${props => props.sm && 'font-size: 22px;'};
   ${props => props.center && 'text-align: center;'};
   ${props => props.color && `color: ${props.color};`};
-  flex: 1;
-  flex-wrap: wrap;
+  ${props => props.flex1 && 'flex: 1; flex-wrap: wrap;'};
   padding-right: 34px;
   ${props => props.noPadding && 'padding: 0;'};
 `
@@ -98,8 +97,6 @@ const PageStyled = styled.Page`
 
 const ContactItemStyled = styled.Text`
   margin-top: 5px;
-  flex: 1;
-  flex-wrap: wrap;
 
   &:first-child {
     margin: 0;

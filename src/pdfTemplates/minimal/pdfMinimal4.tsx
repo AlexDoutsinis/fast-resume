@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '@react-pdf/renderer'
+import { Text, View } from '@react-pdf/renderer'
 import styled from '@react-pdf/styled-components'
 
 import { PropTypes } from '../PropTypes'
@@ -118,15 +118,19 @@ const PdfMinimal4 = (props: PropTypes) => {
         >
           Contact
         </SectionHeadingStyled>
-        <FlexChild>
+        <View>
           {contactList.map(item => (
-            <Text key={item.id}>{item.contactItem}</Text>
+            <TextStyled key={item.id}>{item.contactItem}</TextStyled>
           ))}
-        </FlexChild>
+        </View>
       </SectionStyled>
     </PageStyled>
   )
 }
+
+const TextStyled = styled.Text`
+  font-style: italic;
+`
 
 const FlexChild = styled.View`
   flex: 1;
