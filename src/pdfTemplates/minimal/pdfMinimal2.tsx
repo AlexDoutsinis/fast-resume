@@ -71,6 +71,32 @@ const PdfMinimal2 = (props: PropTypes) => {
           <SectionContentStyled lineHeight={lineHeight}>
             {skills}
           </SectionContentStyled>
+          <SectionHeadingStyled
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+            color={color}
+          >
+            Education
+          </SectionHeadingStyled>
+          {educationList.map(item => (
+            <View key={item.id}>
+              {item.university ? (
+                <SectionSubHeadingStyled lineHeight={lineHeight} fwNormal>
+                  {item.university}
+                </SectionSubHeadingStyled>
+              ) : null}
+              {item.specialize ? (
+                <SectionSubHeadingStyled lineHeight={lineHeight} sm>
+                  {item.specialize}
+                </SectionSubHeadingStyled>
+              ) : null}
+              {item.website ? (
+                <SectionSubHeadingStyled lineHeight={lineHeight} sm>
+                  {item.website}
+                </SectionSubHeadingStyled>
+              ) : null}
+            </View>
+          ))}
         </SideStyled>
         <SideStyled pl width={'60%'}>
           <SectionHeadingStyled
@@ -97,32 +123,6 @@ const PdfMinimal2 = (props: PropTypes) => {
                 <SectionContentStyled lineHeight={lineHeight}>
                   {item.description}
                 </SectionContentStyled>
-              ) : null}
-            </View>
-          ))}
-          <SectionHeadingStyled
-            uppercase={uppercaseHeading}
-            letterSpacing={letterSpacing}
-            color={color}
-          >
-            Education
-          </SectionHeadingStyled>
-          {educationList.map(item => (
-            <View key={item.id}>
-              {item.university ? (
-                <SectionSubHeadingStyled lineHeight={lineHeight} fwNormal>
-                  {item.university}
-                </SectionSubHeadingStyled>
-              ) : null}
-              {item.specialize ? (
-                <SectionSubHeadingStyled lineHeight={lineHeight} sm>
-                  {item.specialize}
-                </SectionSubHeadingStyled>
-              ) : null}
-              {item.website ? (
-                <SectionSubHeadingStyled lineHeight={lineHeight} sm>
-                  {item.website}
-                </SectionSubHeadingStyled>
               ) : null}
             </View>
           ))}

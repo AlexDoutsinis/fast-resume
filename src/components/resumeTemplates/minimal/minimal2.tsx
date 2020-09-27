@@ -73,6 +73,26 @@ const Minimal2 = () => {
               </span>
             ))}
           </SectionContentStyled>
+          <SectionHeadingStyled
+            uppercase={uppercaseHeading}
+            letterSpacing={letterSpacing}
+            color={color}
+          >
+            Education
+          </SectionHeadingStyled>
+          {educationList.map(item => (
+            <div key={item.id}>
+              <SectionSubHeadingStyled fwNormal>
+                {item.university}
+              </SectionSubHeadingStyled>
+              <SectionSubHeadingStyled sm>
+                {item.specialize}
+              </SectionSubHeadingStyled>
+              <SectionSubHeadingStyled sm>
+                {item.website}
+              </SectionSubHeadingStyled>
+            </div>
+          ))}
         </SideStyled>
         <SideStyled pl width={'60%'}>
           <SectionHeadingStyled
@@ -97,26 +117,6 @@ const Minimal2 = () => {
                   </span>
                 ))}
               </SectionContentStyled>
-            </div>
-          ))}
-          <SectionHeadingStyled
-            uppercase={uppercaseHeading}
-            letterSpacing={letterSpacing}
-            color={color}
-          >
-            Education
-          </SectionHeadingStyled>
-          {educationList.map(item => (
-            <div key={item.id}>
-              <SectionSubHeadingStyled fwNormal>
-                {item.university}
-              </SectionSubHeadingStyled>
-              <SectionSubHeadingStyled sm>
-                {item.specialize}
-              </SectionSubHeadingStyled>
-              <SectionSubHeadingStyled sm>
-                {item.website}
-              </SectionSubHeadingStyled>
             </div>
           ))}
         </SideStyled>
