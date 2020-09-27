@@ -125,19 +125,27 @@ export const SideBarStyled = styled.div`
     font-size: 12px;
     line-height: 1.3;
     width: 100%;
-    padding: 3px 6px;
+    padding: 6px 10px;
     outline: none;
     border: none;
     background-color: #f5f6f7;
     margin-bottom: 0.5rem;
+
+    &:focus {
+      outline: 1.5px solid var(--blue-color);
+    }
+
+    &:first-of-type {
+      margin-top: 1.5px;
+    }
   }
 
   textarea {
     resize: vertical;
     min-width: 100%;
     max-width: 100%;
-    min-height: 100px;
-    max-height: 200px;
+    min-height: 120px;
+    max-height: 220px;
     margin-bottom: 0;
   }
 
