@@ -69,6 +69,16 @@ const Design = () => {
       localStorage.setItem('font', e.target.value)
   }
 
+  function setCurrentTemplate(templateName) {
+    dispatch({
+      type: 'setCurrentTemplate',
+      templateName
+    })
+
+    if (typeof window !== 'undefined')
+      localStorage.setItem("currentTemplate", templateName)
+  }
+
   return (
     <DesignTabWrapperStyled>
       <InputWrapperStyled>
@@ -130,12 +140,7 @@ const Design = () => {
             <ImgWrapperStyled
               selected={currentTemplate === node.name ? true : false}
               key={node.name}
-              onClick={() =>
-                dispatch({
-                  type: 'setCurrentTemplate',
-                  templateName: node.name,
-                })
-              }
+              onClick={() => setCurrentTemplate(node.name)}
             >
               <Img
                 fluid={node.childImageSharp.fluid}

@@ -1,4 +1,5 @@
 import { useReducer } from 'react'
+import { useStoredData } from '../hooks/use-storedData'
 
 type State = {
   isModalOpen: boolean
@@ -36,9 +37,11 @@ export function ResumeBuilderReducer(state: State, action: Action): State {
   }
 }
 
+const {storedCurrentTemplate} = useStoredData()
+
 const initialState: State = {
   isModalOpen: false,
-  currentTemplate: 'minimal1',
+  currentTemplate: storedCurrentTemplate || 'minimal1',
   wobble: 0,
 }
 

@@ -20,7 +20,6 @@ const IndexPage = () => {
     <Layout>
       <SEO />
       <ResumeBuilderContextProvider>
-        <SelectedNavItemContextProvider>
           <SectionStyled>
             <Hero>
               <HeroContent />
@@ -32,11 +31,12 @@ const IndexPage = () => {
             </Features>
           </SectionStyled>
           <FormContextProvider>
-            <Modal>
-              <ResumeBuilder />
-            </Modal>
+            <SelectedNavItemContextProvider>
+              <Modal>
+                <ResumeBuilder />
+              </Modal>
+            </SelectedNavItemContextProvider>
           </FormContextProvider>
-        </SelectedNavItemContextProvider>
       </ResumeBuilderContextProvider>
     </Layout>
   )

@@ -13,6 +13,7 @@ let storedLetterSpacing = null
 let storedUppercaseHeading = null
 let storedColor = null
 let storedFont = null
+let storedCurrentTemplate = null
 
 let storeContactList: ContactList = null
 let storeExperienceList: ExperienceList = null
@@ -28,6 +29,7 @@ if (typeof window !== 'undefined') {
   storedUppercaseHeading = localStorage.getItem('uppercaseHeading') == 'true'
   storedColor = localStorage.getItem('color')
   storedFont = localStorage.getItem('font')
+  storedCurrentTemplate = localStorage.getItem('currentTemplate')
 
   storeContactList = JSON.parse(localStorage.getItem('ContactList'))
   storeExperienceList = JSON.parse(localStorage.getItem('ExperienceList'))
@@ -47,6 +49,7 @@ type StoredData = {
   storedUppercaseHeading: boolean
   storedColor: string
   storedFont: string
+  storedCurrentTemplate: string
 }
 
 export const useStoredData = (): StoredData => {
@@ -63,5 +66,6 @@ export const useStoredData = (): StoredData => {
     storedUppercaseHeading,
     storedColor,
     storedFont,
+    storedCurrentTemplate
   }
 }
