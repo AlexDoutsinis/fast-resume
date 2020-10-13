@@ -201,6 +201,11 @@ const CheckboxWrapperStyled = styled.div`
   input {
     cursor: pointer;
     margin: 0;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
   }
 
   ${device.mobileM`
