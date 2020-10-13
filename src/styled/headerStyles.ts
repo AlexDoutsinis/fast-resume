@@ -10,6 +10,7 @@ export const HeaderStyled = styled.header`
   padding-left: 7.5%;
   border-bottom: 0.2px solid transparent;
   box-shadow: 0px 0.2px 5px 0px var(--font-color);
+  min-height: 7vh;
 
   h1 {
     a {

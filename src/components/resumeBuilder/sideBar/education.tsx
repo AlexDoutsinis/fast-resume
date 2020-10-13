@@ -20,7 +20,7 @@ const Education = () => {
   return (
     <>
       {educationList.map((education, index) => {
-        const isLastItem = index === educationList.length - 1
+        const isLastItem: boolean = index === educationList.length - 1
 
         return (
           <FormWrapperStyled key={education.id} mb={isLastItem}>

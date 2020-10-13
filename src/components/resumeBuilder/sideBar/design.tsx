@@ -28,10 +28,10 @@ const Design = () => {
     setFont,
   } = useFormContext()
 
-  function handleLineHeightChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const maxValue = 1.5
-    const minValue = 1
-    const value = parseFloat(e.target.value)
+  function handleLineHeightChange(e: React.ChangeEvent<HTMLInputElement>): void {
+    const maxValue: number = 1.5
+    const minValue: number = 1
+    const value: number = parseFloat(e.target.value)
 
     if (value <= maxValue && value >= minValue) {
       setLineHeight(value)
@@ -40,7 +40,7 @@ const Design = () => {
     }
   }
 
-  function handleLetterSpacingChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleLetterSpacingChange(e: React.ChangeEvent<HTMLInputElement>): void {
     const maxValue = 2.5
     const minValue = 1
     const value = parseFloat(e.target.value)
@@ -52,24 +52,24 @@ const Design = () => {
     }
   }
 
-  function handleUppercaseChange() {
+  function handleUppercaseChange(): void {
     setUppercaseHeading(isUppercase => !isUppercase)
     if (typeof window !== 'undefined')
       localStorage.setItem('uppercaseHeading', `${!uppercaseHeading}`)
   }
 
-  function handleColorChange({ hex }: { hex: string }) {
+  function handleColorChange({ hex }: { hex: string }): void {
     setColor(hex)
     if (typeof window !== 'undefined') localStorage.setItem('color', hex)
   }
 
-  function handleFontChange(e: React.ChangeEvent<HTMLSelectElement>) {
+  function handleFontChange(e: React.ChangeEvent<HTMLSelectElement>): void {
     setFont(e.target.value)
     if (typeof window !== 'undefined')
       localStorage.setItem('font', e.target.value)
   }
 
-  function setCurrentTemplate(templateName) {
+  function setCurrentTemplate(templateName: string): void {
     dispatch({
       type: 'setCurrentTemplate',
       templateName

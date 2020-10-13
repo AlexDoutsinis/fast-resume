@@ -31,12 +31,12 @@ const Modal: React.FC<{}> = ({children}) => {
     dispatch({ type: 'closeModal_stopWobble' })
   }
 
-  function stopWobble() {
+  function stopWobble(): void {
     dispatch({ type: 'stopWobble' })
   }
 
   const { width } = useViewport()
-  const deviceSize = 768
+  const deviceSize: number = 768
 
   return (
     <Wrapper

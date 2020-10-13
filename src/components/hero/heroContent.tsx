@@ -5,7 +5,7 @@ import { useResumeBuilderContext } from '../../contexts/resumeBuilder-context'
 const HeroContent = () => {
   const {dispatch} = useResumeBuilderContext()
 
-  function OpenResumeBuilder() {
+  function OpenResumeBuilder(): void {
     dispatch({type: "openModal_startWobble"})
   }
   

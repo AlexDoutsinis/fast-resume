@@ -10,7 +10,7 @@ const Profile = () => {
 
   function handleInputChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) {
+  ): void {
     setProfile({ ...profile, [e.target.name]: e.target.value })
     if (typeof window !== 'undefined')
       localStorage.setItem(e.target.name, e.target.value)

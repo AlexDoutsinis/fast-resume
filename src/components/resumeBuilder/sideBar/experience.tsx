@@ -23,7 +23,7 @@ const Experience = () => {
   return (
     <>
       {experienceList.map((experience, index) => {
-        const isLastItem = index === experienceList.length - 1
+        const isLastItem: boolean = index === experienceList.length - 1
 
         return (
           <FormWrapperStyled key={experience.id} mb={isLastItem}>

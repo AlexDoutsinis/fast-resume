@@ -20,7 +20,7 @@ const Contact = () => {
   return (
     <>
       {contactList.map((contact, index) => {
-        const isLastItem = index === contactList.length - 1
+        const isLastItem: boolean = index === contactList.length - 1
 
         return (
           <FormWrapperStyled key={contact.id} mb={isLastItem} mb05>

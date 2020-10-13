@@ -8,7 +8,7 @@ const Skills = () => {
   const { skills, setSkills } = useFormContext()
   const { ref } = useFocus()
 
-  function handleInputChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+  function handleInputChange(e: React.ChangeEvent<HTMLTextAreaElement>): void {
     setSkills(e.target.value)
     if (typeof window !== 'undefined')
       localStorage.setItem('skills', e.target.value)

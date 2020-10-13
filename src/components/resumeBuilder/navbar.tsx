@@ -63,7 +63,7 @@ const Navbar = () => {
     font,
   }
 
-  function pdfTemplate() {
+  function pdfTemplate(): JSX.Element {
     if (currentTemplate === 'minimal1') return <PdfMinimal1 {...pdfProps} />
     if (currentTemplate === 'minimal2') return <PdfMinimal2 {...pdfProps} />
     if (currentTemplate === 'minimal3') return <PdfMinimal3 {...pdfProps} />

@@ -47,7 +47,18 @@ type Section = {
 }
 
 const SectionStyled = styled.section<Section>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   ${props => props.bgBlue && 'background-color: var(--light-blue-color);'};
+
+  &:first-of-type {
+    min-height: 30vh;
+  }
+
+  &:last-of-type {
+    min-height: 50vh;
+  }
 
   > div {
     width: 85%;
