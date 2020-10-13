@@ -130,9 +130,10 @@ export const SideBarStyled = styled.div`
     border: none;
     background-color: #f5f6f7;
     margin-bottom: 0.5rem;
+    border-radius: 3px;
 
     &:focus {
-      outline: 1.5px solid var(--blue-color);
+      box-shadow: 0 0 0 1px var(--blue-color);
     }
 
     &:first-of-type {
