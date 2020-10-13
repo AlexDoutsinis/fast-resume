@@ -1,6 +1,7 @@
 import React, { useState, createContext, useContext } from "react"
+import { useStoredData } from "../hooks/use-storedData"
 
-type NavItem =
+export type NavItem =
   | "Profile"
   | "Skills"
   | "Contact"
@@ -16,7 +17,8 @@ type SelectedNavItemContextProps = {
 const SelectedNavItemContext = createContext({} as SelectedNavItemContextProps)
 
 export const SelectedNavItemContextProvider: React.FC<{}> = ({ children }) => {
-  const [selectedNavItem, setSelectedNavItem] = useState("Design" as NavItem)
+  const {storedSelectedNavItem} = useStoredData()
+  const [selectedNavItem, setSelectedNavItem] = useState((storedSelectedNavItem || "Design") as NavItem)
 
   return (
     <SelectedNavItemContext.Provider

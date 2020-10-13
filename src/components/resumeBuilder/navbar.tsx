@@ -3,7 +3,7 @@ import { Document } from '@react-pdf/renderer'
 import styled from 'styled-components'
 
 import { NavStyled, NavItemStyled } from '../../styled/resumeBuilderStyles'
-import { useSelectedNavItemContext } from '../../contexts/selectedNavItem-context'
+import { NavItem, useSelectedNavItemContext } from '../../contexts/selectedNavItem-context'
 import { useResumeBuilderContext } from '../../contexts/resumeBuilder-context'
 import SaveAsPdf from './saveAsPdf'
 import PdfMinimal1 from '../../pdfTemplates/minimal/pdfMinimal1'
@@ -75,6 +75,13 @@ const Navbar = () => {
     dispatch({ type: 'closeModal_stopWobble' })
   }
 
+  function setNavItem(item: NavItem): void {
+    setSelectedNavItem(item)
+
+    if (typeof window !== 'undefined')
+      localStorage.setItem("selectedNavItem", item)
+  }
+
   return (
     <>
       <CloseIconStyled onClick={closeModal}>x</CloseIconStyled>
@@ -82,7 +89,7 @@ const Navbar = () => {
         <ul>
           {navItems.map((item, index) => (
             <NavItemStyled
-              onClick={() => setSelectedNavItem(navItems[index])}
+              onClick={() => setNavItem(navItems[index])}
               selectedNavItem={navItems.indexOf(selectedNavItem)}
               index={index}
               key={item}
