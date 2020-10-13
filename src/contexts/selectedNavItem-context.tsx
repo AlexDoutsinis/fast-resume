@@ -16,7 +16,7 @@ type SelectedNavItemContextProps = {
 const SelectedNavItemContext = createContext({} as SelectedNavItemContextProps)
 
 export const SelectedNavItemContextProvider: React.FC<{}> = ({ children }) => {
-  const [selectedNavItem, setSelectedNavItem] = useState("Profile" as NavItem)
+  const [selectedNavItem, setSelectedNavItem] = useState("Design" as NavItem)
 
   return (
     <SelectedNavItemContext.Provider

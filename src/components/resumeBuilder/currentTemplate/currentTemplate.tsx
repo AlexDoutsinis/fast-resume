@@ -5,7 +5,7 @@ import {
   CurrentTemplateWrapperStyled,
 } from '../../../styled/resumeBuilderStyles'
 import { useFormContext } from '../../../contexts/form-context'
-import { useTemplateListContext } from '../../../contexts/templateList-context'
+import { useResumeBuilderContext } from '../../../contexts/resumeBuilder-context'
 import {
   Minimal1,
   Minimal2,
@@ -17,7 +17,7 @@ import {
 const CurrentTemplate = () => {
   const {
     state: { currentTemplate },
-  } = useTemplateListContext()
+  } = useResumeBuilderContext()
   const { lineHeight, font } = useFormContext()
 
   return (

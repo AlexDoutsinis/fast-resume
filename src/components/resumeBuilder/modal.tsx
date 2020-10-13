@@ -6,14 +6,7 @@ import {
   RotateIconStyled,
 } from '../../styled/resumeBuilderStyles'
 import { useViewport } from '../../hooks/use-viewport'
-
-type Props = {
-  isModalOpen: boolean
-  closeModal: () => void
-  currentTemplate: string
-  wobble: number
-  stopWobble: () => void
-}
+import { useResumeBuilderContext } from '../../contexts/resumeBuilder-context'
 
 Wrapper.setAppElement('#___gatsby')
 
@@ -31,33 +24,33 @@ const customStyles = {
   },
 }
 
-const Modal: React.FC<Props> = props => {
-  const {
-    children,
-    isModalOpen,
-    closeModal,
-    currentTemplate,
-    wobble,
-    stopWobble,
-  } = props
+const Modal: React.FC<{}> = ({children}) => {
+  const { state, dispatch } = useResumeBuilderContext()
+
+  function closeModal(): void {
+    dispatch({ type: 'closeModal_stopWobble' })
+  }
+
+  function stopWobble() {
+    dispatch({ type: 'stopWobble' })
+  }
 
   const { width } = useViewport()
-
   const deviceSize = 768
 
   return (
     <Wrapper
-      isOpen={isModalOpen}
+      isOpen={state.isModalOpen}
       onRequestClose={closeModal}
-      contentLabel={currentTemplate}
+      contentLabel={state.currentTemplate}
       style={customStyles}
     >
       {children}
 
       {width < deviceSize && (
         <RotateIconWrapperStyled>
-          <RotateIconStyled onAnimationEnd={stopWobble} wobble={wobble} />
-          {wobble ? <p>Please rotate your device</p> : null}
+          <RotateIconStyled onAnimationEnd={stopWobble} wobble={state.wobble} />
+          {state.wobble ? <p>Please rotate your device</p> : null}
         </RotateIconWrapperStyled>
       )}
     </Wrapper>

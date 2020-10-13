@@ -1,15 +1,19 @@
 import React from 'react'
 
-type Props = {
-  executeScroll: () => void
-}
+import { useResumeBuilderContext } from '../../contexts/resumeBuilder-context'
 
-const HeroContent = ({ executeScroll }: Props) => {
+const HeroContent = () => {
+  const {dispatch} = useResumeBuilderContext()
+
+  function OpenResumeBuilder() {
+    dispatch({type: "openModal_startWobble"})
+  }
+  
   return (
     <>
       <h2>The most simple way to craft a resume that will get you hired</h2>
       <p>Completely secure, customizable and 100% free</p>
-      <button onClick={executeScroll}>Craft your resume</button>
+      <button onClick={OpenResumeBuilder}>Craft your resume</button>
     </>
   )
 }

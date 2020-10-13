@@ -11,16 +11,16 @@ import { useSelectedNavItemContext } from '../../../contexts/selectedNavItem-con
 
 const SideBar = () => {
   const { selectedNavItem } = useSelectedNavItemContext()
-
+  
   return (
     <>
       <SideBarStyled>
-        {selectedNavItem === 'Profile' && <Profile />}
-        {selectedNavItem === 'Skills' && <Skills />}
-        {selectedNavItem === 'Contact' && <Contact />}
-        {selectedNavItem === 'Experience' && <Experience />}
-        {selectedNavItem === 'Education' && <Education />}
-        {selectedNavItem === 'Design' && <Design />}
+          {selectedNavItem === 'Profile' && <Profile />}
+          {selectedNavItem === 'Skills' && <Skills />}
+          {selectedNavItem === 'Contact' && <Contact />}
+          {selectedNavItem === 'Experience' && <Experience />}
+          {selectedNavItem === 'Education' && <Education />}
+          {selectedNavItem === 'Design' && <Design />}
       </SideBarStyled>
     </>
   )

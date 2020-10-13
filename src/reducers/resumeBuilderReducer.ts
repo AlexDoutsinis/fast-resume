@@ -15,13 +15,12 @@ type Action = {
   templateName?: string
 }
 
-export function templateListReducer(state: State, action: Action): State {
+export function ResumeBuilderReducer(state: State, action: Action): State {
   switch (action.type) {
     case 'openModal_startWobble': {
       return {
         ...state,
         isModalOpen: true,
-        currentTemplate: action.templateName,
         wobble: 1,
       }
     }
@@ -39,17 +38,17 @@ export function templateListReducer(state: State, action: Action): State {
 
 const initialState: State = {
   isModalOpen: false,
-  currentTemplate: '',
+  currentTemplate: 'minimal1',
   wobble: 0,
 }
 
-export type TemplateList = {
+export type ResumeBuilder = {
   state: State
   dispatch: React.Dispatch<Action>
 }
 
-export function useTemplateListReducer(): TemplateList {
-  const [state, dispatch] = useReducer(templateListReducer, initialState)
+export function useResumeBuilderReducer(): ResumeBuilder {
+  const [state, dispatch] = useReducer(ResumeBuilderReducer, initialState)
 
   return { state, dispatch }
 }

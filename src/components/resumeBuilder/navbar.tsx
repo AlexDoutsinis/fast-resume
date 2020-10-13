@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import { NavStyled, NavItemStyled } from '../../styled/resumeBuilderStyles'
 import { useSelectedNavItemContext } from '../../contexts/selectedNavItem-context'
-import { useTemplateListContext } from '../../contexts/templateList-context'
+import { useResumeBuilderContext } from '../../contexts/resumeBuilder-context'
 import SaveAsPdf from './saveAsPdf'
 import PdfMinimal1 from '../../pdfTemplates/minimal/pdfMinimal1'
 import { useFormContext } from '../../contexts/form-context'
@@ -36,7 +36,7 @@ const Navbar = () => {
   const {
     state: { currentTemplate },
     dispatch,
-  } = useTemplateListContext()
+  } = useResumeBuilderContext()
   const {
     profile,
     skills,

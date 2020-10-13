@@ -7,35 +7,37 @@ import Hero from '../components/hero/hero'
 import HeroContent from '../components/hero/heroContent'
 import Features from '../components/features/features'
 import FeaturesContent from '../components/features/featuresContent'
-import TemplateList from '../components/templateList/templateList'
 import ResumeBuilder from '../components/resumeBuilder/resumeBuilder'
-import { TemplateListContextProvider } from '../contexts/templateList-context'
+import { ResumeBuilderContextProvider } from '../contexts/resumeBuilder-context'
 import { device } from '../utils/device'
-import { useScroll } from '../hooks/use-scroll'
+import { SelectedNavItemContextProvider } from '../contexts/selectedNavItem-context'
+import { FormContextProvider } from '../contexts/form-context'
+import Modal from '../components/resumeBuilder/modal'
 
 const IndexPage = () => {
-  const { ref, executeScroll } = useScroll()
 
   return (
     <Layout>
       <SEO />
-      <SectionStyled>
-        <Hero>
-          <HeroContent executeScroll={executeScroll} />
-        </Hero>
-      </SectionStyled>
-      <SectionStyled bgBlue>
-        <Features>
-          <FeaturesContent />
-        </Features>
-      </SectionStyled>
-      <TemplateListContextProvider>
-        <SectionStyled ref={ref}>
-          <TemplateList>
-            <ResumeBuilder />
-          </TemplateList>
-        </SectionStyled>
-      </TemplateListContextProvider>
+      <ResumeBuilderContextProvider>
+        <SelectedNavItemContextProvider>
+          <SectionStyled>
+            <Hero>
+              <HeroContent />
+            </Hero>
+          </SectionStyled>
+          <SectionStyled bgBlue>
+            <Features>
+              <FeaturesContent />
+            </Features>
+          </SectionStyled>
+          <FormContextProvider>
+            <Modal>
+              <ResumeBuilder />
+            </Modal>
+          </FormContextProvider>
+        </SelectedNavItemContextProvider>
+      </ResumeBuilderContextProvider>
     </Layout>
   )
 }

@@ -6,7 +6,7 @@ import { CirclePicker } from 'react-color'
 import { useTemplates } from '../../../hooks/use-templates'
 import { useFormContext } from '../../../contexts/form-context'
 import { device } from '../../../utils/device'
-import { useTemplateListContext } from '../../../contexts/templateList-context'
+import { useResumeBuilderContext } from '../../../contexts/resumeBuilder-context'
 import { colors } from '../../../utils/colorPicker'
 
 const Design = () => {
@@ -14,7 +14,7 @@ const Design = () => {
   const {
     state: { currentTemplate },
     dispatch,
-  } = useTemplateListContext()
+  } = useResumeBuilderContext()
   const {
     lineHeight,
     setLineHeight,
